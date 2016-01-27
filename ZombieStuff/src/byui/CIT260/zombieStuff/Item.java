@@ -11,8 +11,24 @@ import java.io.Serializable;
  *
  * @author T4d3-T550
  */
-public class Item {
+public class Item implements Serializable{
     private String itemDescription;
+
+    public String getItemDescription() {
+        return itemDescription;
+    }
+
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
+    }
+
+    public int getIsWieldable() {
+        return isWieldable;
+    }
+
+    public void setIsWieldable(int isWieldable) {
+        this.isWieldable = isWieldable;
+    }
     private int isWieldable;
 
 }
