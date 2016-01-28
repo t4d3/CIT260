@@ -26,7 +26,21 @@ public class Item implements Serializable{
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(java.lang.Item obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Item other = (Item) obj;
+        return this.isWieldable == other.isWieldable;
+    }
+
+    public boolean equals(Item obj) {
         if (this == obj) {
             return true;
         }
