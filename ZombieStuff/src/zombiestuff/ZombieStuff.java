@@ -20,6 +20,12 @@ public class ZombieStuff {
     public static void main(String[] args) {
         GameCharacter playerOne = new GameCharacter();
         Item hammer = new Item();
+        playerOne.setName("Josh");
+        playerOne.setDescription("He is a holyer than thou type of person...");
+        playerOne.setAttack(5);
+        playerOne.setStrength(1);
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
     }
     
 }
