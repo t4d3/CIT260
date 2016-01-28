@@ -13,7 +13,14 @@ import java.io.Serializable;
  */
 public class Item implements Serializable{
     private String itemDescription;
+    private int isWieldable;
 
+    public Item(String itemDescription) {
+        this.itemDescription = itemDescription;
+    }
+
+    
+    
     public String getItemDescription() {
         return itemDescription;
     }
@@ -29,6 +36,5 @@ public class Item implements Serializable{
     public void setIsWieldable(int isWieldable) {
         this.isWieldable = isWieldable;
     }
-    private int isWieldable;
 
 }
