@@ -6,6 +6,7 @@
 package byui.CIT260.zombieStuff.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -19,9 +20,15 @@ public class Item implements Serializable{
     }
 
     @Override
+    public String toString() {
+        return "Item{" + "itemDescription=" + itemDescription + ", isWieldable=" + isWieldable + '}';
+    }
+
+    @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + this.isWieldable;
+        int hash = 5;
+        hash = 19 * hash + Objects.hashCode(this.itemDescription);
+        hash = 19 * hash + this.isWieldable;
         return hash;
     }
 
@@ -37,43 +44,17 @@ public class Item implements Serializable{
             return false;
         }
         final Item other = (Item) obj;
-        return this.isWieldable == other.isWieldable;
-    }
-
-    public boolean equals(java.lang.Item obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
+        if (this.isWieldable != other.isWieldable) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (!Objects.equals(this.itemDescription, other.itemDescription)) {
             return false;
         }
-        final Item other = (Item) obj;
-        return this.isWieldable == other.isWieldable;
-    }
-
-    public boolean equals(Item obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Item other = (Item) obj;
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "Item{" + "itemDescription=" + itemDescription + ", isWieldable=" + isWieldable + '}';
-    }
-        
     
+    
+
     public String getItemDescription() {
         return itemDescription;
     }
@@ -89,5 +70,4 @@ public class Item implements Serializable{
     public void setIsWieldable(int isWieldable) {
         this.isWieldable = isWieldable;
     }
-
 }
