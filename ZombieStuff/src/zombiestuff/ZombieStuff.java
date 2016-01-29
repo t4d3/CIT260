@@ -6,9 +6,13 @@
 package zombiestuff;
 
 import byui.CIT260.zombieStuff.model.Equip;
+import byui.CIT260.zombieStuff.model.Game;
 import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Item;
 import byui.CIT260.zombieStuff.model.Inventory;
+import byui.CIT260.zombieStuff.model.Location;
+import byui.CIT260.zombieStuff.model.Map;
+import byui.CIT260.zombieStuff.model.Player;
 import byui.CIT260.zombieStuff.model.SceneAttack;
 import byui.CIT260.zombieStuff.model.SceneHallway;
 import byui.CIT260.zombieStuff.model.SceneShop;
@@ -30,6 +34,10 @@ public class ZombieStuff {
         SceneShop shopScene = new SceneShop();
         Inventory playerOneInventory = new Inventory();
         Equip playerOneEquip = new Equip();
+        Map theMall = new Map();
+        Location position = new Location();
+        Game game = new Game();
+        Player superPlayer = new Player();
         
         playerOne.setName("Josh");
         playerOne.setDescription("He is a holyer than thou type of person...");
@@ -46,7 +54,13 @@ public class ZombieStuff {
         playerOneEquip.setObjectID(69);
         playerOneEquip.setAttributeDefence(0);
         playerOneEquip.setAttributeAttack(5);
-        
+        position.setDescription("You are at the mall");
+        position.setName("The mall");
+        position.setItemID(1);
+        superPlayer.setDescription("You are the player. The super player.");
+        superPlayer.setName("JNASTY");
+                
+                
         String playerInfo = playerOne.toString();
         String hammerInfo = hammer.toString();
         String attackInfo = attackScene.toString();
@@ -54,6 +68,8 @@ public class ZombieStuff {
         String shopScInfo = shopScene.toString();
         String plyInvInfo = playerOneInventory.toString();
         String plyEquInfo = playerOneEquip.toString();
+        String positionInfo = position.toString();
+        String superPlayerInfo = superPlayer.toString();
         System.out.println(playerInfo);
         System.out.println(hammerInfo);
         System.out.println(attackInfo);
@@ -61,6 +77,10 @@ public class ZombieStuff {
         System.out.println(shopScInfo);
         System.out.println(plyInvInfo);
         System.out.println(plyEquInfo);
+        System.out.println(positionInfo);
+        System.out.println(superPlayerInfo);
+        
+         
     }
     
 }
