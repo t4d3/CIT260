@@ -8,6 +8,9 @@ package zombiestuff;
 import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Item;
 import byui.CIT260.zombieStuff.model.Inventory;
+import byui.CIT260.zombieStuff.model.SceneAttack;
+import byui.CIT260.zombieStuff.model.SceneHallway;
+import byui.CIT260.zombieStuff.model.SceneShop;
 
 /**
  *
@@ -21,7 +24,11 @@ public class ZombieStuff {
     public static void main(String[] args) {
         GameCharacter playerOne = new GameCharacter();
         Item hammer = new Item();
+        SceneAttack attackScene = new SceneAttack();
+        SceneHallway hallwayScene = new SceneHallway();
+        SceneShop shopScene = new SceneShop();
         Inventory playerOneInventory = new Inventory();
+        
         playerOne.setName("Josh");
         playerOne.setDescription("He is a holyer than thou type of person...");
         playerOne.setAttack(5);
