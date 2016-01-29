@@ -5,6 +5,7 @@
  */
 package zombiestuff;
 
+import byui.CIT260.zombieStuff.model.Equip;
 import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Item;
 import byui.CIT260.zombieStuff.model.Inventory;
@@ -28,6 +29,7 @@ public class ZombieStuff {
         SceneHallway hallwayScene = new SceneHallway();
         SceneShop shopScene = new SceneShop();
         Inventory playerOneInventory = new Inventory();
+        Equip playerOneEquip = new Equip();
         
         playerOne.setName("Josh");
         playerOne.setDescription("He is a holyer than thou type of person...");

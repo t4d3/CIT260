@@ -13,22 +13,22 @@ import java.util.Objects;
  * @author T4d3-T550
  */
 public class Item implements Serializable{
+    private Integer itemID;
     private String itemDescription;
-    private int isWieldable;
+    private Integer isWieldable;
 
     public Item() {
     }
 
     @Override
     public String toString() {
-        return "Item{" + "itemDescription=" + itemDescription + ", isWieldable=" + isWieldable + '}';
+        return "Item{" + "ItemID=" + itemID + ", itemDescription=" + itemDescription + ", isWieldable=" + isWieldable + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 19 * hash + Objects.hashCode(this.itemDescription);
-        hash = 19 * hash + this.isWieldable;
+        hash = 19 * hash + Objects.hashCode(this.itemID);
         return hash;
     }
 
@@ -44,7 +44,7 @@ public class Item implements Serializable{
             return false;
         }
         final Item other = (Item) obj;
-        if (this.isWieldable != other.isWieldable) {
+        if (!Objects.equals(this.isWieldable, other.isWieldable)) {
             return false;
         }
         return Objects.equals(this.itemDescription, other.itemDescription);
@@ -56,6 +56,14 @@ public class Item implements Serializable{
 
     public void setItemDescription(String itemDescription) {
         this.itemDescription = itemDescription;
+    }
+
+    public Integer getItemID() {
+        return itemID;
+    }
+
+    public void setItemID(Integer itemID) {
+        this.itemID = itemID;
     }
 
     public int getIsWieldable() {
