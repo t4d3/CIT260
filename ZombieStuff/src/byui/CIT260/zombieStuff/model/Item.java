@@ -47,13 +47,8 @@ public class Item implements Serializable{
         if (this.isWieldable != other.isWieldable) {
             return false;
         }
-        if (!Objects.equals(this.itemDescription, other.itemDescription)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.itemDescription, other.itemDescription);
     }
-    
-    
 
     public String getItemDescription() {
         return itemDescription;
