@@ -57,5 +57,10 @@ public class Inventory {
     public void setItemID(int itemID) {
         this.itemID = itemID;
     }
+
+    @Override
+    public String toString() {
+        return "Inventory{" + "size=" + size + ", itemID=" + itemID + '}';
+    }
     
 }
