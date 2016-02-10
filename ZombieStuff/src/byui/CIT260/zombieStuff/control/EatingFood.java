@@ -26,11 +26,10 @@ public class EatingFood {
         else if (numCornDogs < (10 - healthCurrent)) {
             //WARNING: you could have more cornDogs
             //CONTINUE onto the purchase
-            ;
+            return -3;
         }
         else if (numCornDogs == (10 - healthCurrent)) {
             //CONTINUE onto the purchase
-            ;
         }
 // the purchase portion of the code
         double maxCostOfCornDogs = (1.75 * numCornDogs)*.22 + (1.75 * numCornDogs);
