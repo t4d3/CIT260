@@ -24,6 +24,10 @@ public class calcTravelTime {
         }
         double distSqr = (Math.pow((ALocation.getX() - BLocation.getX()), 2)
                          + Math.pow((ALocation.getY() - BLocation.getY()), 2));
-        return (int) Math.sqrt(distSqr); //This is the total Distance (travel time)
-    }
+        int timeToTravel = (int) Math.sqrt(distSqr); //This is the total Distance (travel time)
+        if ((timeToTravel + timeUsed) > maxTime) {
+            return -3;
+        }
+        return timeToTravel;
+   }
 }
