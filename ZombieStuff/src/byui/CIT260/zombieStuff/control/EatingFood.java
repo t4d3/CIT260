@@ -6,7 +6,6 @@
 package byui.CIT260.zombieStuff.control;
 
 /**
- *
  * @author T4d3-T550
  */
 public class EatingFood {
@@ -15,7 +14,7 @@ public class EatingFood {
             return healthCurrent;
             // ERROR: they have no need for food
         }
-        else if (0 == healthCurrent) {
+        else if (healthCurrent == 0) {
             return -1;
             //ERROR: they are dead
         }
@@ -28,18 +27,15 @@ public class EatingFood {
             //CONTINUE onto the purchase
             return -3;
         }
-        else if (numCornDogs == (10 - healthCurrent)) {
-            //CONTINUE onto the purchase
-        }
 // the purchase portion of the code
         double maxCostOfCornDogs = (1.75 * numCornDogs)*.22 + (1.75 * numCornDogs);
         double minCostOfCornDogs = (1.75 * numCornDogs)*.12 + (1.75 * numCornDogs);
         if (money > maxCostOfCornDogs) {
-            return -1;
+            return -4;
             //ERROR: that tip is bogus!
         }
         if (money < minCostOfCornDogs) {
-            return -1;
+            return -5;
             //ERROR: where's the tip?
         }
 	healthCurrent += numCornDogs;
