@@ -13,18 +13,21 @@ import java.awt.Point;
  * @author T4d3-T550
  */
 public class calcTravelTime {
-    public int calcTravelTime(Point ALocation, Point bLocation, int timeUsed, int maxTime) {
+    public int calcTravelTime(Point ALocation, Point BLocation, int timeUsed, int maxTime) {
         if (timeUsed >= maxTime ) {
-            return maxTime;
+            return -2;
             //ERROR: You are out of time!
         }
         else if (timeUsed < 0) {
             return -1;
             //ERROR: you cannot be negative time!
         }
-        else if (0 <= timeUsed && timeUsed < maxTime) {
-            //Continue onto program
+        double distSqr = (Math.pow((ALocation.getX() - BLocation.getX()), 2)
+                         + Math.pow((ALocation.getY() - BLocation.getY()), 2));
+        int timeToTravel = (int) Math.sqrt(distSqr); //This is the total Distance (travel time)
+        if ((timeToTravel + timeUsed) > maxTime) {
+            return -3;
         }
-        
-    }
+        return timeToTravel;
+   }
 }
