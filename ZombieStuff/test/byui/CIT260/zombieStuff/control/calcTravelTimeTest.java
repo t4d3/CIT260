@@ -34,7 +34,7 @@ public class calcTravelTimeTest {
     @Test
     public void testCalcTravelTime() {
         System.out.println("calcTravelTime");
-        System.out.println("Test Case No: 1");
+        System.out.println("Test Case No: 5");
         Point ALocation = new Point(1,1);
         Point BLocation = new Point(3,2);
         int timeUsed = 9;
