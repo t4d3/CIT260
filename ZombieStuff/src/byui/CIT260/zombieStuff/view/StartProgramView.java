@@ -11,10 +11,12 @@ package byui.CIT260.zombieStuff.view;
  */
 public class StartProgramView {
     
-    public void startPrgram(){
-
- //Display the banner screen
- this.displayBanner();
+    private String promptMessage;
+    
+    public StartProgramView(){
+        this.promptMessage ="\nPlease enter your name: ";
+    //Display the banner screen
+    this.displayBanner();
  //Get the players name
  //Create a new player
  //DISPLAY a customized welcome message
