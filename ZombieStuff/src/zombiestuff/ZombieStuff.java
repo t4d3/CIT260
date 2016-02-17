@@ -16,6 +16,8 @@ import byui.CIT260.zombieStuff.model.Player;
 import byui.CIT260.zombieStuff.model.SceneAttack;
 import byui.CIT260.zombieStuff.model.SceneHallway;
 import byui.CIT260.zombieStuff.model.SceneShop;
+import byui.CIT260.zombieStuff.view.StartProgramView;
+
 
 /**
  *
@@ -38,6 +40,10 @@ public class ZombieStuff {
         Location position = new Location();
         Game game = new Game();
         Player superPlayer = new Player();
+        
+        //display the banner
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
         
         playerOne.setName("Josh");
         playerOne.setDescription("He is a holyer than thou type of person...");
