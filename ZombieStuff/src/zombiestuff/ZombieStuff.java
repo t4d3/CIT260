@@ -43,7 +43,7 @@ public class ZombieStuff {
         
         //display the banner
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgram();
+        startProgramView.displayStartProgramView();
         
         playerOne.setName("Josh");
         playerOne.setDescription("He is a holyer than thou type of person...");
