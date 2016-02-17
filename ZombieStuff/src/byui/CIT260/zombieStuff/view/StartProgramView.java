@@ -32,7 +32,11 @@ public class StartProgramView {
                         + "\n*get the items that you forgot*");
         
         System.out.println("Fight the zombies, get the items, don't die, and get back to"
-                        + "party before the roast goes bad. Good luck!");
+                        + "the party before the roast goes bad. Good luck!");
         
+    }
+
+    public void displayStartProgramView() {
+        System.out.println("\n***displayProgramView function called ***");
     }
 }
