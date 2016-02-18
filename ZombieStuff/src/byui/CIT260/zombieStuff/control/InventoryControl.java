@@ -11,4 +11,5 @@ package byui.CIT260.zombieStuff.control;
  */
 public class InventoryControl {
     
+    
 }
