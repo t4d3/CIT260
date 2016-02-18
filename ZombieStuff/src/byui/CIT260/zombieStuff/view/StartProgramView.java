@@ -24,16 +24,16 @@ public class StartProgramView {
 }
 
     private void displayBanner() {
-        System.out.println("\n\n****************************************");
+        System.out.println("\n******************************************************"
+                        + "\n* Welcome to the text based rpg game Zombie Mall!     *"
+                        + "\n* In this game you are a dad whose daughter is having *"
+                        + "\n* her birthday party but you forgot some things in    *"
+                        + "\n* order for the party to be complete. You leave your  *"
+                        + "\n* pot roast onthe stove and head to the mall infested *"
+                        + "\n* with zombies to get the items that you forgot       *"
+                        + "\n*******************************************************");
         
-        System.out.println("\nWelcome to the text based rpg game Zombie Mall*"
-                        + "\n*In this game you are a dad whose daughter is having*"
-                        + "\n*her birthday party but you forgot some things in order*"
-                        + "\n*for the party to be complete. You leave your pot roast on*"
-                        + "\n*the stove and head to the mall infested with zombies to*"
-                        + "\n*get the items that you forgot*");
-        
-        System.out.println("Fight the zombies, get the items, don't die, and get back to"
+        System.out.println("\nFight the zombies, get the items, don't die, and get back to"
                         + "the party before the roast goes bad. Good luck!");
         
     }
