@@ -5,10 +5,15 @@
  */
 package byui.CIT260.zombieStuff.control;
 
+import byui.CIT260.zombieStuff.model.Player;
+
 /**
  *
  * @author Justin Cox
  */
 public class GameControl {
-    
+    public static Player createPlayer(String playerName) {
+        System.out.println("\n*** Create player funciton called***");
+        return new Player();
+    }
 }
