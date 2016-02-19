@@ -6,6 +6,7 @@
 package byui.CIT260.zombieStuff.control;
 
 import byui.CIT260.zombieStuff.model.Player;
+import zombiestuff.ZombieStuff;
 
 /**
  *
@@ -14,6 +15,11 @@ import byui.CIT260.zombieStuff.model.Player;
 public class GameControl {
     public static Player createPlayer(String playerName) {
         System.out.println("\n*** Create player funciton called***");
-        return new Player();
+        if (playerName == null) { return null; }
+        Player player;
+        player = new Player();
+        player.setName(playerName);
+        ZombieStuff.setPlayer(player);
+        return player;
     }
 }

@@ -5,6 +5,8 @@
  */
 package zombiestuff;
 
+import byui.CIT260.zombieStuff.model.Game;
+import byui.CIT260.zombieStuff.model.Player;
 import byui.CIT260.zombieStuff.view.StartProgramView;
 
 
@@ -13,7 +15,25 @@ import byui.CIT260.zombieStuff.view.StartProgramView;
  * @author T4d3-T550
  */
 public class ZombieStuff {
+    private static Game currentGame = null;
+    private static Player player = null;
 
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        ZombieStuff.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        ZombieStuff.player = player;
+    }
+    
     public static void main(String[] args) {
 
         

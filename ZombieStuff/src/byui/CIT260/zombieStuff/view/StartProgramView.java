@@ -15,18 +15,12 @@ import java.util.Scanner;
  */
 public class StartProgramView {
     
-    private String promptMessage;
+    private final String promptMessage;
     
     public StartProgramView(){
         this.displayBanner();
         this.promptMessage ="\nPlease enter your name: ";
-        System.out.println(promptMessage);
-    //Display the banner screen
- //Get the players name
- //Create a new player
- //DISPLAY a customized welcome message
- //DISPLAY the main menu
-}
+    }
 
     private void displayBanner() {
         System.out.println("\n******************************************************"
@@ -88,15 +82,23 @@ public class StartProgramView {
             System.out.println("Error: cannot create player");
             return false;
         }
-        this.displayNextView();
-        return false;
+        this.displayNextView(player);
+        return true;
     }
     
     
     
     //end of program
 
-    private void displayNextView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void displayNextView(Player player) {
+        System.out.println("\n*** displayNextView() Call***");
+        System.out.println("\n*******************************************"
+                          +"\nWelcome to the game, " + player.getName() + "."
+                          +"\n We hope you get a really good experience"
+                          +"\n from this delitefull game..."
+                          +"\n*******************************************");
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
+        //poop balls
     }
 }
