@@ -22,4 +22,8 @@ public class GameControl {
         ZombieStuff.setPlayer(player);
         return player;
     }
+
+    public static void createNewGame(Player player) {
+        System.out.println("\n*** createNewGame() called***");
+    }
 }
