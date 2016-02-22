@@ -100,7 +100,7 @@ public class MainMenuView {
         System.out.println("\n*** displayHelpMenu() called ***");
         System.out.println( "\n*************Main Menu***************"
                 + "\nG - What is the goal of the game?"
-                + "\nM - How to move" 
+                + "\nM - How to move"
                 + "\nE - Estimating the amount of resources"
                 + "\nH - Harvesting resources"
                 + "\nD - Delivering resources to warehouse"
