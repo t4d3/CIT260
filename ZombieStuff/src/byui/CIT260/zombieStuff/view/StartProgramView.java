@@ -99,6 +99,5 @@ public class StartProgramView {
                           +"\n*******************************************");
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMainMenuView();
-        //poop balls
     }
 }
