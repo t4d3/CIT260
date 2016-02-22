@@ -24,6 +24,17 @@ public class MainMenuView {
                           + "\nQ - Quit"
                           + "\n*************************************" );
     }
+    public void HelpMenuView() {
+        System.out.println("\n*** displayHelpMenu() called ***"
+                + "****************Help Menu*****************"
+                + "\nG - What is the goal of the game?"
+                + "\nM - How to move" 
+                + "\nT - How much time will I have?"
+                + "\nF - How to fight"
+                + "\nD - Collecting/weilding items"
+                + "\nQ - Quit"
+                + "\n****************************************" );
+    }
     public void displayMainMenuView() {
         boolean done = false;
         do {
@@ -97,15 +108,15 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("\n*** displayHelpMenu() called ***");
-        System.out.println( "\n*************Main Menu***************"
-                + "\nG - What is the goal of the game?"
-                + "\nM - How to move"
-                + "\nE - Estimating the amount of resources"
-                + "\nH - Harvesting resources"
-                + "\nD - Delivering resources to warehouse"
-                + "\nQ - Quit");
-                }
+        boolean done = false;
+        do {
+            this.HelpMenuView();
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("Q"))
+                return;
+            done = this.doHelpAction(menuOption);
+        } while (!done);
+    }
 
     private void saveGame() {
         System.out.println("\n*** saveGame() called ***");
@@ -114,5 +125,32 @@ public class MainMenuView {
     private void quitGame() {
         System.out.println("\n*** quitGame() called ***");
     }
-}
 
+    private boolean doHelpAction(String menuOption) {
+        System.out.println("\n*** doHelpAction() called ***");
+        menuOption = menuOption.toUpperCase();
+        switch (menuOption) {
+            case "G" :
+                    System.out.println("This is how you ... goal"); //Goal of the game" 
+                    break;
+            case "M" :
+                    System.out.println("This is how you ... move"); //How to move" 
+                    break;
+            case "T" :
+                    System.out.println("This is how you ... tell time"); //How much time will I have?"
+                    break;
+            case "F" :
+                    System.out.println("This is how you ... fight"); //How to fight"
+                    break;
+            case "D" :
+                    System.out.println("This is how you ... deal with items"); //Collecting/weilding items"
+                    break;
+            case "Q" :
+                    break;
+            default :
+                System.out.println("\nERROR: Invalid selection... Try again!");
+                break;
+        }
+        return false;
+    }
+}
