@@ -17,6 +17,7 @@ public class GameMenuView {
         System.out.println("****************Game menu******************"
                 + "\n* G - Go to a store                       *"
                 + "\n* M - Display the Map                     *"
+                + "\n* F - Go to the Food Court                *"
                 + "\n*******************************************");
     }
 
@@ -53,22 +54,20 @@ public class GameMenuView {
             case "M" :
                     this.MapView();
                     break;
-            case "R":
-                    this.startExistingGame();
+            case "U":
+                    this.movePlayer();
                     break;
-/*                    case "H":
+/*            case "H":
                     this.displayHelpMenu();
                     break;
-                    case "S":
+            case "S":
                     this.saveGame();
-                    break;
-                    case "Q":
-                    this.quitGame();
-            break;*/
+                    break;*/
+            case "Q":
+                break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
-            
         }
         return false;
     }
@@ -78,9 +77,8 @@ public class GameMenuView {
         mapView.MapView();
     }
 
-    private void startExistingGame() {
-        System.out.println("Please type the full file path of the the "
-                + "existing file\n file:");
+    private void movePlayer() {
+        System.out.println("*** movePlayer() ***");
     }
 
 }
