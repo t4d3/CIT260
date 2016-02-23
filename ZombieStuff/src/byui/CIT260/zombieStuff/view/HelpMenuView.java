@@ -41,6 +41,17 @@ public class HelpMenuView {
         return value;
     }
 
+    public void displayHelpMenuView() {
+        boolean done = false;
+        do {
+            this.HelpMenuView();
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("Q"))
+                return;
+            done = this.doAction(menuOption);
+        } while (!done);
+    }
+
     private boolean doAction(String menuOption) {
         System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
@@ -69,14 +80,4 @@ public class HelpMenuView {
         return false;
     }
 
-    public void displayHelpMenuView() {
-        boolean done = false;
-        do {
-            this.HelpMenuView();
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
 }
