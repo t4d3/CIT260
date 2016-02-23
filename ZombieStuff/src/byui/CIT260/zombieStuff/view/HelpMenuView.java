@@ -13,8 +13,7 @@ import java.util.Scanner;
  */
 public class HelpMenuView {
     public void HelpMenuView() {
-        System.out.println("\n*** displayHelpMenu() called ***"
-                + "\n***************Help Menu****************"
+        System.out.println("***************Help Menu****************"
                 + "\nG - What is the goal of the game?"
                 + "\nM - How to move" 
                 + "\nT - How much time will I have?"
@@ -25,7 +24,6 @@ public class HelpMenuView {
     }
 
     private String getMenuOption() {
-        System.out.println("\n*** getMenuOption() called***");
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid;
@@ -53,7 +51,6 @@ public class HelpMenuView {
     }
 
     private boolean doAction(String menuOption) {
-        System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
         switch (menuOption) {
             case "G" :

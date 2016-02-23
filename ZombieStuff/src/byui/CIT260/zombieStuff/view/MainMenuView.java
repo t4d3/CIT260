@@ -33,7 +33,6 @@ public class MainMenuView {
     }
 
     private String getMenuOption() {
-        System.out.println("\n*** getMenuOption() called***");
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid;
@@ -78,12 +77,11 @@ public class MainMenuView {
     }
 
     private void startNewGame() {
-        System.out.println("*** startNewGame() called ***");
         GameControl.createNewGame(ZombieStuff.getPlayer());
-        System.out.println("*** startNewGame() called again ***");
 
-        GameMenuView gameView = new GameMenuView();
-        gameView.displayMenu();
+        GameMenuView gameMenuView = new GameMenuView();
+//This part should start into the game...Unlike most code, it is very important.
+        gameMenuView.displayMenu();
     }
 
     private void startExistingGame() {

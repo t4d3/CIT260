@@ -10,9 +10,11 @@ package byui.CIT260.zombieStuff.view;
  * @author T4d3-T550
  */
 class GameMenuView {
-
-    void displayMenu() {
+    public void displayMenu() {
         System.out.println("\n*** displayMenu() called ***");
+//tmp function to see the map in the program.
+        MapView mapView = new MapView();
+        mapView.MapView();
     }
     
 }
