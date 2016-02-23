@@ -11,7 +11,15 @@ import java.util.Scanner;
  *
  * @author T4d3-T550
  */
-class GameMenuView {
+public class GameMenuView {
+
+    public GameMenuView() {
+        System.out.println("****************Game menu******************"
+                + "* G - Go to a store                       *"
+                + "* M - Display the Map                     *"
+                + "*******************************************");
+    }
+
     public void displayMenu() {
         boolean done = false;
         do {
@@ -22,14 +30,7 @@ class GameMenuView {
             done = this.doAction(menuOption);
         } while (!done);
     }
-
-    private GameMenuView() {
-        System.out.println("****************Game menu******************"
-                + "* G - Go to a store                       *"
-                + "* M - Display the Map                     *"
-                + "*******************************************");
-    }
-
+    
     private String getMenuOption() {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
