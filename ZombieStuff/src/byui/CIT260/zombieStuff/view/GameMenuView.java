@@ -13,11 +13,11 @@ import java.util.Scanner;
  */
 public class GameMenuView {
 
-    public GameMenuView() {
+    private void GameMenuView() {
         System.out.println("****************Game menu******************"
-                + "* G - Go to a store                       *"
-                + "* M - Display the Map                     *"
-                + "*******************************************");
+                + "\n* G - Go to a store                       *"
+                + "\n* M - Display the Map                     *"
+                + "\n*******************************************");
     }
 
     public void displayMenu() {
@@ -40,7 +40,7 @@ public class GameMenuView {
             value = keyboard.nextLine();
             value = value.trim();
             if (value.length() != 1)
-                System.out.println("ERROR: Invalid entry; must be one letter");
+                System.out.println("ERROR: Invalid entry...must be one letter");
             else valid = true;
         } while (!valid);
         return value;
@@ -53,10 +53,10 @@ public class GameMenuView {
             case "M" :
                     this.MapView();
                     break;
-                    /*            case "R":
+            case "R":
                     this.startExistingGame();
                     break;
-                    case "H":
+/*                    case "H":
                     this.displayHelpMenu();
                     break;
                     case "S":
@@ -76,6 +76,11 @@ public class GameMenuView {
     private void MapView() {
         MapView mapView = new MapView();
         mapView.MapView();
+    }
+
+    private void startExistingGame() {
+        System.out.println("Please type the full file path of the the "
+                + "existing file\n file:");
     }
 
 }
