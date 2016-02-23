@@ -31,7 +31,7 @@ public class GameMenuView {
             done = this.doAction(menuOption);
         } while (!done);
     }
-    
+
     private String getMenuOption() {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
@@ -46,6 +46,7 @@ public class GameMenuView {
         } while (!valid);
         return value;
     }
+
     private boolean doAction(String menuOption) {
         System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
@@ -74,7 +75,7 @@ public class GameMenuView {
 
     private void MapView() {
         MapView mapView = new MapView();
-        mapView.MapView();
+        mapView.displayMap();
     }
 
     private void movePlayer() {
