@@ -17,12 +17,12 @@ public class MainMenuView {
     private String menu;
     public void MainMenuView() {
         System.out.println( "\n*************Main Menu***************"
-                          + "\nN - New game"
-                          + "\nR - Retrieve and resume old game"
-                          + "\nH - Display a Help menu"
-                          + "\nS - Save game"
-                          + "\nQ - Quit"
-                          + "\n*************************************" );
+                + "\nN - New game"
+                + "\nR - Retrieve and resume old game"
+                + "\nH - Display a Help menu"
+                + "\nS - Save game"
+                + "\nQ - Quit"
+                + "\n*************************************" );
     }
     public void HelpMenuView() {
         System.out.println("\n*** displayHelpMenu() called ***"
