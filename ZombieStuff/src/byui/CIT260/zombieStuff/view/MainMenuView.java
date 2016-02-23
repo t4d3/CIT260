@@ -78,7 +78,6 @@ public class MainMenuView {
 
     private void startNewGame() {
         GameControl.createNewGame(ZombieStuff.getPlayer());
-
         GameMenuView gameMenuView = new GameMenuView();
 //This part should start into the game...Unlike most code, it is very important.
         gameMenuView.displayMenu();
