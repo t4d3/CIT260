@@ -6,6 +6,7 @@
 package byui.CIT260.zombieStuff.model;
 
 import byui.CIT260.zombieStuff.control.CalcTravelTime;
+import byui.CIT260.zombieStuff.view.HelpMenuView;
 import java.awt.Point;
 import java.util.Scanner;
 
@@ -47,11 +48,12 @@ public class MovePlayer {
             return;
         pointB = this.doAction(menuOption);
         CalcTravelTime checkTime = new CalcTravelTime();
-        // This is the hardcoding, getting ready for real variables
+// This is the hardcoding, getting ready for real variables
         Point ALocation = new Point(3,4);
         Point BLocation = new Point(pointB);
-        int timeUsed = 23;
+        int timeUsed = 0;
         int maxTime = 120;
+// This is the end of the hardcoding...  REPLACE THIS CODE!
         int travelTime = checkTime.calcTravelTime(ALocation, BLocation, timeUsed, maxTime);
         if (travelTime > 0) {
             ALocation = BLocation;
@@ -104,4 +106,9 @@ public class MovePlayer {
         }
         return pointB;
     }
+    private void displayHelpMenu() {
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.displayHelpMenuView();
+    }
+
 }

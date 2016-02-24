@@ -15,14 +15,14 @@ import java.util.Scanner;
 public class MapView {
     public void MapView() {
         System.out.println( 
-  "\n          ___________________________"
-+ "\n         |                           |*********Map View*********"
+  "\n          ___________________________ ********Map View**********"
++ "\n         |                           |* F - Food Court         *"
 + "\n         |                           |* M - Move the character *"
 + "\n         |      Victoria's Secret    |* L - List visited places*"
-+ "\n         |                           |* ?                      *"
-+ "\n         |____________._.____________|* H - Get help           *"
++ "\n         |                           |* S - Shop current store *"
++ "\n         |____________._.____________|* H - Display Help menu  *"
 + "\n            |       |     |  Old  |   * Q - Exit back to menu  *"
-+ "\n            | Sears I x,y I  Navy |   **************************"
++ "\n            | Food  I x,y I  Navy |   **************************"
 + "\n ___________|_______|     |_______|___________________________"
 + "\n|           |       |     |       |       |       |           |"
 + "\n|           |Zumies I x,y I  Nike | Zales |Stairs |           |"
