@@ -38,9 +38,22 @@ import java.util.Scanner;
 * 24    
 * 25    
 */
-public class MovePlayer {
+public class MovePlayerView {
     private Point desiredLocation;
-    public void MovePlayer() {
+    private void movePlayerView() {
+        System.out.println("*********Directory Listing**********"
+                + "\n*     First Floor     |  Second Floor     *"
+                + "\n* A - Go to a store    N -                *"
+                + "\n* B - Display the Map  O -                *"
+                + "\n* D - Go to            P -                *"
+                + "\n* E - Go to            Q - Quit*"
+                + "\n* F - Go to *"
+                + "\n* G - Go to *"
+                + "\n* H - Display Help Menu *"
+                + "\n*******************************************");
+    }
+
+    public void DisplayMovePlayerView() {
         Point pointB = null;
         System.out.println("Where do you want to go? ");
         String menuOption = this.getMenuOption();
@@ -51,7 +64,7 @@ public class MovePlayer {
 // This is the hardcoding, getting ready for real variables
         Point ALocation = new Point(3,4);
         Point BLocation = new Point(pointB);
-        int timeUsed = 0;
+        int timeUsed = 119;
         int maxTime = 120;
 // This is the end of the hardcoding...  REPLACE THIS CODE!
         int travelTime = checkTime.calcTravelTime(ALocation, BLocation, timeUsed, maxTime);
@@ -100,12 +113,16 @@ public class MovePlayer {
                     break;
             case "Q":
                 break;
+            case "H":
+                this.displayHelpMenu();
+                break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
         }
         return pointB;
     }
+
     private void displayHelpMenu() {
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.displayHelpMenuView();

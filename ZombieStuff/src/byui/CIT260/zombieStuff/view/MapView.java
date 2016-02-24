@@ -5,7 +5,7 @@
  */
 package byui.CIT260.zombieStuff.view;
 
-import byui.CIT260.zombieStuff.model.MovePlayer;
+import byui.CIT260.zombieStuff.model.MovePlayerView;
 import java.util.Scanner;
 
 /**
@@ -64,7 +64,7 @@ public class MapView {
 
         switch (menuOption) {
             case "M" :
-                    this.movePlayer();
+                    this.movePlayerView();
                     break;
             case "L":
                     this.visitedPlaceView();
@@ -84,10 +84,9 @@ public class MapView {
         return false;
     }
 
-    private void movePlayer() {
-        System.out.println("\n***movePlayer()***");
-        MovePlayer movePlayer = new MovePlayer();
-        movePlayer.MovePlayer();
+    private void movePlayerView() {
+        MovePlayerView movePlayerView = new MovePlayerView();
+        movePlayerView.DisplayMovePlayerView();
     }
 
     private void visitedPlaceView() {
