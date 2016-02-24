@@ -3,43 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.CIT260.zombieStuff.model;
+package byui.CIT260.zombieStuff.view;
 
 import byui.CIT260.zombieStuff.control.CalcTravelTime;
 import byui.CIT260.zombieStuff.view.HelpMenuView;
 import java.awt.Point;
 import java.util.Scanner;
 
-/**
- *List the 25 or so locations here, for the sake of keeping track of things:
-* 1     Victoria's Secret
-* 2     Old Navy
-* 3     Sears
-* 4     Zumies
-* 5     Claire's
-* 6     Stairs
-* 7     Zales
-* 8     Nike
-* 9     Target
-* 10    
-* 11    
-* 12    
-* 13    
-* 14    
-* 15    
-* 16    
-* 17    
-* 18    
-* 19    
-* 20    
-* 21    
-* 22    
-* 23    
-* 24    
-* 25    
-*/
 public class MovePlayerView {
-    private Point desiredLocation;
     private void movePlayerView() {
         System.out.println("*********Directory Listing**********"
                 + "\n*     First Floor     |  Second Floor     *"
@@ -55,8 +26,10 @@ public class MovePlayerView {
 
     public void DisplayMovePlayerView() {
         Point pointB = null;
+        this.movePlayerView();
         System.out.println("Where do you want to go? ");
         String menuOption = this.getMenuOption();
+        Point desiredLocation;
         if (menuOption.toUpperCase().equals("Q"))
             return;
         pointB = this.doAction(menuOption);

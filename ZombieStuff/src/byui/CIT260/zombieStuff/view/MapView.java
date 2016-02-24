@@ -5,7 +5,6 @@
  */
 package byui.CIT260.zombieStuff.view;
 
-import byui.CIT260.zombieStuff.model.MovePlayerView;
 import java.util.Scanner;
 
 /**
