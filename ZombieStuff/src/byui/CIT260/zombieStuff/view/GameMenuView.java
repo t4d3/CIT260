@@ -58,10 +58,10 @@ public class GameMenuView {
             case "U":
                     this.movePlayer();
                     break;
-/*            case "H":
-                    this.displayHelpMenu();
+            case "F":
+                    this.FoodMenuView();
                     break;
-            case "S":
+/*            case "S":
                     this.saveGame();
                     break;*/
             case "Q":
@@ -80,6 +80,11 @@ public class GameMenuView {
 
     private void movePlayer() {
         System.out.println("*** movePlayer() ***");
+    }
+    
+    private void FoodMenuView() {
+        FoodMenuView foodMenuView = new FoodMenuView();
+        foodMenuView.displayFoodMenu();
     }
 
 }

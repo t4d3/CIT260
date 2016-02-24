@@ -53,7 +53,7 @@ public class StartProgramView {
             value = keyboard.nextLine();
             value = value.trim();
             if (value.length() < 1) {
-                System.out.println("Invalid enytry.  Value cannot be blank!");
+                System.out.println("Invalid entry.  Value cannot be blank!");
                 continue;
             }
             break;
@@ -78,7 +78,7 @@ public class StartProgramView {
 
     private void displayNextView(Player player) {
         System.out.println("*******************************************"
-                +"\nWelcome " + player.getName() + ", Enjoy the game!"
+                +"\nWelcome " + player.getName() + ", Enjoy the Game!"
                 +"\n*******************************************");
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMainMenuView();
