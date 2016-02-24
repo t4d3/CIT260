@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author T4d3-T550
  */
 public class MapView {
-    public void MapView() {
+    public void displayMap() {
         System.out.println( 
   "\n          ___________________________ ********Map View**********"
 + "\n         |                           |* F - Food Court         *"
@@ -33,10 +33,10 @@ public class MapView {
 + "\n|___________|                                     |___________|" );
     }
 
-    public void displayMap() {
+    public void displayMapView() {
         boolean done = false;
         do {
-            this.MapView();
+            this.displayMap();
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
