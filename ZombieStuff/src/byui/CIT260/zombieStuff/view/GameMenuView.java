@@ -74,7 +74,7 @@ public class GameMenuView {
 
     private void MapView() {
         MapView mapView = new MapView();
-        mapView.displayMap();
+        mapView.displayMapView();
     }
 
     private void movePlayer() {
