@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author T4d3-T550
  */
-public class calcTravelTimeTest {
+public class CalcTravelTimeTest {
     
-    public calcTravelTimeTest() {
+    public CalcTravelTimeTest() {
     }
     
     @Before
