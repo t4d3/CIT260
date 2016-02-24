@@ -29,7 +29,7 @@ public class calcTravelTimeTest {
     }
 
     /**
-     * Test of calcTravelTime method, of class calcTravelTime.
+     * Test of CalcTravelTime method, of class CalcTravelTime.
      */
     @Test
     public void testCalcTravelTime() {
@@ -39,7 +39,7 @@ public class calcTravelTimeTest {
         Point BLocation = new Point(3,2);
         int timeUsed = 9;
         int maxTime = 120;
-        calcTravelTime instance = new calcTravelTime();
+        CalcTravelTime instance = new CalcTravelTime();
         int expResult = 2;
         int result = instance.calcTravelTime(ALocation, BLocation, timeUsed, maxTime);
         assertEquals(expResult, result);

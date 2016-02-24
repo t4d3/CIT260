@@ -5,6 +5,7 @@
  */
 package byui.CIT260.zombieStuff.view;
 
+import byui.CIT260.zombieStuff.model.MovePlayer;
 import java.util.Scanner;
 
 /**
@@ -17,17 +18,16 @@ public class MapView {
   "\n          ___________________________"
 + "\n         |                           |*********Map View*********"
 + "\n         |                           |* M - Move the character *"
-+ "\n         |            x,y            |* L - List visited places*"
-+ "\n         |                           |*                        *"
-+ "\n         |____________._.____________|*                        *"
-+ "\n            |       |     |       |   * H - Get help           *"
-+ "\n            |  x,y  I x,y I  x,y  |   *************************"
-+ "\n ___________|_______|     |_______|                ___________"
-+ "\n|           |       |     |       |_______________|           |"
-+ "\n|           |  x,y  I x,y I  x,y  |  x,y  |  x,y  |           |"
++ "\n         |      Victoria's Secret    |* L - List visited places*"
++ "\n         |                           |* ?                      *"
++ "\n         |____________._.____________|* H - Get help           *"
++ "\n            |       |     |  Old  |   * Q - Exit back to menu  *"
++ "\n            | Sears I x,y I  Navy |   **************************"
++ "\n ___________|_______|     |_______|___________________________"
++ "\n|           |       |     |       |       |       |           |"
++ "\n|           |Zumies I x,y I  Nike | Zales |Stairs |           |"
 + "\n|           |_______|     |__._.__|__._.__|__._.__|           |"
-+ "\n|           |                                     |           |"
-+ "\n|    x,y    I  x,y    x,y    x,y     x,y     x,y  I    x,y    |"
++ "\n|  Target   I  x,y    x,y    x,y     x,y     x,y  I  Claire's |"
 + "\n|           |________._._.________________________|           |"
 + "\n|           |                                     |           |"
 + "\n|___________|                                     |___________|" );
@@ -67,13 +67,13 @@ public class MapView {
                     this.movePlayer();
                     break;
             case "L":
-                    this.previousePlaceView();
+                    this.visitedPlaceView();
                     break;
             case "H":
                     this.displayHelpMenu();
                     break;
-/*            case "S":
-                    this.saveGame();
+/*            case "?":
+                    this.?();
                     break;*/
             case "Q":
                 break;
@@ -84,12 +84,14 @@ public class MapView {
         return false;
     }
 
-    private void previousePlaceView() {
-                System.out.println("\n***PreviousePlacesView()***");
+    private void movePlayer() {
+        System.out.println("\n***movePlayer()***");
+        MovePlayer movePlayer = new MovePlayer();
+        movePlayer.MovePlayer();
     }
 
-    private void movePlayer() {
-                System.out.println("\n***movePlayer()***");
+    private void visitedPlaceView() {
+                System.out.println("\n***PreviousePlacesView()***");
     }
 
     private void displayHelpMenu() {

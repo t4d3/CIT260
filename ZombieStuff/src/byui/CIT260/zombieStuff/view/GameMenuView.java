@@ -48,7 +48,6 @@ public class GameMenuView {
     }
 
     private boolean doAction(String menuOption) {
-        System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
 
         switch (menuOption) {
