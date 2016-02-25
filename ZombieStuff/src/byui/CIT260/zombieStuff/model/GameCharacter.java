@@ -5,6 +5,7 @@
  */
 package byui.CIT260.zombieStuff.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -17,8 +18,26 @@ public class GameCharacter implements Serializable {
     private String description;
     private double attack;
     private double strength;
+    private int floor;
+    private Point location;
 
     public GameCharacter() {
+    }
+
+    public int getFloor() {
+        return floor;
+    }
+
+    public void setFloor(int floor) {
+        this.floor = floor;
+    }
+
+    public Point getLocation() {
+        return location;
+    }
+
+    public void setLocation(Point location) {
+        this.location = location;
     }
 
     

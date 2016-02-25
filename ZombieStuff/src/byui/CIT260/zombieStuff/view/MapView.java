@@ -12,31 +12,30 @@ import java.util.Scanner;
  * @author T4d3-T550
  */
 public class MapView {
-    public void MapView() {
+    public void displayMap() {
         System.out.println( 
-  "\n          ___________________________"
-+ "\n         |                           |*********Map View*********"
+  "\n          ___________________________ ********Map View**********"
++ "\n         |                           |* F - Food Court         *"
 + "\n         |                           |* M - Move the character *"
-+ "\n         |            x,y            |* L - List visited places*"
-+ "\n         |                           |*                        *"
-+ "\n         |____________._.____________|*                        *"
-+ "\n            |       |     |       |   * H - Get help           *"
-+ "\n            |  x,y  I x,y I  x,y  |   *************************"
-+ "\n ___________|_______|     |_______|                ___________"
-+ "\n|           |       |     |       |_______________|           |"
-+ "\n|           |  x,y  I x,y I  x,y  |  x,y  |  x,y  |           |"
++ "\n         |      Victoria's Secret    |* L - List visited places*"
++ "\n         |                           |* S - Shop current store *"
++ "\n         |____________._.____________|* H - Display Help menu  *"
++ "\n            |       |     |  Old  |   * Q - Exit back to menu  *"
++ "\n            | Food  I x,y I  Navy |   **************************"
++ "\n ___________|_______|     |_______|___________________________"
++ "\n|           |       |     |       |       |       |           |"
++ "\n|           |Zumies I x,y I  Nike | Zales |Stairs |           |"
 + "\n|           |_______|     |__._.__|__._.__|__._.__|           |"
-+ "\n|           |                                     |           |"
-+ "\n|    x,y    I  x,y    x,y    x,y     x,y     x,y  I    x,y    |"
++ "\n|  Target   I  x,y    x,y    x,y     x,y     x,y  I  Claire's |"
 + "\n|           |________._._.________________________|           |"
 + "\n|           |                                     |           |"
 + "\n|___________|                                     |___________|" );
     }
 
-    public void displayMap() {
+    public void displayMapView() {
         boolean done = false;
         do {
-            this.MapView();
+            this.displayMap();
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
@@ -64,16 +63,16 @@ public class MapView {
 
         switch (menuOption) {
             case "M" :
-                    this.movePlayer();
+                    this.movePlayerView();
                     break;
             case "L":
-                    this.previousePlaceView();
+                    this.visitedPlaceView();
                     break;
             case "H":
                     this.displayHelpMenu();
                     break;
-/*            case "S":
-                    this.saveGame();
+/*            case "?":
+                    this.?();
                     break;*/
             case "Q":
                 break;
@@ -84,12 +83,13 @@ public class MapView {
         return false;
     }
 
-    private void previousePlaceView() {
-                System.out.println("\n***PreviousePlacesView()***");
+    private void movePlayerView() {
+        MovePlayerView movePlayerView = new MovePlayerView();
+        movePlayerView.DisplayMovePlayerView();
     }
 
-    private void movePlayer() {
-                System.out.println("\n***movePlayer()***");
+    private void visitedPlaceView() {
+                System.out.println("\n***PreviousePlacesView()***");
     }
 
     private void displayHelpMenu() {

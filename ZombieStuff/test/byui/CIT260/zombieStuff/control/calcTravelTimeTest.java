@@ -29,7 +29,7 @@ public class CalcTravelTimeTest {
     }
 
     /**
-     * Test of calcTravelTime method, of class calcTravelTime.
+     * Test of CalcTravelTime method, of class CalcTravelTime.
      */
     @Test
     public void testCalcTravelTime() {

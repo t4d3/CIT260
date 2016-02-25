@@ -48,7 +48,6 @@ public class GameMenuView {
     }
 
     private boolean doAction(String menuOption) {
-        System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
 
         switch (menuOption) {
@@ -75,7 +74,7 @@ public class GameMenuView {
 
     private void MapView() {
         MapView mapView = new MapView();
-        mapView.displayMap();
+        mapView.displayMapView();
     }
 
     private void movePlayer() {
