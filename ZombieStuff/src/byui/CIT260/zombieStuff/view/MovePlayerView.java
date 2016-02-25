@@ -15,11 +15,17 @@ public class MovePlayerView {
                 + "\n*     First Floor     |  Second Floor     *"
                 + "\n* A - Go to a store    N -                *"
                 + "\n* B - Display the Map  O -                *"
-                + "\n* D - Go to            P -                *"
-                + "\n* E - Go to            Q - Quit*"
-                + "\n* F - Go to *"
-                + "\n* G - Go to *"
-                + "\n* H - Display Help Menu *"
+                + "\n* C - Go to            P -                *"
+                + "\n* D - Go to            Q - *"
+                + "\n* E - Go to            R - *"
+                + "\n* F - Go to            S - *"
+                + "\n* G - Go to            T - *"
+                + "\n* H - Help Menu        U -  *"
+                + "\n* I - Go to            V - Victoria's Secret*"  
+                + "\n* J - Go to            W - *"
+                + "\n* K - Go to            X - *"
+                + "\n* L - Go to            Y - *"
+                + "\n* M - Go to            Z - *"
                 + "\n*******************************************");
     }
 
