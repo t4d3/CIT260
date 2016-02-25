@@ -13,6 +13,8 @@ import java.awt.Point;
  * @author T4d3-T550
  */
 public class CalcTravelTime {
+    public CalcTravelTime() {
+    }
     public int calcTravelTime(Point ALocation, Point BLocation, int timeUsed, int maxTime) {
         if (timeUsed >= maxTime ) {
             return -2;
