@@ -24,8 +24,8 @@ public class FoodMenuView {
             +  "\n* 0M0                                  0M0  *"
             +  "\n* 0M0                                  0M0  *"
             +  "\n* UMU  Choice #2: Hot Dog: SOLD OUT    UMU  *"
-            +  "\n*  Y                                    Y    *"
-            +  "\n*  |                                    |    *"
+            +  "\n*  Y                                    Y   *"
+            +  "\n*  |                                    |   *"
             +  "\n*  |   Choice #3: Fries: SOLD OUT       |   *"
             +  "\n*                                           *"
             +  "\n*********************************************");
@@ -67,9 +67,7 @@ public class FoodMenuView {
             case "D" :
                     this.displayFoodMenu();
                     break;
-            case "H" :
-                    System.out.println("Sorry, we are out of hot dogs...");
-            case "Q":
+            case "Q" :
                 break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
