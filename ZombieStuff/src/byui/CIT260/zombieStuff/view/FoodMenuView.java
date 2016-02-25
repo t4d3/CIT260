@@ -28,6 +28,11 @@ public class FoodMenuView {
             +  "\n*  |                                    |   *"
             +  "\n*  |   Choice #3: Fries: SOLD OUT       |   *"
             +  "\n*                                           *"
+            +  "\n*-------------------------------------------*"
+            +  "\n* C - Buy a corndog                         *"
+            +  "\n* H - Buy a hot dog                         *"
+            +  "\n* F - Get some fries                        *"
+            +  "\n* Q - Leave the food court                  *"
             +  "\n*********************************************");
     }
     
@@ -61,8 +66,14 @@ public class FoodMenuView {
         menuOption = menuOption.toUpperCase();
 
         switch (menuOption) {
-            case "B" :
-                    this.buyFood();
+            case "C" :
+                    this.buyCornDog();
+                    break;
+            case "H" :
+                    System.out.println("Sorry, we are out of hot dogs...");
+                    break;
+            case "F" :
+                    System.out.println("No fries left, get something else.");
                     break;
             case "D" :
                     this.displayFoodMenu();
@@ -77,7 +88,7 @@ public class FoodMenuView {
     }
 
 
-    private void buyFood() {
+    private void buyCornDog() {
         System.out.println("\n** buyFood() **");
         
     }
