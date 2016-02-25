@@ -18,7 +18,7 @@ public class MovePlayerView {
                 + "\n* C - Go to            P -                *"
                 + "\n* D - Go to            Q - *"
                 + "\n* E - Go to            R - *"
-                + "\n* F - Go to            S - *"
+                + "\n* F - Food Court       S - *"
                 + "\n* G - Go to            T - *"
                 + "\n* H - Help Menu        U -  *"
                 + "\n* I - Go to            V - Victoria's Secret*"  
@@ -42,7 +42,7 @@ public class MovePlayerView {
 // This is the hardcoding, getting ready for real variables
         Point ALocation = new Point(3,4);
         Point BLocation = new Point(pointB);
-        int timeUsed = 119;
+        int timeUsed = 10;
         int maxTime = 120;
 // This is the end of the hardcoding...  REPLACE THIS CODE!
         int travelTime = checkTime.calcTravelTime(ALocation, BLocation, timeUsed, maxTime);
@@ -87,13 +87,73 @@ public class MovePlayerView {
                     pointB.setLocation(0,2);
                     break;
             case "D":
-                    pointB.setLocation(0,3);
+                    pointB.setLocation(0,0);
+                    break;
+            case "E":
+                    pointB.setLocation(0,0);
+                    break;
+            case "F":
+                    pointB.setLocation(0,0);
+                    break;
+            case "G":
+                    pointB.setLocation(0,0);
+                    break;
+            case "H":
+                    this.displayHelpMenu();
+                    break;
+            case "I":
+                    pointB.setLocation(0,0);
+                    break;
+            case "J":
+                    pointB.setLocation(0,0);
+                    break;
+            case "K":
+                    pointB.setLocation(0,0);
+                    break;
+            case "L":
+                    pointB.setLocation(0,0);
+                    break;
+            case "M":
+                    pointB.setLocation(0,0);
+                    break;
+            case "N":
+                    pointB.setLocation(0,0);
+                    break;
+            case "O":
+                this.displayHelpMenu();
+                break;
+            case "P":
+                    pointB.setLocation(0,0);
                     break;
             case "Q":
                 break;
-            case "H":
-                this.displayHelpMenu();
-                break;
+            case "R":
+                    pointB.setLocation(0,0);
+                    break;
+            case "S":
+                    pointB.setLocation(0,0);
+                    break;
+            case "T":
+                    pointB.setLocation(0,0);
+                    break;
+            case "U":
+                    pointB.setLocation(0,0);
+                    break;
+            case "V":
+                    pointB.setLocation(0,0);
+                    break;
+            case "W":
+                    pointB.setLocation(0,0);
+                    break;
+            case "X":
+                    pointB.setLocation(0,0);
+                    break;
+            case "Y":
+                    pointB.setLocation(0,0);
+                    break;
+            case "Z":
+                    pointB.setLocation(0,0);
+                    break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
