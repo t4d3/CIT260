@@ -49,8 +49,8 @@ public class MovePlayerView {
         if (travelTime > 0) {
             ALocation = BLocation;
             timeUsed += travelTime;
-            System.out.println("Sounds great, you used " + timeUsed
-            + " minuts!");
+            System.out.println("Sounds great, it took you " + travelTime
+            + " minutes to get there!");
         }
         else if (travelTime == -3)
             System.out.println("ERROR: you will be out of timeif you do this!");
