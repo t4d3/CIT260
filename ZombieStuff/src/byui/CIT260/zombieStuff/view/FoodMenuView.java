@@ -67,6 +67,8 @@ public class FoodMenuView {
             case "D" :
                     this.displayFoodMenu();
                     break;
+            case "H" :
+                    System.out.println("Sorry, we are out of hot dogs...");
             case "Q":
                 break;
             default:
