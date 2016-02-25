@@ -14,17 +14,21 @@ import java.util.Scanner;
 public class FoodMenuView {
     public void FoodMenuView(){
         System.out.println(
-               "*            FEELING HUNGRY ARE YOU?          *"
-            +  "*\n                                           *"
-            +  "*\n         What would you like to eat?       *"
-            +  "*\n                                           *"
-            +  "*\n         Choice #1: Corn Dog               *"
-            +  "*\n                                           *"
-            +  "*\n                                           *"
-            +  "*\n         Choice #2: Corn Dog               *"
-            +  "*\n                                           *"
-            +  "*\n                                           *"
-            +  "*\n         Choice #3: Corn Dog               *");
+               "\n*********************************************"
+            +  "\n*          FEELING HUNGRY ARE YOU?          *"
+            +  "\n*                                           *"
+            +  "\n*         What would you like to eat?       *"
+            +  "\n*-------------------------------------------*"
+            +  "\n*                                           *"
+            +  "\n*     Choice #1: Corn Dog                   *"
+            +  "\n*                                           *"
+            +  "\n*                                           *"
+            +  "\n*     Choice #2: Hot Dog: SOLD OUT          *"
+            +  "\n*                                           *"
+            +  "\n*                                           *"
+            +  "\n*     Choice #3: Fries: SOLD OUT            *"
+            +  "\n*                                           *"
+            +  "\n*********************************************");
     }
     
     public void displayFoodMenu() {
