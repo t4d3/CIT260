@@ -6,7 +6,6 @@
 package byui.CIT260.zombieStuff.view;
 
 import byui.CIT260.zombieStuff.control.CalcTravelTime;
-import byui.CIT260.zombieStuff.view.HelpMenuView;
 import java.awt.Point;
 import java.util.Scanner;
 
@@ -70,7 +69,7 @@ public class MovePlayerView {
         System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
         Point pointB = new Point();
-
+//this might have to be in a while loop, for the sake of having two floors
         switch (menuOption) {
             case "A" :
                     pointB.setLocation(0,0);
