@@ -12,15 +12,17 @@ import java.util.Scanner;
  * @author T4d3-T550
  */
 public class HelpMenuView {
+    private String displayMessage;
+    
     public void HelpMenuView() {
-        System.out.println("***************Help Menu****************"
+        this.displayMessage = "***************Help Menu****************"
                 + "\nG - What is the goal of the game?"
                 + "\nM - How to move" 
                 + "\nT - How much time will I have?"
                 + "\nF - How to fight"
                 + "\nD - Collecting/weilding items"
                 + "\nQ - Quit"
-                + "\n****************************************" );
+                + "\n****************************************";
     }
 
     private String getMenuOption() {
@@ -42,7 +44,7 @@ public class HelpMenuView {
     public void displayHelpMenuView() {
         boolean done = false;
         do {
-            this.HelpMenuView();
+            System.out.println(this.displayMessage);
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
