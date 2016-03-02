@@ -33,9 +33,9 @@ public class EatingFoodTest {
     @Test
     public void testEatFood() {
         System.out.println("eatFood");
-        int healthCurrent = 5;
-        int numCornDogs = 5;
-        float money = 10.23F;
+        int healthCurrent = 10;
+        int numCornDogs = 1;
+        float money = 2.04F;
         EatingFood instance = new EatingFood();
         int expResult = 10;
         int result = instance.eatFood(healthCurrent, numCornDogs, money);
