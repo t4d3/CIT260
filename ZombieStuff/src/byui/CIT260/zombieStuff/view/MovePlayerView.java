@@ -10,8 +10,9 @@ import java.awt.Point;
 import java.util.Scanner;
 
 public class MovePlayerView {
-    private void movePlayerView() {
-        System.out.println("*********Directory Listing**********"
+    private String displayMessage;
+    private void MovePlayerView() {
+        this.displayMessage = "*********Directory Listing**********"
                 + "\n*     First Floor     |  Second Floor     *"
                 + "\n* A - Go to a store    N -                *"
                 + "\n* B - Display the Map  O -                *"
@@ -26,12 +27,12 @@ public class MovePlayerView {
                 + "\n* K - Go to            X - *"
                 + "\n* L - Go to            Y - *"
                 + "\n* M - Go to            Z - *"
-                + "\n*******************************************");
+                + "\n*******************************************";
     }
 
     public void DisplayMovePlayerView() {
         Point pointB = null;
-        this.movePlayerView();
+        System.out.println(this.displayMessage);
         System.out.println("Where do you want to go? ");
         String menuOption = this.getMenuOption();
         Point desiredLocation;
