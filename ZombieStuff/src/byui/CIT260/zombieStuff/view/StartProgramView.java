@@ -13,17 +13,10 @@ import java.util.Scanner;
  *
  * @author Justin Cox
  */
-public class StartProgramView {
+public class StartProgramView extends View {
     
-    private final String promptMessage;
-    
-    public StartProgramView(){
-        this.displayBanner();
-        this.promptMessage ="\nPlease enter your name: ";
-    }
-
-    private void displayBanner() {
-        System.out.println("*******************************************************"
+    public StartProgramView() {
+        super("*******************************************************"
                         + "\n* Welcome to the text based rpg game Zombie Mall!     *"
                         + "\n* In this game you are a dad whose daughter is having *"
                         + "\n* her birthday party but you forgot some things in    *"
@@ -33,14 +26,8 @@ public class StartProgramView {
                         + "\n*******************************************************");
     }
 
-    public void displayStartProgramView() {
-        boolean done = false;
-        do {
-            String playerName = this.getPlayerName();
-            if (playerName.toUpperCase().equals("Q"))
-                return;
-            done = this.doAction(playerName);
-        } while (!done);
+    private void promptName() {
+        System.out.println("\nPlease enter your name: ");
     }
 
     private String getPlayerName() {
@@ -49,7 +36,7 @@ public class StartProgramView {
         boolean valid;
         valid = false;
         while(!valid) {// a valid value has not been entered
-            System.out.println("" + this.promptMessage);
+            this.promptName();
             value = keyboard.nextLine();
             value = value.trim();
             if (value.length() < 1) {
@@ -61,7 +48,8 @@ public class StartProgramView {
         return value;
     }
 
-    private boolean doAction(String playerName) {
+    @Override
+    public boolean doAction(String playerName) {
         if (playerName.length() < 2) {
             System.out.println("Invalid entry...must be longer than one letter.");
             return false;

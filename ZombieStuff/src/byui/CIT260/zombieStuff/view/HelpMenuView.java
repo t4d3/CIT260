@@ -11,48 +11,20 @@ import java.util.Scanner;
  *
  * @author T4d3-T550
  */
-public class HelpMenuView {
-    private String displayMessage;
-    
-    public void HelpMenuView() {
-        this.displayMessage = "***************Help Menu****************"
+public class HelpMenuView extends View{
+    public HelpMenuView() {
+      super("***************Help Menu****************"
                 + "\nG - What is the goal of the game?"
                 + "\nM - How to move" 
                 + "\nT - How much time will I have?"
                 + "\nF - How to fight"
                 + "\nD - Collecting/weilding items"
                 + "\nQ - Quit"
-                + "\n****************************************";
+                + "\n****************************************");
     }
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid;
-        valid = false;
-        do {
-            value = keyboard.nextLine();
-            value = value.trim();
-            if (value.length() != 1) {
-                System.out.println("ERROR: Invalid entry; must be one letter");
-            }
-            else valid = true;
-        } while (!valid);
-        return value;
-    }
-
-    public void displayHelpMenuView() {
-        boolean done = false;
-        do {
-            System.out.println(this.displayMessage);
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-
-    private boolean doAction(String menuOption) {
+    @Override
+    public boolean doAction(String menuOption) {
         menuOption = menuOption.toUpperCase();
         switch (menuOption) {
             case "G" :
