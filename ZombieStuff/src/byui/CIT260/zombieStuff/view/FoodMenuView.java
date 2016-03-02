@@ -12,8 +12,10 @@ import java.util.Scanner;
  * @author Justin Cox
  */
 public class FoodMenuView {
+    private String displayMessage;
+    
     public void FoodMenuView(){
-        System.out.println(
+        this.displayMessage=
                "\n*********************************************"
             +  "\n*          FEELING HUNGRY ARE YOU?          *"
             +  "\n*                                           *"
@@ -33,13 +35,13 @@ public class FoodMenuView {
             +  "\n* H - Buy a hot dog                         *"
             +  "\n* F - Get some fries                        *"
             +  "\n* Q - Leave the food court                  *"
-            +  "\n*********************************************");
+            +  "\n*********************************************";
     }
     
     public void displayFoodMenu() {
         boolean done = false;
         do {
-            this.FoodMenuView();
+            System.out.println(this.displayMessage);
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q"))
                 return;

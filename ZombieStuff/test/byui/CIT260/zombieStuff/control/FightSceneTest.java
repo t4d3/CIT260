@@ -32,12 +32,12 @@ public class FightSceneTest {
      */
     @Test
     public void testFightAZombie() {
-        System.out.println("Test 5");
-        int currentHealth = 8;
-        int armorBonus = 1;
-        int weaponBonus = 1;
+        System.out.println("Test 3");
+        int currentHealth = 7;
+        int armorBonus = 0;
+        int weaponBonus = 0;
         FightScene instance = new FightScene();
-        int expResult = 7;
+        int expResult = 5;
         int result = instance.fightAZombie(currentHealth, armorBonus, weaponBonus);
         assertEquals(expResult, result);
         

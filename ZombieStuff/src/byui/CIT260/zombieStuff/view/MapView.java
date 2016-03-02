@@ -12,8 +12,9 @@ import java.util.Scanner;
  * @author T4d3-T550
  */
 public class MapView {
+    private String displayMessage;
     public void displayMap() {
-        System.out.println( 
+        this.displayMessage = 
   "\n          ___________________________ ********Map View**********"
 + "\n         |                           |* F - Food Court         *"
 + "\n         |                           |* M - Move the character *"
@@ -29,13 +30,13 @@ public class MapView {
 + "\n|  Target   I  x,y    x,y    x,y     x,y     x,y  I  Claire's |"
 + "\n|           |________._._.________________________|           |"
 + "\n|           |                                     |           |"
-+ "\n|___________|                                     |___________|" );
++ "\n|___________|                                     |___________|";
     }
 
     public void displayMapView() {
         boolean done = false;
         do {
-            this.displayMap();
+            System.out.println(this.displayMessage);
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q"))
                 return;

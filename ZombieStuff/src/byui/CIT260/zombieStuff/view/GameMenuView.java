@@ -12,19 +12,20 @@ import java.util.Scanner;
  * @author T4d3-T550
  */
 public class GameMenuView {
+    private String displayMessage;
 
     private void GameMenuView() {
-        System.out.println("****************Game menu******************"
+        this.displayMessage = "****************Game menu******************"
                 + "\n* G - Go to a store                       *"
                 + "\n* M - Display the Map                     *"
                 + "\n* F - Go to the Food Court                *"
-                + "\n*******************************************");
+                + "\n*******************************************";
     }
 
     public void displayMenu() {
         boolean done = false;
         do {
-            this.GameMenuView();
+            System.out.println(this.displayMessage);
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q"))
                 return;

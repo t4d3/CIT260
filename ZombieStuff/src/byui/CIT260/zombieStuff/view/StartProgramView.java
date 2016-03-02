@@ -81,6 +81,6 @@ public class StartProgramView {
                 +"\nWelcome " + player.getName() + ", Enjoy the Game!"
                 +"\n*******************************************");
         MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
     }
 }

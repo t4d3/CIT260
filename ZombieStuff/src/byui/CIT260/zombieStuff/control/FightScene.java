@@ -25,7 +25,7 @@ public class FightScene {
         while(zombieHealth >= 1){
             zombieHealth -= 3 + weaponBonus;
             if(zombieHealth >= 1){
-                currentHealth -= 2 - armorBonus;
+                currentHealth -= (2 - armorBonus);
             }
             if(currentHealth <= 0) {
                 //error you are dead
