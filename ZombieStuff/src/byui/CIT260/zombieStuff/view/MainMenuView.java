@@ -10,45 +10,19 @@ import java.util.Scanner;
 import zombiestuff.ZombieStuff;
 import byui.CIT260.zombieStuff.view.HelpMenuView;
 
-public class MainMenuView {
-    private String menu;
-    public void MainMenuView() {
-        System.out.println( "\n*************Main Menu***************"
+public class MainMenuView extends View {
+    public MainMenuView() {
+        super("\n*************Main Menu***************"
                 + "\nN - New game"
                 + "\nR - Retrieve and resume old game"
                 + "\nH - Display a Help menu"
                 + "\nS - Save game"
                 + "\nQ - Quit"
-                + "\n*************************************" );
-    }
-    public void displayMainMenuView() {
-        boolean done = false;
-        do {
-            this.MainMenuView();
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            done = this.doAction(menuOption);
-        } while (!done);
+                + "\n*************************************");
     }
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid;
-        valid = false;
-        do {
-            value = keyboard.nextLine();
-            value = value.trim();
-            if (value.length() != 1) {
-                System.out.println("ERROR: Invalid entry; must be one letter");
-            }
-            else valid = true;
-        } while (!valid);
-        return value;
-    }
-
-    private boolean doAction(String menuOption) {
+    @Override
+    public boolean doAction(String menuOption) {
         System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
 
