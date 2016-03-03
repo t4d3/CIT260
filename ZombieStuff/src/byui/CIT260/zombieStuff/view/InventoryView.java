@@ -12,8 +12,8 @@ package byui.CIT260.zombieStuff.view;
 public class InventoryView extends View {
     public InventoryView() {
               super("****************Inventory******************"
-                + "\n* G - Go to a store                       *"
-                + "\n* M - Display the Map                     *"
+                + "\n* D - Delete Item                         *"
+                + "\n* E - Equip Item                          *"
                 + "\n* F - Go to the Food Court                *"
                 + "\n* Q - Quit                                *"
                 + "\n*******************************************");

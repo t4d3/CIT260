@@ -11,7 +11,7 @@ package byui.CIT260.zombieStuff.view;
  */
 public class EquipItemView extends View{
         public EquipItemView() {
-            super("***************Help Menu****************"
+            super("***************Equip Item****************"
                 + "\nG - What is the goal of the game?"
                 + "\nM - How to move" 
                 + "\nT - How much time will I have?"

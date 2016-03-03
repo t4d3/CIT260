@@ -86,7 +86,7 @@ public class MapView {
 
     private void movePlayerView() {
         MovePlayerView movePlayerView = new MovePlayerView();
-        movePlayerView.DisplayMovePlayerView();
+        movePlayerView.display();
     }
 
     private void visitedPlaceView() {
