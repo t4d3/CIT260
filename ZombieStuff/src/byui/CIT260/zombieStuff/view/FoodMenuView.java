@@ -11,12 +11,10 @@ import java.util.Scanner;
  *
  * @author Justin Cox
  */
-public class FoodMenuView {
-    private String displayMessage;
+public class FoodMenuView extends View {
     
-    public void FoodMenuView(){
-        this.displayMessage=
-               "\n*********************************************"
+    public FoodMenuView(){
+        super ("\n*********************************************"
             +  "\n*          FEELING HUNGRY ARE YOU?          *"
             +  "\n*                                           *"
             +  "\n*         What would you like to eat?       *"
@@ -35,7 +33,7 @@ public class FoodMenuView {
             +  "\n* H - Buy a hot dog                         *"
             +  "\n* F - Get some fries                        *"
             +  "\n* Q - Leave the food court                  *"
-            +  "\n*********************************************";
+            +  "\n*********************************************");
     }
     
     public void displayFoodMenu() {
@@ -63,7 +61,8 @@ public class FoodMenuView {
         } while (!valid);
         return value;
     }
-    private boolean doAction(String menuOption) {
+    @Override
+    public boolean doAction(String menuOption) {
         System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
 
