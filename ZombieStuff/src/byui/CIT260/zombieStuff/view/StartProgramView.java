@@ -50,6 +50,7 @@ public class StartProgramView extends View {
 
     @Override
     public boolean doAction(String playerName) {
+        this.promptName();
         if (playerName.length() < 2) {
             System.out.println("Invalid entry...must be longer than one letter.");
             return false;
