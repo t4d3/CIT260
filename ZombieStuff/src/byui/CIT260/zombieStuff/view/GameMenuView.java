@@ -19,6 +19,7 @@ public class GameMenuView {
                 + "\n* G - Go to a store                       *"
                 + "\n* M - Display the Map                     *"
                 + "\n* F - Go to the Food Court                *"
+                + "\n* I - Look at your Inventory              *"
                 + "\n*******************************************";
     }
 
@@ -61,9 +62,9 @@ public class GameMenuView {
             case "F":
                     this.FoodMenuView();
                     break;
-/*            case "S":
-                    this.saveGame();
-                    break;*/
+            case "I":
+                    this.InventoryView();
+                    break;
             case "Q":
                 break;
             default:
@@ -85,6 +86,11 @@ public class GameMenuView {
     private void FoodMenuView() {
         FoodMenuView foodMenuView = new FoodMenuView();
         foodMenuView.displayFoodMenu();
+    }
+
+    private void InventoryView() {
+        InventoryView inventoryView = new InventoryView();
+        inventoryView.display();
     }
 
 }

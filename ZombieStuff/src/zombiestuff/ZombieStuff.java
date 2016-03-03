@@ -39,7 +39,7 @@ public class ZombieStuff {
         
         //display the banner
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+        startProgramView.display();
          
     }
     
