@@ -29,7 +29,8 @@ public class MapView extends View{
 + "\n|  Target   I  x,y    x,y    x,y     x,y     x,y  I  Claire's |"
 + "\n|           |________._._.________________________|           |"
 + "\n|           |                                     |           |"
-+ "\n|___________|                                     |___________|");
++ "\n|___________|                                     |___________|"
++ "\n\tWhat would you like to do?");
     }
 
     @Override
