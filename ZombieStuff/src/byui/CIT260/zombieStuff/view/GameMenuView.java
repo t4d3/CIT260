@@ -58,7 +58,7 @@ public class GameMenuView extends View{
     
     private void FoodMenuView() {
         FoodMenuView foodMenuView = new FoodMenuView();
-        foodMenuView.displayFoodMenu();
+        foodMenuView.display();
     }
 
     private void InventoryView() {
