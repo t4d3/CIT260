@@ -36,31 +36,6 @@ public class FoodMenuView extends View {
             +  "\n*********************************************");
     }
     
-    public void displayFoodMenu() {
-        boolean done = false;
-        do {
-            System.out.println(this.displayMessage);
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-    
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid;
-        valid = false;
-        do {
-            value = keyboard.nextLine();
-            value = value.trim();
-            if (value.length() != 1)
-                System.out.println("ERROR: Invalid entry...must be one letter");
-            else valid = true;
-        } while (!valid);
-        return value;
-    }
     @Override
     public boolean doAction(String menuOption) {
         System.out.println("\n*** doAction() called ***");
@@ -77,7 +52,7 @@ public class FoodMenuView extends View {
                     System.out.println("No fries left, get something else.");
                     break;
             case "D" :
-                    this.displayFoodMenu();
+                    this.display();
                     break;
             case "Q" :
                 break;
