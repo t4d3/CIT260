@@ -91,8 +91,6 @@ break;
 case "P":
 pointB.setLocation(0,0);
 break;
-case "Q":
-break;
 case "R":
 pointB.setLocation(0,0);
 break;

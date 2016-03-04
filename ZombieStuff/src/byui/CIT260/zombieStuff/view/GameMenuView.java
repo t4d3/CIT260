@@ -38,8 +38,6 @@ public class GameMenuView extends View{
             case "I":
                     this.InventoryView();
                     break;
-            case "Q":
-                break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;

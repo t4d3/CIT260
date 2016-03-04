@@ -54,8 +54,6 @@ public class FoodMenuView extends View {
             case "D" :
                     this.display();
                     break;
-            case "Q" :
-                break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;

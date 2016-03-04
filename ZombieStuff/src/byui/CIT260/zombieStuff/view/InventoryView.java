@@ -31,8 +31,6 @@ public class InventoryView extends View {
             case "E" :
                 this.equipItem();
                 break;
-            case "Q":
-                break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;

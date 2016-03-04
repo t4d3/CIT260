@@ -42,8 +42,6 @@ public class HelpMenuView extends View{
             case "D" :
                 System.out.println("This is how you ... deal with items"); //Collecting/weilding items"
                 break;
-            case "Q" :
-                break;
             default :
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;

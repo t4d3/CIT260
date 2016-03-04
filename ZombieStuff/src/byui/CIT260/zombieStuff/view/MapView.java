@@ -50,8 +50,6 @@ public class MapView extends View{
 /*            case "?":
                     this.?();
                     break;*/
-            case "Q":
-                break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
