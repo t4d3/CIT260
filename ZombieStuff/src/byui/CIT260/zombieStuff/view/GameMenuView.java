@@ -11,45 +11,18 @@ import java.util.Scanner;
  *
  * @author T4d3-T550
  */
-public class GameMenuView {
-    private String displayMessage;
-
-    private void GameMenuView() {
-        this.displayMessage = "****************Game menu******************"
+public class GameMenuView extends View{
+    public GameMenuView() {
+            super("*****************Game menu*******************"
                 + "\n* G - Go to a store                       *"
                 + "\n* M - Display the Map                     *"
                 + "\n* F - Go to the Food Court                *"
                 + "\n* I - Look at your Inventory              *"
-                + "\n*******************************************";
+                + "\n*******************************************");
     }
 
-    public void displayMenu() {
-        boolean done = false;
-        do {
-            System.out.println(this.displayMessage);
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid;
-        valid = false;
-        do {
-            value = keyboard.nextLine();
-            value = value.trim();
-            if (value.length() != 1)
-                System.out.println("ERROR: Invalid entry...must be one letter");
-            else valid = true;
-        } while (!valid);
-        return value;
-    }
-
-    private boolean doAction(String menuOption) {
+    @Override
+    public boolean doAction(String menuOption) {
         menuOption = menuOption.toUpperCase();
 
         switch (menuOption) {

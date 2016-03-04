@@ -40,7 +40,6 @@ public class MainMenuView extends View {
                     this.saveGame();
                     break;
             case "Q":
-                    this.quitGame();
                     break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
@@ -54,7 +53,7 @@ public class MainMenuView extends View {
         GameControl.createNewGame(ZombieStuff.getPlayer());
         GameMenuView gameMenuView = new GameMenuView();
 //This part should start into the game...Unlike most code, it is very important.
-        gameMenuView.displayMenu();
+        gameMenuView.display();
     }
 
     private void startExistingGame() {
@@ -63,10 +62,6 @@ public class MainMenuView extends View {
 
     private void saveGame() {
         System.out.println("\n*** saveGame() called ***");
-    }
-
-    private void quitGame() {
-        System.out.println("\n*** quitGame() called ***");
     }
 
     private void displayHelpMenu() {
