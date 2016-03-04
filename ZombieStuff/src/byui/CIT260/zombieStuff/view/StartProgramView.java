@@ -23,34 +23,12 @@ public class StartProgramView extends View {
                         + "\n* order for the party to be complete. You leave your  *"
                         + "\n* pot roast onthe stove and head to the mall infested *"
                         + "\n* with zombies to get the items that you forgot       *"
-                        + "\n*******************************************************");
-    }
-
-    private void promptName() {
-        System.out.println("\nPlease enter your name: ");
-    }
-
-    private String getPlayerName() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid;
-        valid = false;
-        while(!valid) {// a valid value has not been entered
-            this.promptName();
-            value = keyboard.nextLine();
-            value = value.trim();
-            if (value.length() < 1) {
-                System.out.println("Invalid entry.  Value cannot be blank!");
-                continue;
-            }
-            break;
-        }
-        return value;
+                        + "\n*******************************************************"
+                        +"\nPlease enter your name: ");
     }
 
     @Override
     public boolean doAction(String playerName) {
-        this.promptName();
         if (playerName.length() < 2) {
             System.out.println("Invalid entry...must be longer than one letter.");
             return false;

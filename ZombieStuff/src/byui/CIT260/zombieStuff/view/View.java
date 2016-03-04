@@ -43,7 +43,7 @@ public abstract class View implements ViewInterface{
             System.out.println("\n" + this.displayMessage);
             value = keyboard.nextLine();
             value = value.trim();
-            if (value.length() != 1) {
+            if (value.length() < 1) {
                 System.out.println("ERROR: Invalid entry; must be one letter");
             }
             else valid = true;
