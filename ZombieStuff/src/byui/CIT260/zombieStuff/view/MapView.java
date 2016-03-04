@@ -11,10 +11,9 @@ import java.util.Scanner;
  *
  * @author T4d3-T550
  */
-public class MapView {
-    private String displayMessage;
-    public void displayMap() {
-        this.displayMessage = 
+public class MapView extends View{
+    public MapView() {
+        super( 
   "\n          ___________________________ ********Map View**********"
 + "\n         |                           |* F - Food Court         *"
 + "\n         |                           |* M - Move the character *"
@@ -30,35 +29,11 @@ public class MapView {
 + "\n|  Target   I  x,y    x,y    x,y     x,y     x,y  I  Claire's |"
 + "\n|           |________._._.________________________|           |"
 + "\n|           |                                     |           |"
-+ "\n|___________|                                     |___________|";
++ "\n|___________|                                     |___________|");
     }
 
-    public void displayMapView() {
-        boolean done = false;
-        do {
-            System.out.println(this.displayMessage);
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid;
-        valid = false;
-        do {
-            value = keyboard.nextLine();
-            value = value.trim();
-            if (value.length() != 1)
-                System.out.println("ERROR: Invalid entry...must be one letter");
-            else valid = true;
-        } while (!valid);
-        return value;
-    }
-    private boolean doAction(String menuOption) {
+    @Override
+    public boolean doAction(String menuOption) {
         System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
 

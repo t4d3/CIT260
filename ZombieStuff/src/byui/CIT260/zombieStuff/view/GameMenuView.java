@@ -49,7 +49,7 @@ public class GameMenuView extends View{
 
     private void MapView() {
         MapView mapView = new MapView();
-        mapView.displayMapView();
+        mapView.display();
     }
 
     private void movePlayer() {
