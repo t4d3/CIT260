@@ -18,6 +18,7 @@ public class GameMenuView extends View{
                 + "\n* M - Display the Map                     *"
                 + "\n* F - Go to the Food Court                *"
                 + "\n* I - Look at your Inventory              *"
+                + "\n* B - Fight a Zombie                      *"
                 + "\n*******************************************");
     }
 
@@ -38,6 +39,8 @@ public class GameMenuView extends View{
             case "I":
                     this.InventoryView();
                     break;
+            case "B":
+                    this.FightZombieView();
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
@@ -62,6 +65,11 @@ public class GameMenuView extends View{
     private void InventoryView() {
         InventoryView inventoryView = new InventoryView();
         inventoryView.display();
+    }
+
+    private void FightZombieView() {
+        FightZombieView fightZombieView = new FightZombieView();
+        fightZombieView.display();
     }
 
 }
