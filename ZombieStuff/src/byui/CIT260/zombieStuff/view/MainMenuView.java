@@ -12,13 +12,19 @@ import byui.CIT260.zombieStuff.view.HelpMenuView;
 
 public class MainMenuView extends View {
     public MainMenuView() {
-        super("\n*************Main Menu***************"
-                + "\nN - New game"
-                + "\nR - Retrieve and resume old game"
-                + "\nH - Display a Help menu"
-                + "\nS - Save game"
-                + "\nQ - Quit"
-                + "\n*************************************");
+        super(    "***********************Main Menu***********************"
++ "\n*                                                     *"
++ "\n*                                                     *"
++ "\n* N - New game                                        *"
++ "\n* R - Retrieve and resume old game                    *"
++ "\n* H - Display a Help menu                             *"
++ "\n* S - Save game                                       *"
++ "\n* Q - Quit                                            *"
++ "\n*                                                     *"
++ "\n*                                                     *"
++ "\n*******************************************************"
++ "\n\tWhat would you like to do? "
+);
     }
 
     @Override

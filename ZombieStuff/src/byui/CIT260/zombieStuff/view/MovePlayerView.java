@@ -13,22 +13,24 @@ import java.util.Scanner;
 
 public class MovePlayerView extends View{
     public MovePlayerView() {
-        super("*********Directory Listing**********"
-                + "\n*     First Floor     |  Second Floor     *"
-                + "\n* A - Go to a store    N -                *"
-                + "\n* B -                  O -                *"
-                + "\n* C - Go to            P -                *"
-                + "\n* D - Go to            Q - Quit           *"
-                + "\n* E - Go to            R - *"
-                + "\n* F - Food Court       S - *"
-                + "\n* G - Go to            T - *"
-                + "\n* H - Help Menu        U -  *"
-                + "\n* I - Go to            V - Victoria's Secret*"  
-                + "\n* J - Go to            W - *"
-                + "\n* K - Go to            X - *"
-                + "\n* L - Go to            Y - *"
-                + "\n* M - Go to            Z - *"
-                + "\n*******************************************");
+        super(    "*******************Directory Listing*******************"
++ "\n*     First Floor                 Second Floor        *"
++ "\n* A - Go to a store           N -                     *"
++ "\n* B -                         O -                     *"
++ "\n* C - Go to                   P -                     *"
++ "\n* D - Go to                   Q - Quit                *"
++ "\n* E - Go to                   R -                     *"
++ "\n* F - Food Court              S -                     *"
++ "\n* G - Go to                   T -                     *"
++ "\n* H - Help Menu               U -                     *"
++ "\n* I - Go to                   V - Victoria's Secret   *"
++ "\n* J - Go to                   W -                     *"
++ "\n* K - Go to                   X -                     *"
++ "\n* L - Go to                   Y -                     *"
++ "\n* M - Go to                   Z -                     *"
++ "\n*******************************************************"
++ "\n\tWhat would you like to do? "
+);
     }
 
     @Override

@@ -13,14 +13,18 @@ import java.util.Scanner;
  */
 public class HelpMenuView extends View{
     public HelpMenuView() {
-      super("***************Help Menu****************"
-                + "\nG - What is the goal of the game?"
-                + "\nM - How to move" 
-                + "\nT - How much time will I have?"
-                + "\nF - How to fight"
-                + "\nD - Collecting/weilding items"
-                + "\nQ - Quit"
-                + "\n****************************************");
+      super("***********************Help Menu***********************"
++ "\n*                                                     *"
++ "\n*                                                     *"
++ "\n* G - What is the goal of the game?                   *"
++ "\n* M - How to move                                     *"
++ "\n* T - How much time will I have?                      *"
++ "\n* F - How to fight                                    *"
++ "\n* D - Collecting/weilding items                       *"
++ "\n* Q - Quit                                            *"
++ "\n*                                                     *"
++ "\n*                                                     *"
++ "\n*******************************************************");
     }
 
     @Override

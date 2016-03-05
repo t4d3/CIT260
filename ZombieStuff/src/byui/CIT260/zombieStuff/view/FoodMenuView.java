@@ -14,26 +14,27 @@ import java.util.Scanner;
 public class FoodMenuView extends View {
     
     public FoodMenuView(){
-        super ("\n*********************************************"
-            +  "\n*          FEELING HUNGRY ARE YOU?          *"
-            +  "\n*                                           *"
-            +  "\n*         What would you like to eat?       *"
-            +  "\n*-------------------------------------------*"
-            +  "\n* .n.                                  .n.  *"
-            +  "\n* 0M0  Choice #1: Corn Dog             0M0  *"
-            +  "\n* 0M0                                  0M0  *"
-            +  "\n* 0M0                                  0M0  *"
-            +  "\n* UMU  Choice #2: Hot Dog: SOLD OUT    UMU  *"
-            +  "\n*  Y                                    Y   *"
-            +  "\n*  |                                    |   *"
-            +  "\n*  |   Choice #3: Fries: SOLD OUT       |   *"
-            +  "\n*                                           *"
-            +  "\n*-------------------------------------------*"
-            +  "\n* C - Buy a corndog                         *"
-            +  "\n* H - Buy a hot dog                         *"
-            +  "\n* F - Get some fries                        *"
-            +  "\n* Q - Leave the food court                  *"
-            +  "\n*********************************************");
+        super ("*******************************************************"
++ "\n*               FEELING HUNGRY ARE YOU?               *"
++ "\n*                                                     *"
++ "\n*              What would you like to eat?            *"
++ "\n*-----------------------------------------------------*"
++ "\n*     .n.                                     .n.     *"
++ "\n*     0M0     Choice #1: Corn Dog             0M0     *"
++ "\n*     0M0                                     0M0     *"
++ "\n*     0M0                                     0M0     *"
++ "\n*     UMU     Choice #2: Hot Dog: SOLD OUT    UMU     *"
++ "\n*      Y                                       Y      *"
++ "\n*      |                                       |      *"
++ "\n*      |      Choice #3: Fries: SOLD OUT       |      *"
++ "\n*                                                     *"
++ "\n*-----------------------------------------------------*"
++ "\n* C - Buy a corndog                                   *"
++ "\n* H - Buy a hot dog                                   *"
++ "\n* F - Get some fries                                  *"
++ "\n* Q - Leave the food court                            *"
++ "\n*******************************************************"
++ "\n\tWhat would you like to do? ");
     }
     
     @Override

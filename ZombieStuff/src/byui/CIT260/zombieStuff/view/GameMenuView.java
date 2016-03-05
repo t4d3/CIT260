@@ -13,12 +13,18 @@ import java.util.Scanner;
  */
 public class GameMenuView extends View{
     public GameMenuView() {
-            super("*****************Game menu*******************"
-                + "\n* G - Go to a store                       *"
-                + "\n* M - Display the Map                     *"
-                + "\n* F - Go to the Food Court                *"
-                + "\n* I - Look at your Inventory              *"
-                + "\n*******************************************");
+            super("***********************Game Menu***********************"
++ "\n*                                                     *"
++ "\n*                                                     *"
++ "\n* G - Go to a store                                   *"
++ "\n* M - Display the Map                                 *"
++ "\n* F - Go to the Food Court                            *"
++ "\n* I - Look at your Inventory                          *"
++ "\n* Q - Quit                                            *"
++ "\n*                                                     *"
++ "\n*                                                     *"
++ "\n*******************************************************"
++ "\n\tWhat would you like to do? ");
     }
 
     @Override

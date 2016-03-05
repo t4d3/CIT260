@@ -17,13 +17,17 @@ public class StartProgramView extends View {
     
     public StartProgramView() {
         super("*******************************************************"
-                        + "\n* Welcome to the text based rpg game Zombie Mall!     *"
-                        + "\n* In this game you are a dad whose daughter is having *"
-                        + "\n* her birthday party but you forgot some things in    *"
-                        + "\n* order for the party to be complete. You leave your  *"
-                        + "\n* pot roast onthe stove and head to the mall infested *"
-                        + "\n* with zombies to get the items that you forgot       *"
-                        + "\n*******************************************************"
++ "\n*                                                     *"
++ "\n*                                                     *"
++ "\n* Welcome to the text based rpg game Zombie Mall!     *"
++ "\n* In this game you are a dad whose daughter is having *"
++ "\n* her birthday party but you forgot some things in    *"
++ "\n* order for the party to be complete. You leave your  *"
++ "\n* pot roast onthe stove and head to the mall infested *"
++ "\n* with zombies to get the items that you forgot       *"
++ "\n*                                                     *"
++ "\n*                                                     *"
++ "\n*******************************************************"
                         +"\nPlease enter your name: ");
     }
 
