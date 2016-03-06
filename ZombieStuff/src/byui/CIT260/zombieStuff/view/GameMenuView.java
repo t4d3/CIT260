@@ -22,7 +22,8 @@ public class GameMenuView extends View{
                 + "\n*******************************************");
     }
 
-    @Override
+    @
+        Override
     public boolean doAction(String menuOption) {
         menuOption = menuOption.toUpperCase();
 

@@ -11,12 +11,17 @@ package byui.CIT260.zombieStuff.view;
  */
 public class InventoryView extends View {
     public InventoryView() {
-              super("****************Inventory******************"
-                + "\n* D - Delete Item                         *"
-                + "\n* E - Equip Item                          *"
-                + "\n* F - Go to the Food Court                *"
-                + "\n* Q - Quit                                *"
-                + "\n*******************************************");
+              super("***********************Inventory***********************"
++ "\n*                                                     *"
++ "\n*                                                     *"
++ "\n* D - Delete Item                                     *"
++ "\n* E - Equip Item                                      *"
++ "\n* F - Go to the Food Court                            *"
++ "\n* Q - Quit                                            *"
++ "\n*                                                     *"
++ "\n*                                                     *"
++ "\n*******************************************************"
++ "\n\tWhat would you like to do? ");
     }
     
     @Override

@@ -9,10 +9,22 @@ package byui.CIT260.zombieStuff.view;
  *
  * @author T4d3-T550
  */
-class DeleteItemView {
-
-    void display() {
-        System.out.println("*** DeleteItem() Called***");
+public class DeleteItemView extends View{
+    public DeleteItemView() {
+        super(      "**********************Delete Item**********************"
++ "\n* 0 - Go to a store                                   *"
++ "\n* 0 - Display the Map                                 *"
++ "\n* 0 - Go to the Food Court                            *"
++ "\n* 0 - Look at your Inventory                          *"
++ "\n*******************************************************"
++ "\n\tWhat would you like to do? "
+        );
+                }
+    @Override
+    public boolean doAction(String value) {
+        System.out.println("Howdy.... Do action called");
+        return false;
     }
-    
 }
+
+        

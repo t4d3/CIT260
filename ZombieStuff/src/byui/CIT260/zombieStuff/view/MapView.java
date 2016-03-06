@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class MapView extends View{
     public MapView() {
         super( 
-  "\n          ___________________________ ********Map View**********"
+  "            ___________________________ ********Map View**********"
 + "\n         |                           |* F - Food Court         *"
 + "\n         |                           |* M - Move the character *"
 + "\n         |      Victoria's Secret    |* L - List visited places*"
@@ -29,7 +29,8 @@ public class MapView extends View{
 + "\n|  Target   I  x,y    x,y    x,y     x,y     x,y  I  Claire's |"
 + "\n|           |________._._.________________________|           |"
 + "\n|           |                                     |           |"
-+ "\n|___________|                                     |___________|");
++ "\n|___________|                                     |___________|"
++ "\n\tWhat would you like to do? ");
     }
 
     @Override

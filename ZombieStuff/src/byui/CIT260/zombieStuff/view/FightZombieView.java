@@ -10,10 +10,7 @@ package byui.CIT260.zombieStuff.view;
  * @author Justin Cox
  */
 public class FightZombieView extends View{
-    public FightZombieView() {
-        
-        
-        
+    public FightZombieView(){  
         
         super( "\n*********************************************************"  
             +  "\n*                   TIME TO FIGHT!!!                    *"

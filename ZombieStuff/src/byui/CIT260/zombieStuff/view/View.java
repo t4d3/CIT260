@@ -40,7 +40,7 @@ public abstract class View implements ViewInterface{
         String value = "";
         boolean valid = false;
         do {
-            System.out.println("\n" + this.displayMessage);
+            System.out.print("\n" + this.displayMessage + "\r");
             value = keyboard.nextLine();
             value = value.trim();
             if (value.length() < 1) {
