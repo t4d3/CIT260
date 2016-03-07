@@ -14,13 +14,13 @@ import java.util.Scanner;
 public class MapView extends View{
     public MapView() {
         super( 
-  "            ___________________________ ********Map View**********"
-+ "\n         |                           |* F - Food Court         *"
+    "          ___________________________ ********Map View**********"
 + "\n         |                           |* M - Move the character *"
-+ "\n         |      Victoria's Secret    |* L - List visited places*"
-+ "\n         |                           |* S - Shop current store *"
-+ "\n         |____________._.____________|* H - Display Help menu  *"
-+ "\n            |       |     |  Old  |   * Q - Exit back to menu  *"
++ "\n         |                           |* L - List visited places*"
++ "\n         |      Victoria's Secret    |* S - Shop current store *"
++ "\n         |                           |* H - Display Help menu  *"
++ "\n         |____________._.____________|* Q - Exit back to menu  *"
++ "\n            |       |     |  Old  |   *                        *"
 + "\n            | Food  I x,y I  Navy |   **************************"
 + "\n ___________|_______|     |_______|___________________________"
 + "\n|           |       |     |       |       |       |           |"

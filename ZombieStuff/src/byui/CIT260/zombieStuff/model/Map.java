@@ -5,6 +5,7 @@
  */
 package byui.CIT260.zombieStuff.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 
 /**
@@ -13,65 +14,42 @@ import java.io.Serializable;
  */
 public class Map implements Serializable {
    //class instance variable
-    private int column;
-    private int row;
-
     public Map() {
     }
 
-    
-    
-    public int getColumn() {
-        return column;
-    }
-
-    public void setColumn(int column) {
-        this.column = column;
-    }
-
-    public int getRow() {
-        return row;
-    }
-
-    public void setRow(int row) {
-        this.row = row;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + this.column;
-        hash = 97 * hash + this.row;
-        return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "Map{" + "column=" + column + ", row=" + row + '}';
-    }
-
-    
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    private final String name[] = {"Zumies", "Old Navy", "Zales", "Nike"};
+    private final Point location[][] = {
+        {
+            new Point(0,0),
+            new Point(0,1),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+        },
+        {
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,26),
         }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Map other = (Map) obj;
-        if (this.column != other.column) {
-            return false;
-        }
-        if (this.row != other.row) {
-            return false;
-        }
-        return true;
-    }
-    
-    
+    };
+
 }

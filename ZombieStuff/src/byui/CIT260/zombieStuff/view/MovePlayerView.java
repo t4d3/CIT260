@@ -106,7 +106,7 @@ case "U":
 pointB.setLocation(0,0);
 break;
 case "V":
-pointB.setLocation(0,0);
+pointB.setLocation(map.getlocation("Victoria's Secret"));
 break;
 case "W":
 pointB.setLocation(0,0);

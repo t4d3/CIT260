@@ -13,13 +13,18 @@ import java.util.Scanner;
  */
 public class GameMenuView extends View{
     public GameMenuView() {
-            super("*****************Game menu*******************"
-                + "\n* G - Go to a store                       *"
-                + "\n* M - Display the Map                     *"
-                + "\n* F - Go to the Food Court                *"
-                + "\n* I - Look at your Inventory              *"
-                + "\n* B - Fight a Zombie                      *"
-                + "\n*******************************************");
+            super("***********************Game menu***********************"
++ "\n*                                                     *"
++ "\n*                                                     *"
++ "\n* G - Go to a store                                   *"
++ "\n* M - Display the Map                                 *"
++ "\n* F - Fight a Zombie                                  *"
++ "\n* I - Look at your Inventory                          *"
++ "\n* Q - Quit                                            *"
++ "\n*                                                     *"
++ "\n*                                                     *"
++ "\n*******************************************************"
++ "\n\tWhat would you like to do? ");
     }
 
     @
@@ -35,7 +40,7 @@ public class GameMenuView extends View{
                     this.movePlayer();
                     break;
             case "F":
-                    this.FoodMenuView();
+                    this.FightZombieView();
                     break;
             case "I":
                     this.InventoryView();
