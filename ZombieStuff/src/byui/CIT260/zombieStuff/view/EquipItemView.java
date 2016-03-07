@@ -11,12 +11,16 @@ package byui.CIT260.zombieStuff.view;
  */
 public class EquipItemView extends View{
         public EquipItemView() {
-            super(
-    "**********************Equip Item***********************"
+            super("**********************Equip  Item**********************"
++ "\n*                                                     *"
++ "\n*                                                     *"
 + "\n* 0 - Go to a store                                   *"
 + "\n* 0 - Display the Map                                 *"
 + "\n* 0 - Go to the Food Court                            *"
 + "\n* 0 - Look at your Inventory                          *"
++ "\n* 0 - Quit                                            *"
++ "\n*                                                     *"
++ "\n*                                                     *"
 + "\n*******************************************************"
 + "\n\tWhat would you like to do? ");
     }
