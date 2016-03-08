@@ -19,7 +19,8 @@ public class GameMenuView extends View{
                 + "\n* F - Go to the Food Court                *"
                 + "\n* I - Look at your Inventory              *"
                 + "\n* B - Fight a Zombie                      *"
-                + "\n*******************************************");
+                + "\n*******************************************"
+                + "\n\tWhat would you like to do? ");
     }
 
     @

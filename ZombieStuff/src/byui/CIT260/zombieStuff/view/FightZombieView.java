@@ -40,7 +40,7 @@ public class FightZombieView extends View{
             +  "\n*              F - Fight to the death                   *"
             +  "\n*              R - Run away like a girl                 *"
             +  "\n*********************************************************"
-            +  "\nWhat would you like to do?");
+            +  "\n\tWhat would you like to do?");
     }
     
         @Override
