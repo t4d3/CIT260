@@ -37,8 +37,7 @@ public class MovePlayerView extends View{
     public boolean doAction(String menuOption) {
         System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
-        GameCharacter character = new GameCharacter();
-        int timeUsed = GameControl.updateLocation(menuOption, character);
+        int timeUsed = GameControl.updateLocation(menuOption, GameCharacter.Player);
         //if time used is negative
         //display error messagage RETURN FALSE;
         //
