@@ -12,65 +12,23 @@ import java.util.Objects;
  *
  * @author T4d3-T550
  */
-public class Item implements Serializable{
-    private Integer itemID;
+public enum Item implements Serializable{
+    Hammer("This is a pretty hard thing to see...", 1, 0, 2),
+    Toothbrush("it's dirty", -1, 0, 0);
+    
     private String itemDescription;
-    private Integer isWieldable;
+    private final int defenceBonus;
+    private final int attackBonus;
+    private final int weight;
 
-    public Item() {
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" + "ItemID=" + itemID + ", itemDescription=" + itemDescription + ", isWieldable=" + isWieldable + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 19 * hash + Objects.hashCode(this.itemID);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Item other = (Item) obj;
-        if (!Objects.equals(this.isWieldable, other.isWieldable)) {
-            return false;
-        }
-        return Objects.equals(this.itemDescription, other.itemDescription);
-    }
-
-    public String getItemDescription() {
-        return itemDescription;
+    Item(String itemDescription, int attackBonus, int defenseBonus, int weight) {
+        this.itemDescription = itemDescription;
+        this.attackBonus = attackBonus;
+        this.defenceBonus = defenseBonus;
+        this.weight = weight;
     }
 
     public void setItemDescription(String itemDescription) {
         this.itemDescription = itemDescription;
-    }
-
-    public Integer getItemID() {
-        return itemID;
-    }
-
-    public void setItemID(Integer itemID) {
-        this.itemID = itemID;
-    }
-
-    public int getIsWieldable() {
-        return isWieldable;
-    }
-
-    public void setIsWieldable(int isWieldable) {
-        this.isWieldable = isWieldable;
     }
 }

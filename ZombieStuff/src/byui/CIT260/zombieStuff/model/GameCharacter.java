@@ -21,17 +21,30 @@ public enum GameCharacter implements Serializable {
     ShopOwner("He kinda wears weird cloaths, but that's his thing", new Point(2,3)),
     HotDogOnAStickEmployee("She looks shifty, but oddly enough, you want to buy her food", new Point(2,3));
 
+    private final double attack;
+    private final double defence;
+    private final int floor;
     private final String description;
-    
     private final Point currentLocation;
 
     GameCharacter(String description, Point currentLocation) {
         this.description = description;
         this.currentLocation = currentLocation;
+        this.floor = 1;
+        this.attack = 3;
+        this.defence = 3;
+
     }
 
     
     
     public String getDescription() {
         return description;
-    }}
+    }
+
+    public String setCurrentLocation() {
+        return description;
+    }
+    
+    
+}
