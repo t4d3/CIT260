@@ -14,6 +14,10 @@ import java.io.Serializable;
 public class Game implements Serializable {
     private double timeStarted;
     private double currentScore;
+    private Item[] inventory;
+    private Player player;
+    private String[] actors;
+    private Map map;
 
     public Game() {
     }

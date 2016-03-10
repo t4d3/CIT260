@@ -20,7 +20,6 @@ public class Location implements Serializable {
     private boolean visited;
     private String description;
     private String name;
-    private int itemID;
 
     public Location() {
     }
@@ -67,14 +66,6 @@ public class Location implements Serializable {
         this.name = name;
     }
 
-    public int getItemID() {
-        return itemID;
-    }
-
-    public void setItemID(int itemID) {
-        this.itemID = itemID;
-    }
-
     @Override
     public int hashCode() {
         int hash = 5;
@@ -83,16 +74,9 @@ public class Location implements Serializable {
         hash = 23 * hash + (this.visited ? 1 : 0);
         hash = 23 * hash + Objects.hashCode(this.description);
         hash = 23 * hash + Objects.hashCode(this.name);
-        hash = 23 * hash + this.itemID;
         return hash;
     }
 
-    @Override
-    public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", description=" + description + ", name=" + name + ", itemID=" + itemID + '}';
-    }
-
-    
     
     @Override
     public boolean equals(Object obj) {
@@ -115,16 +99,10 @@ public class Location implements Serializable {
         if (this.visited != other.visited) {
             return false;
         }
-        if (this.itemID != other.itemID) {
-            return false;
-        }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.name, other.name);
     }
 
     

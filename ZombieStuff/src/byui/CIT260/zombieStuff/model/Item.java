@@ -13,10 +13,10 @@ import java.util.Objects;
  * @author T4d3-T550
  */
 public enum Item implements Serializable{
-    Hammer("This is a pretty hard thing to see...", 1, 0, 2),
-    Toothbrush("it's dirty", -1, 0, 0);
+    Hammer("This is a pretty hard thing, but you can manage.", 1, 0, 2),
+    Toothbrush("It's got lots of dust, and a black hair... Gross.", -1, 0, 0);
     
-    private String itemDescription;
+    private final String itemDescription;
     private final int defenceBonus;
     private final int attackBonus;
     private final int weight;
@@ -28,7 +28,15 @@ public enum Item implements Serializable{
         this.weight = weight;
     }
 
-    public void setItemDescription(String itemDescription) {
-        this.itemDescription = itemDescription;
+    public String getItemDescription() {
+        return itemDescription;
+    }
+
+    public int getAttackBonus() {
+        return attackBonus;
+    }
+
+    public int getWeight() {
+        return weight;
     }
 }
