@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 public class Map implements Serializable {
    //class instance variable
-    public Map() {
+    public Map(int a, int b) {
     }
 
     private final String name[] = {"Zumies", "Old Navy", "Zales", "Nike"};

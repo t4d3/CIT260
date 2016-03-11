@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author Justin Cox
  */
 public class Game implements Serializable {
-    private double timeStarted;
+    private double totalTime;
     private double currentScore;
     private Item[] inventory;
     private Player player;
@@ -25,11 +25,11 @@ public class Game implements Serializable {
     
     
     public double getTimeStarted() {
-        return timeStarted;
+        return totalTime;
     }
 
-    public void setTimeStarted(double timeStarted) {
-        this.timeStarted = timeStarted;
+    public void setTimeStarted(double totalTime) {
+        this.totalTime = totalTime;
     }
 
     public double getCurrentScore() {
@@ -43,14 +43,14 @@ public class Game implements Serializable {
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 43 * hash + (int) (Double.doubleToLongBits(this.timeStarted) ^ (Double.doubleToLongBits(this.timeStarted) >>> 32));
+        hash = 43 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
         hash = 43 * hash + (int) (Double.doubleToLongBits(this.currentScore) ^ (Double.doubleToLongBits(this.currentScore) >>> 32));
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "timeStarted=" + timeStarted + ", currentScore=" + currentScore + '}';
+        return "Game{" + "totalTime=" + totalTime + ", currentScore=" + currentScore + '}';
     }
 
     
@@ -67,7 +67,7 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.timeStarted) != Double.doubleToLongBits(other.timeStarted)) {
+        if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
             return false;
         }
         if (Double.doubleToLongBits(this.currentScore) != Double.doubleToLongBits(other.currentScore)) {
@@ -75,6 +75,46 @@ public class Game implements Serializable {
         }
         return true;
     }
-    
+
+    public double getTotalTime() {
+        return totalTime;
+    }
+
+    public void setTotalTime(double totalTime) {
+        this.totalTime = totalTime;
+    }
+
+    public Item[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Item[] inventory) {
+        this.inventory = inventory;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public String[] getActors() {
+        return actors;
+    }
+
+    public void setActors(String[] actors) {
+        this.actors = actors;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
     
 }

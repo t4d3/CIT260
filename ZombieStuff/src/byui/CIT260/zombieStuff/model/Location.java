@@ -24,8 +24,6 @@ public class Location implements Serializable {
     public Location() {
     }
     
-    
-
     public int getRow() {
         return row;
     }

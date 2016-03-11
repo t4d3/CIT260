@@ -5,7 +5,10 @@
  */
 package byui.CIT260.zombieStuff.control;
 
+import byui.CIT260.zombieStuff.model.Game;
 import byui.CIT260.zombieStuff.model.GameCharacter;
+import byui.CIT260.zombieStuff.model.Item;
+import byui.CIT260.zombieStuff.model.Map;
 import byui.CIT260.zombieStuff.model.Player;
 import java.awt.Point;
 import zombiestuff.ZombieStuff;
@@ -29,7 +32,17 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame() called***");
+        Game game = new Game();
+        ZombieStuff.setCurrentGame(game);
+        game.setPlayer(player);
+        
+        Item[] inventoryList = GameControl.createInventory();
+        game.setInventory(inventoryList);
+        
+        Map map = MapControl.createMap();
+        game.setMap(map);
+        
+        MapControl.moveCharacterToStartingLocation(map);
     }
 
     public static int updateLocation(String locationOption, GameCharacter character) {
@@ -126,5 +139,11 @@ public class GameControl {
         break;
         }
         return pointB;*/
+    }
+
+    private static Item[] createInventory() {
+        System.out.println("** createInventory() called ***");
+        Item[] item = {};
+        return item;
     }
 }
