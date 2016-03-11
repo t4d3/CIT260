@@ -20,6 +20,7 @@ public class Location implements Serializable {
     private boolean visited;
     private String description;
     private String name;
+    private Scene scene;
 
     public Location() {
     }
@@ -54,6 +55,14 @@ public class Location implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 
     public String getName() {

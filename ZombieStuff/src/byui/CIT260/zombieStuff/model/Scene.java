@@ -13,9 +13,9 @@ import java.io.Serializable;
  */
 public enum Scene implements Serializable {
         
-    Zumies(""),
+    Zumies("A great place...for teeangers."),
     OldNavy(""),
-    Zales(""),
+    Zales("Too fancy for your bood."),
     Nike(""),
     VictoriasSecret(""),
     Stairs(""),

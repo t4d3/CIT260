@@ -15,6 +15,13 @@ import java.util.ArrayList;
  */
 public class Map implements Serializable {
    //class instance variable
+    private int noOfRows;
+    private int noOfColumns;
+    private int floors;
+    private Location[][] locations;
+    private Scene scene;
+    private ArrayList<GameCharacter> gameCharacter;
+
     public Map() {
     }
     
@@ -28,22 +35,42 @@ public class Map implements Serializable {
         
         this.locations = new Location[noOfRows][noOfColumns];
         
-        for (int row = 0; row < noOfRows; row++) {
-            for (int column = 0; column < noOfColumns; column++) {
-                Location location = new Location();
-                location.setColumn(column);
-                location.setRow(row);
-                location.setVisited(false);
+        for (int floor = 0; floor < floors; floor++) {
+            for (int row = 0; row < noOfRows; row++) {
+                for (int column = 0; column < noOfColumns; column++) {
+                    Location location = new Location();
+                    location.setColumn(column);
+                    location.setRow(row);
+                    location.setVisited(false);
                 
                 locations[row][column] = location;
+                }
             }
         }
-    
+    }
+
+    public int getFloors() {
+        return floors;
+    }
+
+    public void setFloors(int floors) {
+        this.floors = floors;
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
     
-    private int noOfRows;
-    private int noOfColumns;
-    private Location[][] locations;
-    private Scene scene;
-    private ArrayList<GameCharacter> gameCharacter;
 }
