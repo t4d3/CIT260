@@ -7,6 +7,7 @@ package byui.CIT260.zombieStuff.model;
 
 import java.awt.Point;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,42 +15,35 @@ import java.io.Serializable;
  */
 public class Map implements Serializable {
    //class instance variable
-    public Map(int a, int b) {
+    public Map() {
     }
-
-    private final String name[] = {"Zumies", "Old Navy", "Zales", "Nike"};
-    private final Point location[][] = {
-        {
-            new Point(0,0),
-            new Point(0,1),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-        },
-        {
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,0),
-            new Point(0,26),
+    
+    public Map(int noOfRows, int noOfColumns) {
+        if (noOfRows < 1 || noOfColumns < 1) {
+            System.out.println("The number of Rows and Columns must be > 0");
+            return;
         }
-    };
-
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
+        
+        this.locations = new Location[noOfRows][noOfColumns];
+        
+        for (int row = 0; row < noOfRows; row++) {
+            for (int column = 0; column < noOfColumns; column++) {
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                locations[row][column] = location;
+            }
+        }
+    
+    }
+    
+    private int noOfRows;
+    private int noOfColumns;
+    private Location[][] locations;
+    private Scene scene;
+    private ArrayList<GameCharacter> gameCharacter;
 }

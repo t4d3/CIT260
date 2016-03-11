@@ -15,24 +15,26 @@ import java.util.Objects;
  */
 public enum GameCharacter implements Serializable {
 
-    Player("This is an evil Zombie", new Point(0,0)),
-    Zombie("This is an evil Zombie", new Point(2,3)),
-    Baker("He might not exist, but he looks good!", new Point(2,3)),
-    ShopOwner("He kinda wears weird cloaths, but that's his thing", new Point(2,3)),
-    HotDogOnAStickEmployee("She looks shifty, but oddly enough, you want to buy her food", new Point(2,3));
+    Player(10, 3, 0, 1, new Point(0,0), "You might have had too many street tacos"),
+    Zombie(5, 2, 0, 1, new Point(2,3), "This is an evil Zombie"),
+    Baker(10, 3, 0, 1, new Point(0,0), "He might not exist, but he looks good!"),
+    ShopOwner(10, 3, 0, 1, new Point(0,0), "He kinda wears weird cloaths, but that's his thing"),
+    HotDogEmployee(1, 70, 10, 1, new Point(0,0), "She looks shifty, but oddly enough, you want to buy her food");
 
     private final double attack;
     private final double defence;
+    private double health;
     private final int floor;
     private final String description;
     private final Point currentLocation;
 
-    GameCharacter(String description, Point currentLocation) {
+    GameCharacter(int health, int attack, int defence, int floor, Point currentLocation, String description) {
         this.description = description;
         this.currentLocation = currentLocation;
-        this.floor = 1;
-        this.attack = 3;
-        this.defence = 3;
+        this.floor = floor;
+        this.health = health;
+        this.attack = attack;
+        this.defence = defence;
 
     }
 

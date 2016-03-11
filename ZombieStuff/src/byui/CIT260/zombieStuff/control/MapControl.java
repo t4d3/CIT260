@@ -14,15 +14,17 @@ import byui.CIT260.zombieStuff.model.Map;
 public class MapControl {
     public static Map createMap() {
         Map map = new Map(20,20);
-        
-        Scene[] scenes = createScenes();
-        
-        assignScenesToLocations(map, scenes);
-        
+
+        assignScenesToLocations(map);
+
         return map;
     }
 
     static void moveCharacterToStartingLocation(Map map) {
         System.out.println("** moveCharacterToStartingLocation() called ***");
+    }
+
+    private static void assignScenesToLocations(Map map) {
+        System.out.println("** assignScenesToLocations() called ***");
     }
 }
