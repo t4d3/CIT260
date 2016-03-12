@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public enum Item implements Serializable{
     Hammer     (1, 0, 2, "Hammer\t", "This is a pretty hard thing, but you can manage."), 
-    Toothbrush (-1, 0, 0, "Toothbrush\t", "It's got lots of dust, and a black hair... Gross.");
+    Toothbrush (-1, 0, 0, "Toothbrush", "It's got lots of dust, and a black hair... Gross.");
 //out of lazyness, if itemName < "Hammer", add two \t for us all...
     private final String itemDescription;
     private final String itemName;

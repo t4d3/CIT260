@@ -5,28 +5,28 @@
  */
 package byui.CIT260.zombieStuff.view;
 
+import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Item;
+import java.util.ArrayList;
 
 /**
  *
  * @author T4d3-T5500
  */
 public class InventoryView extends View {
+
     public InventoryView() {
-              super("***********************Inventory***********************"
-// while (GameCharacter.Player.inventory
-//
-//"\n* " + GameCharacter.Player.getInventory() + String.format("%38s", " ") + "*"
-+ "\n* " + Item.Hammer.getItemName() + String.format("%38s", " ") + "*"
-+ "\n* " + Item.Toothbrush.getItemName() + String.format("%38s", " ") + "*"
-+ "\n* We can display the items here                       *"
-+ "\n*                                                     *"
-+ "\n*                                                     *"
-+ "\n* D - Drop Item                                       *"
-+ "\n* E - Equip Item                                      *"
-+ "\n* Q - Quit                                            *"
-+ "\n*******************************************************"
-+ "\n\tWhat would you like to do? ");
+        super(//"***********************Inventory***********************"
+//+ "\n* This is being taken care of by the main menu now... *" 
+//+ "\n* I cannot find a way to impliment the                *"
+//+ "\n*         DisplayInventoryBlockMessage()              *"
+//+ "\n*                                                     *"
+      "*                                                     *"
+  + "\n* D - Drop Item                                       *"
+  + "\n* E - Equip Item                                      *"
+  + "\n* Q - Quit                                            *"
+  + "\n*******************************************************"
+  + "\n\tWhat would you like to do? ");
     }
     
     @Override
@@ -44,7 +44,6 @@ public class InventoryView extends View {
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
-            
         }
         return false;
     }
@@ -52,12 +51,29 @@ public class InventoryView extends View {
     private void dropItem() {
         DropItemView DropItemView = new DropItemView();
         DropItemView.display();
+
     }
 
     private void equipItem() {
         EquipItemView equipItemview = new EquipItemView();
         equipItemview.display();
     }
-
     
+    private String DisplayInventoryBlockMessage() {
+//Suedo code, filling the gameCharacter's inventory
+        GameCharacter.Player.addInventoryItem(Item.Hammer);
+        GameCharacter.Player.addInventoryItem(Item.Toothbrush);
+
+        String inventoryDisplayBlock = "***********************Inventory***********************";
+        ArrayList<Item> inventory = GameCharacter.Player.getInventory();
+//replace the .size() with an absolute, once we decide the inventory size
+        for (int i = 0; i < inventory.size(); i++) {
+            String currentItem = "\t\t";
+            if (!"\n".equals(inventory.get(i).getItemName()))
+                currentItem = inventory.get(i).getItemName();
+            inventoryDisplayBlock += ("\n* " + i + " - " + currentItem
+                    + String.format("%38s", " ") + "*");
+        }
+        return inventoryDisplayBlock;
+    }
 }

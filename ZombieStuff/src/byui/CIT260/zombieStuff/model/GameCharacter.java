@@ -28,7 +28,7 @@ public enum GameCharacter implements Serializable {
     private final int floor;
     private final String description;
     private final Point currentLocation;
-    private final ArrayList<Item> inventory = new ArrayList<>();
+    private ArrayList<Item> inventory = new ArrayList<>();
 
     GameCharacter(int health, int attack, int defence, int floor, Point currentLocation, String description) {
         this.description = description;
@@ -43,6 +43,18 @@ public enum GameCharacter implements Serializable {
     
     public String getDescription() {
         return description;
+    }
+
+    public ArrayList<Item> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(ArrayList<Item> inventory) {
+        this.inventory = inventory;
+    }
+
+    public void addInventoryItem(Item item) {
+        this.inventory.add(item);
     }
 
     public String setCurrentLocation() {
