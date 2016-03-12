@@ -13,16 +13,18 @@ import java.util.Objects;
  * @author T4d3-T550
  */
 public enum Item implements Serializable{
-    Hammer     (1, 0, 2, "This is a pretty hard thing, but you can manage."), 
-    Toothbrush (-1, 0, 0, "It's got lots of dust, and a black hair... Gross.");
-    
+    Hammer     (1, 0, 2, "Hammer\t", "This is a pretty hard thing, but you can manage."), 
+    Toothbrush (-1, 0, 0, "Toothbrush\t", "It's got lots of dust, and a black hair... Gross.");
+//out of lazyness, if itemName < "Hammer", add two \t for us all...
     private final String itemDescription;
+    private final String itemName;
     private final int defenceBonus;
     private final int attackBonus;
     private final int weight;
 
-    Item(int attackBonus, int defenseBonus, int weight, String itemDescription) {
+    Item(int attackBonus, int defenseBonus, int weight, String itemName, String itemDescription) {
         this.itemDescription = itemDescription;
+        this.itemName = itemName;
         this.attackBonus = attackBonus;
         this.defenceBonus = defenseBonus;
         this.weight = weight;
@@ -30,6 +32,14 @@ public enum Item implements Serializable{
 
     public String getItemDescription() {
         return itemDescription;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public int getDefenceBonus() {
+        return defenceBonus;
     }
 
     public int getAttackBonus() {

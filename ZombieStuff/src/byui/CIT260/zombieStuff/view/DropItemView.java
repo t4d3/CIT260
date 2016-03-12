@@ -9,20 +9,20 @@ package byui.CIT260.zombieStuff.view;
  *
  * @author T4d3-T550
  */
-public class DeleteItemView extends View{
-    public DeleteItemView() {
+public class DropItemView extends View{
+    public DropItemView() {
         super("**********************Delete Item**********************"
 + "\n*                                                     *"
-+ "\n*                                                     *"
-+ "\n* 0 - Go to a store                                   *"
-+ "\n* 0 - Display the Map                                 *"
-+ "\n* 0 - Go to the Food Court                            *"
-+ "\n* 0 - Look at your Inventory                          *"
-+ "\n* 0 - Quit                                            *"
-+ "\n*                                                     *"
++ "\n* This is where we'd do like a:                       *"
++ "\n*    if(itemExists) display                           *"
++ "\n* A - type thing, to see the inventory!               *"
++ "\n* B - if there is no item, it'd be blank              *"
++ "\n* C -if there is an item, then it would display a list*"
++ "\n* D - a MAXIMUM of the max number of items in an inv. *"
++ "\n* Q - Quit                                            *"
 + "\n*                                                     *"
 + "\n*******************************************************"
-+ "\n\tWhat would you like to do? "
++ "\n\tWhich item would you like to remove? "
         );
                 }
     @Override

@@ -5,21 +5,26 @@
  */
 package byui.CIT260.zombieStuff.view;
 
+import byui.CIT260.zombieStuff.model.Item;
+
 /**
  *
- * @author T4d3-T550
+ * @author T4d3-T5500
  */
 public class InventoryView extends View {
     public InventoryView() {
               super("***********************Inventory***********************"
+// while (GameCharacter.Player.inventory
+//
+//"\n* " + GameCharacter.Player.getInventory() + String.format("%38s", " ") + "*"
++ "\n* " + Item.Hammer.getItemName() + String.format("%38s", " ") + "*"
++ "\n* " + Item.Toothbrush.getItemName() + String.format("%38s", " ") + "*"
++ "\n* We can display the items here                       *"
 + "\n*                                                     *"
 + "\n*                                                     *"
-+ "\n* D - Delete Item                                     *"
++ "\n* D - Drop Item                                       *"
 + "\n* E - Equip Item                                      *"
-+ "\n* F - Go to the Food Court                            *"
 + "\n* Q - Quit                                            *"
-+ "\n*                                                     *"
-+ "\n*                                                     *"
 + "\n*******************************************************"
 + "\n\tWhat would you like to do? ");
     }
@@ -31,7 +36,7 @@ public class InventoryView extends View {
 
         switch (menuOption) {
             case "D" :
-                this.deleteItem();
+                this.dropItem();
                 break;
             case "E" :
                 this.equipItem();
@@ -44,9 +49,9 @@ public class InventoryView extends View {
         return false;
     }
 
-    private void deleteItem() {
-        DeleteItemView deleteItemView = new DeleteItemView();
-        deleteItemView.display();
+    private void dropItem() {
+        DropItemView DropItemView = new DropItemView();
+        DropItemView.display();
     }
 
     private void equipItem() {

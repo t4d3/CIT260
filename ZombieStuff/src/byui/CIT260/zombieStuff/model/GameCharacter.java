@@ -7,6 +7,7 @@ package byui.CIT260.zombieStuff.model;
 
 import java.awt.Point;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -27,6 +28,7 @@ public enum GameCharacter implements Serializable {
     private final int floor;
     private final String description;
     private final Point currentLocation;
+    private final ArrayList<Item> inventory = new ArrayList<>();
 
     GameCharacter(int health, int attack, int defence, int floor, Point currentLocation, String description) {
         this.description = description;
@@ -35,7 +37,6 @@ public enum GameCharacter implements Serializable {
         this.health = health;
         this.attack = attack;
         this.defence = defence;
-
     }
 
     
