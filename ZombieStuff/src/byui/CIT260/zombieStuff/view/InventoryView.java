@@ -32,6 +32,9 @@ public class InventoryView extends View {
             case "E" :
                 this.equipItem();
                 break;
+            case "S" :
+                this.viewItemStats();
+                break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
@@ -53,6 +56,10 @@ public class InventoryView extends View {
         System.out.println("**Equip item called***");
     }
 
+    
+    private void viewItemStats() {
+        System.out.println("*** viewItemStats called ***");
+    }
     private String getInventoryBlockMessage() {
         GameCharacter.Player.addInventoryItem(Item.Hammer);
         GameCharacter.Player.addInventoryItem(Item.Toothbrush);
@@ -78,7 +85,7 @@ public class InventoryView extends View {
 //+ "\n* view, to not detract from inventory size.           *"
         inventoryDisplayBlock += 
     "\n*                                                     *"
-  + "\n* D - Drop Item                                       *"
+  + "\n* D - Drop Item        S - View Item Stats            *"
   + "\n* E - Equip Item                                      *"
   + "\n* Q - Quit                                            *"
   + "\n*******************************************************"
