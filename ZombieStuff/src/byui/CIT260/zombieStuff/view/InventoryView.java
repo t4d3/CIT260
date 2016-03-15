@@ -63,6 +63,7 @@ public class InventoryView extends View {
     private String getInventoryBlockMessage() {
         GameCharacter.Player.addInventoryItem(Item.Hammer);
         GameCharacter.Player.addInventoryItem(Item.Toothbrush);
+
         String inventoryDisplayBlock = 
                 "***********************Inventory***********************"
             + "\n*                                                     *";

@@ -5,11 +5,23 @@
  */
 package byui.CIT260.zombieStuff.control;
 
+import byui.CIT260.zombieStuff.model.Item;
+import java.util.ArrayList;
+
 /**
  *
- * @author Justin Cox
+ * @author Justin Sucks
  */
 public class InventoryControl {
-    
-    
+    InventoryControl() {
+    }
+
+    public static int getInventoryWeight(ArrayList<Item> inventory) {
+        int totalWeight = 0;
+        for(Item tmp: inventory) {
+            totalWeight += tmp.getWeight();
+        }
+        return totalWeight;
+//code here
+    }
 }

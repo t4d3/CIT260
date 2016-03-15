@@ -24,7 +24,7 @@ public enum Item implements Serializable{
     Hanger     (1, 0, 1, "Hanger\t", "I gues you could stab something with it."),
 
 //Defence related objects
-    Shirt      (0, 1, 1, "Shirt", "The Hello Kitty picture is so CUTE!!!"),
+    Shirt      (0, 1, 1, "Shirt\t\t", "The Hello Kitty picture is so CUTE!!!"),
     Armor      (0, 5, 5, "Full Body Armor", "In theory, this should protect me."),
 
 //not really related objects
