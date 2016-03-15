@@ -72,23 +72,6 @@ public class GameMenuView extends View{
     }
 
     private void InventoryView() {
-//Psuedo code for giving GameCharacter.Player some Item
-        GameCharacter.Player.addInventoryItem(Item.Hammer);
-        GameCharacter.Player.addInventoryItem(Item.Toothbrush);
-//Hopefully this will be in the InventoryView class, in the Super() call.
-        String inventoryDisplayBlock = 
-                "***********************Inventory***********************"
-            + "\n*                                                     *";
-        ArrayList<Item> inventory = GameCharacter.Player.getInventory();
-        for (int i = 0; i < 4; i++) {
-            String currentItem = "\t\t";
-            if (i < inventory.size())
-                currentItem = inventory.get(i).getItemName();
-            inventoryDisplayBlock += ("\n* " + (i + 1) + " - " + currentItem
-                    + String.format("%38s", " ") + "*");
-        }
-        System.out.print(inventoryDisplayBlock);
-
         InventoryView inventoryView = new InventoryView();
         inventoryView.display();
     }

@@ -28,7 +28,7 @@ public class StartProgramView extends View {
 + "\n*                                                     *"
 + "\n*                                                     *"
 + "\n*******************************************************"
-                        +"\nPlease enter your name: ");
+        +"\n\tPlease enter your name: ");
     }
 
     @Override

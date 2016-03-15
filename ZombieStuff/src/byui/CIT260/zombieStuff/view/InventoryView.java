@@ -8,6 +8,7 @@ package byui.CIT260.zombieStuff.view;
 import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Item;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -16,22 +17,12 @@ import java.util.ArrayList;
 public class InventoryView extends View {
 
     public InventoryView() {
-        super(//"***********************Inventory***********************"
-//+ "\n* This is being taken care of by the main menu now... *" 
-//+ "\n* I cannot find a way to impliment the                *"
-//+ "\n*         DisplayInventoryBlockMessage()              *"
-//+ "\n*                                                     *"
-      "*                                                     *"
-  + "\n* D - Drop Item                                       *"
-  + "\n* E - Equip Item                                      *"
-  + "\n* Q - Quit                                            *"
-  + "\n*******************************************************"
-  + "\n\tWhat would you like to do? ");
+        super("");
+        this.displayMessage = getInventoryBlockMessage();
     }
     
     @Override
     public boolean doAction(String menuOption) {
-        System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
 
         switch (menuOption) {
@@ -49,31 +40,50 @@ public class InventoryView extends View {
     }
 
     private void dropItem() {
-        DropItemView DropItemView = new DropItemView();
-        DropItemView.display();
+        this.displayMessage = ("Which item do you want to drop? ERROR CHECKING NOT IMPLIMENTED: ");
+        int num = Integer.valueOf(this.getInput());
+        System.out.println(num);
+        
 
+//this resets the super message, because they are in the inventoryView() function.
+        this.displayMessage = getInventoryBlockMessage();
     }
 
     private void equipItem() {
-        EquipItemView equipItemview = new EquipItemView();
-        equipItemview.display();
+        System.out.println("**Equip item called***");
     }
-    
-    private String DisplayInventoryBlockMessage() {
-//Suedo code, filling the gameCharacter's inventory
+
+    private String getInventoryBlockMessage() {
         GameCharacter.Player.addInventoryItem(Item.Hammer);
         GameCharacter.Player.addInventoryItem(Item.Toothbrush);
-
-        String inventoryDisplayBlock = "***********************Inventory***********************";
+        String inventoryDisplayBlock = 
+                "***********************Inventory***********************"
+            + "\n*                                                     *";
         ArrayList<Item> inventory = GameCharacter.Player.getInventory();
-//replace the .size() with an absolute, once we decide the inventory size
-        for (int i = 0; i < inventory.size(); i++) {
+        for (int i = 0; i < 4; i++) {
+//the default is always resert to empty
             String currentItem = "\t\t";
-            if (!"\n".equals(inventory.get(i).getItemName()))
+//while there is still something in the inventory, display it
+            if (i < inventory.size())
                 currentItem = inventory.get(i).getItemName();
-            inventoryDisplayBlock += ("\n* " + i + " - " + currentItem
+//the default \t\t is used if the statement isn't met.
+            inventoryDisplayBlock += ("\n* " + (i + 1) + " - " + currentItem
                     + String.format("%38s", " ") + "*");
         }
+//"***********************Inventory***********************"
+//+ "\n* The First portion of the code does this display     *" 
+//+ "\n* portion, factoring in the items in the inventory    *"
+//+ "\n* this is all given that there are a max of 4 items   *"
+//+ "\n* in the inventory MAX.  Equiped will be a different  *"
+//+ "\n* view, to not detract from inventory size.           *"
+        inventoryDisplayBlock += 
+    "\n*                                                     *"
+  + "\n* D - Drop Item                                       *"
+  + "\n* E - Equip Item                                      *"
+  + "\n* Q - Quit                                            *"
+  + "\n*******************************************************"
+  + "\n\tWhat would you like to do? ";
+
         return inventoryDisplayBlock;
     }
 }
