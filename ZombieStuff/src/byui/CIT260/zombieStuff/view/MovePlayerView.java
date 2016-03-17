@@ -7,18 +7,21 @@ package byui.CIT260.zombieStuff.view;
 
 import byui.CIT260.zombieStuff.control.CalcTravelTime;
 import byui.CIT260.zombieStuff.control.GameControl;
+import byui.CIT260.zombieStuff.exceptions.GameControlException;
 import byui.CIT260.zombieStuff.model.GameCharacter;
 import java.awt.Point;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MovePlayerView extends View{
     public MovePlayerView() {
         super(    "*******************Directory Listing*******************"
-+ "\n*     First Floor                 Second Floor        *"
++ "\n*      First Floor                 Second Floor       *"
 + "\n* A - Aldo                    N - Nike                *"
 + "\n* B - Bed Bath and Beyond     O - Old Navy            *"
 + "\n* C - Claire's                P - Pink                *"
-+ "\n* D - Dickies                 Q -        Quit         *"
++ "\n* D - Dickies                 Q - Quit                *"
 + "\n* E - Go to                   R - Rue 21              *"
 + "\n* F - Food Court              S - Stairs              *"
 + "\n* G - GameStop                T - Target              *"
@@ -37,93 +40,13 @@ public class MovePlayerView extends View{
     public boolean doAction(String menuOption) {
         System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
-        int timeUsed = GameControl.updateLocation(menuOption, GameCharacter.Player);
-        //if time used is negative
-        //display error messagage RETURN FALSE;
-        //
-        //
-//this might have to be in a while loop, for the sake of having two floors
-/*        switch (menuOption) {
-case "A" :
-pointB.setLocation(0,0);
-break;
-case "B":
-pointB.setLocation(0,1);
-break;
-case "C":
-pointB.setLocation(0,2);
-break;
-case "D":
-pointB.setLocation(0,0);
-break;
-case "E":
-pointB.setLocation(0,0);
-break;
-case "F":
-pointB.setLocation(0,0);
-break;
-case "G":
-pointB.setLocation(0,0);
-break;
-case "H":
-this.displayHelpMenu();
-break;
-case "I":
-pointB.setLocation(0,0);
-break;
-case "J":
-pointB.setLocation(0,0);
-break;
-case "K":
-pointB.setLocation(0,0);
-break;
-case "L":
-pointB.setLocation(0,0);
-break;
-case "M":
-pointB.setLocation(0,0);
-break;
-case "N":
-pointB.setLocation(0,0);
-break;
-case "O":
-this.displayHelpMenu();
-break;
-case "P":
-pointB.setLocation(0,0);
-break;
-case "R":
-pointB.setLocation(0,0);
-break;
-case "S":
-pointB.setLocation(0,0);
-break;
-case "T":
-pointB.setLocation(0,0);
-break;
-case "U":
-pointB.setLocation(0,0);
-break;
-case "V":
-pointB.setLocation(map.getlocation("Victoria's Secret"));
-break;
-case "W":
-pointB.setLocation(0,0);
-break;
-case "X":
-pointB.setLocation(0,0);
-break;
-case "Y":
-pointB.setLocation(0,0);
-break;
-case "Z":
-pointB.setLocation(0,0);
-break;
-default:
-System.out.println("\nERROR: Invalid selection... Try again!");
-break;
-}
-    return pointB;*/    
+            //        try(GameControl.updateLocation();
+//           catch( say why you cannot travel to that location)
+        try {
+            GameControl.updateLocation(menuOption, GameCharacter.Player);
+        } catch (GameControlException ex) {
+            Logger.getLogger(MovePlayerView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     return true;
     }
 
