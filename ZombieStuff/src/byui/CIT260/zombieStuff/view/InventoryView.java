@@ -73,9 +73,9 @@ public class InventoryView extends View {
 
             displayMessage += ("\n* " + (i + 1) + " - " + currentItem
                     + "\t"
-                    + Item.Hammer.getAttackBonus()
+                    + inventory.get(i).getAttackBonus()
                     + "\t\t"
-                    + Item.Toothbrush.getDefenceBonus()
+                    + inventory.get(i).getDefenceBonus()
                     + "             *");
                     //+ String.format("%38s", " ") + "*");
 
