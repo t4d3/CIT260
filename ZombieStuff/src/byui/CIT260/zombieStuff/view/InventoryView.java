@@ -33,7 +33,7 @@ public class InventoryView extends View {
                 this.equipItem();
                 break;
             case "S" :
-                this.viewItemStats();
+                this.viewInventoryStats();
                 break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
@@ -57,9 +57,40 @@ public class InventoryView extends View {
     }
 
     
-    private void viewItemStats() {
-        System.out.println("*** viewItemStats called ***");
+    private String viewInventoryStats() {
+                this.displayMessage = 
+                  "*****************Inventory Stats***********************"
+              + "\n*                                                     *"
+              + "\n*      Item           Attack           Defense        *"
+              + "\n*-----------------------------------------------------*";
+        ArrayList<Item> inventory = GameCharacter.Player.getInventory();
+        for (int i = 0; i < 2; i++) {
+
+            String currentItem = "\t";
+
+            if (i < inventory.size())
+                currentItem = inventory.get(i).getItemName();
+
+            displayMessage += ("\n* " + (i + 1) + " - " + currentItem
+                    + "\t"
+                    + Item.Hammer.getAttackBonus()
+                    + "\t\t"
+                    + Item.Toothbrush.getDefenceBonus()
+                    + "             *");
+                    //+ String.format("%38s", " ") + "*");
+
+        }
+
+        displayMessage+=
+              "\n*-----------------------------------------------------*"
+            + "\n* D - Drop Item        S - View Inventory Stats       *"
+            + "\n* E - Equip Item                                      *"
+            + "\n* Q - Quit                                            *"
+            + "\n*******************************************************"
+            + "\n\tWhat would you like to do? ";        
+        return displayMessage;
     }
+    
     private String getInventoryBlockMessage() {
         GameCharacter.Player.addInventoryItem(Item.Hammer);
         GameCharacter.Player.addInventoryItem(Item.Toothbrush);
@@ -86,7 +117,7 @@ public class InventoryView extends View {
 //+ "\n* view, to not detract from inventory size.           *"
         inventoryDisplayBlock += 
     "\n*                                                     *"
-  + "\n* D - Drop Item        S - View Item Stats            *"
+  + "\n* D - Drop Item        S - View Inventory Stats       *"
   + "\n* E - Equip Item                                      *"
   + "\n* Q - Quit                                            *"
   + "\n*******************************************************"
