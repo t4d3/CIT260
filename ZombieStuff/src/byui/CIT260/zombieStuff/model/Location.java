@@ -17,6 +17,7 @@ public class Location implements Serializable {
     //variables
     private int row;
     private int column;
+    private int floor;
     private boolean visited;
     private String description;
     private String name;
