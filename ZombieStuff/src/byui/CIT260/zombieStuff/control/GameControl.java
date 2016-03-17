@@ -5,6 +5,7 @@
  */
 package byui.CIT260.zombieStuff.control;
 
+import byui.CIT260.zombieStuff.exceptions.GameControlException;
 import byui.CIT260.zombieStuff.model.Game;
 import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Item;
@@ -45,100 +46,23 @@ public class GameControl {
         MapControl.moveCharacterToStartingLocation(map);
     }
 
-    public static int updateLocation(String locationOption, GameCharacter character) {
+//    public static updateLocation() {
+//        call calcTravelTime
+//            if there is no error, the update the location
+    public static void updateLocation(String locationOption, GameCharacter character) throws GameControlException {
         System.out.println("***UpdateLocation() Called***");
         Point pointB = new Point(0,0);
+        Point desiredLocation = new Point();
+        Point currentLocation = new Point();
         //get the locatin of the store
         //calculate the travel time to that store;
         //if the travel time is negative, RETURN Error Code
         //Update character's location
-        //update total time
+        //update total time  try movePlayerView > updateLocation > calcTravelTime throw
         //return total time
-
-        return 0;
-        /*        switch (locationOption) {
-        case "A":
-        pointB.setLocation(0, 0);
-        break;
-        case "B":
-        pointB.setLocation(0, 1);
-        break;
-        case "C":
-        pointB.setLocation(0, 2);
-        break;
-        case "D":
-        pointB.setLocation(0, 0);
-        break;
-        case "E":
-        pointB.setLocation(0, 0);
-        break;
-        case "F":
-        pointB.setLocation(0, 0);
-        break;
-        case "G":
-        pointB.setLocation(0, 0);
-        break;
-        case "H":
-        this.displayHelpMenu();
-        break;
-        case "I":
-        pointB.setLocation(0, 0);
-        break;
-        case "J":
-        pointB.setLocation(0, 0);
-        break;
-        case "K":
-        pointB.setLocation(0, 0);
-        break;
-        case "L":
-        pointB.setLocation(0, 0);
-        break;
-        case "M":
-        pointB.setLocation(0, 0);
-        break;
-        case "N":
-        pointB.setLocation(0, 0);
-        break;
-        case "O":
-        this.displayHelpMenu();
-        break;
-        case "P":
-        pointB.setLocation(0, 0);
-        break;
-        case "Q":
-        break;
-        case "R":
-        pointB.setLocation(0, 0);
-        break;
-        case "S":
-        pointB.setLocation(0, 0);
-        break;
-        case "T":
-        pointB.setLocation(0, 0);
-        break;
-        case "U":
-        pointB.setLocation(0, 0);
-        break;
-        case "V":
-        pointB.setLocation(0, 0);
-        break;
-        case "W":
-        pointB.setLocation(0, 0);
-        break;
-        case "X":
-        pointB.setLocation(0, 0);
-        break;
-        case "Y":
-        pointB.setLocation(0, 0);
-        break;
-        case "Z":
-        pointB.setLocation(0, 0);
-        break;
-        default:
-        System.out.println("\nERROR: Invalid selection... Try again!");
-        break;
-        }
-        return pointB;*/
+        throw new GameControlException("Cannot Update Location"
+                + desiredLocation + ", because it's dumb. "
+                + "CurrentLocation is " + currentLocation);
     }
 
     private static Item[] createInventory() {

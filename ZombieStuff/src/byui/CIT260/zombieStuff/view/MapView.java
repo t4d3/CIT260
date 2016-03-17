@@ -68,7 +68,8 @@ public class MapView extends View{
     }
 
     private void displayHelpMenu() {
-                System.out.println("\n***displayHelpMenu()***");
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
     }
 
 

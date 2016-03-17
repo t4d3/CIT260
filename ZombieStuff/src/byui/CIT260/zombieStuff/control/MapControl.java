@@ -5,9 +5,12 @@
  */
 package byui.CIT260.zombieStuff.control;
 
+import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Location;
 import byui.CIT260.zombieStuff.model.Map;
 import byui.CIT260.zombieStuff.model.Scene;
+import java.awt.Point;
+import zombiestuff.ZombieStuff;
 
 /**
  *
@@ -23,6 +26,17 @@ public class MapControl {
 
     static void moveCharacterToStartingLocation(Map map) {
         System.out.println("** moveCharacterToStartingLocation() called ***");
+    }
+    
+    public static int moveCharacterToLocation(GameCharacter character, Point coordinates) {
+        Map map = ZombieStuff.getCurrentGame().getMap();
+        int newRow = coordinates.x-1;
+        int newColumn = coordinates.y-1;
+        
+        if (newRow < 0 || newRow >= map.getNoOfRows() ||
+            newColumn < 0 || newColumn >= map.getNoOfColumns())
+            return -1;
+        return 0;
     }
 
     private static void assignScenesToLocations(Map map, Scene scene) {
