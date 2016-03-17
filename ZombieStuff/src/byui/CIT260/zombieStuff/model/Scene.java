@@ -13,18 +13,38 @@ import java.io.Serializable;
  */
 public enum Scene implements Serializable {
         
-    Zumies("A great place...for teeangers."),
-    OldNavy(""),
-    Zales("Too fancy for your bood."),
-    Nike(""),
-    VictoriasSecret(""),
-    Stairs(""),
-    Claires(""),
-    Target("");
+    Aldo("Aldo", ""),
+    BedBathAndBeyond("Bed Bath and Beyond", ""),
+    Claires("Claire's", ""),
+    Dickies("Dickies", ""),
+// E - E("", ""),
+    FoodCourt("Food Court", ""),
+    GameStop("GameStop", ""),
+    Hall("Hallway", ""),
+    InkShop("Ink Shop", ""),
+    JCPenney("JCPenny", ""),
+    Kay("Kay Jewelers", ""),
+    Lids("Lids", ""),
+    Maurices("Maurices", ""),
+    Nike("Nike", ""),
+    OldNavy("Old Navy", ""),
+    Pink("Pink", ""),
+// Q - Quit
+    Rue("Rue 21", ""),
+    Stairs("Stairs", ""), //the big stores can be cover 2 locations, with two floors
+    Target("Target", ""),
+    Uber("Uber", ""),
+    VictoriasSecret("Victoria's Secret", ""),
+    Wag("Wag", ""),
+    Xuppa("Xuppa", ""),
+    YMCA("YMCA", ""),
+    Zumies("Zumies", "A great place...for teeangers.");
 
-    private final String itemDescription;
-    
-    Scene(String itemDescription) {
-        this.itemDescription = itemDescription;
+    private final String description;
+    private final String name;
+
+    Scene(String name, String description) {
+        this.description = description;
+        this.name = name;
     }
 }
