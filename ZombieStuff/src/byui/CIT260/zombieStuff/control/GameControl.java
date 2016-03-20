@@ -49,7 +49,13 @@ public class GameControl {
 //    public static updateLocation() {
 //        call calcTravelTime
 //            if there is no error, the update the location
-    public static void updateLocation(String locationOption, GameCharacter character) throws GameControlException {
+    public static void updateGameTime(int desiredTravelTime) {
+        System.out.println("***updateGameTime() Called***");
+        ZombieStuff.getCurrentGame().setTotalTime(ZombieStuff.getCurrentGame().getTotalTime() + desiredTravelTime);
+    }
+
+    public static void updateLocation(String locationOption, GameCharacter character)
+            throws GameControlException {
         System.out.println("***UpdateLocation() Called***");
         Point pointB = new Point(0,0);
         Point desiredLocation = new Point();
@@ -58,9 +64,10 @@ public class GameControl {
         //calculate the travel time to that store;
         //if the travel time is negative, RETURN Error Code
         //Update character's location
-        //update total time  try movePlayerView > updateLocation > calcTravelTime throw
+        //update total time  try movePlayerView > updateLocation > calcTravelTime > updateGameTime throw
         //return total time
-        throw new GameControlException("Cannot Update Location"
+        if (false)
+            throw new GameControlException("Cannot Update Location"
                 + desiredLocation + ", because it's dumb. "
                 + "CurrentLocation is " + currentLocation);
     }

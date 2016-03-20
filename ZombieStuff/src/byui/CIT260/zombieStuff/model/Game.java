@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author Justin Cox
  */
 public class Game implements Serializable {
-    private double totalTime;
+    private int totalTime;
     private double currentScore;
     private Item[] inventory;
     private Player player;
@@ -24,11 +24,11 @@ public class Game implements Serializable {
 
     
     
-    public double getTimeStarted() {
+    public int getTimeStarted() {
         return totalTime;
     }
 
-    public void setTimeStarted(double totalTime) {
+    public void setTimeStarted(int totalTime) {
         this.totalTime = totalTime;
     }
 
@@ -76,11 +76,11 @@ public class Game implements Serializable {
         return true;
     }
 
-    public double getTotalTime() {
+    public int getTotalTime() {
         return totalTime;
     }
 
-    public void setTotalTime(double totalTime) {
+    public void setTotalTime(int totalTime) {
         this.totalTime = totalTime;
     }
 

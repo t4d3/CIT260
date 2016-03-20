@@ -18,27 +18,22 @@ public class CalcTravelTime {
     }
 //    public calcTravelTime() {
 //       if there is an error, this will go back to the movePlayerView()
-    public int calcTravelTime(Point ALocation, Point BLocation, int timeUsed, int maxTime) throws GameControlException {
+    public void calcTravelTime(Point ALocation, Point BLocation, int timeUsed, int maxTime) throws GameControlException {
+        System.out.println("***CalcTravelTime() Called***");
         boolean pass = true;
-        if (timeUsed >= maxTime ) {
+        if (timeUsed >= maxTime || timeUsed < 0)
             pass = false;
-            //ERROR: You are out of time!
-        }
-        else if (timeUsed < 0) {
-            pass = false;
-            //ERROR: you cannot be negative time!
-        }
-        if (pass)
-            throw new GameControlException("Cannot Update Time: "
-                + timeUsed + " is greater than "
-                + maxTime + " after the calculation is made.");
 
         double distSqr = (Math.pow((ALocation.getX() - BLocation.getX()), 2)
                          + Math.pow((ALocation.getY() - BLocation.getY()), 2));
         int timeToTravel = (int) Math.sqrt(distSqr); //This is the total Distance (travel time)
-        if ((timeToTravel + timeUsed) > maxTime) {
-            return -3;
-        }
-        return timeToTravel;
-   }
+        if ((timeToTravel + timeUsed) > maxTime)
+            pass = false;
+        if (pass)
+            throw new GameControlException("Cannot Update Time: "
+                + timeUsed + " is greater than "
+                + maxTime + " after the calculation is made.");
+        GameControl.updateGameTime(timeToTravel);
+
+    }
 }
