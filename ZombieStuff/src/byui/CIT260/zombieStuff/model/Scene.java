@@ -14,7 +14,7 @@ import java.io.Serializable;
 public enum Scene implements Serializable {
         
     Aldo("Aldo", ""),
-    BedBathAndBeyond("Bed Bath and Beyond", ""),
+    BestBuy("Best Buy", ""),
     Claires("Claire's", ""),
     Dickies("Dickies", ""),
 // E - E("", ""),
