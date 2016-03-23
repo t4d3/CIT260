@@ -61,11 +61,13 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("\n*** startExistingGame() called ***");
+        ExistingGameView existingGameView = new ExistingGameView();
+        existingGameView.display();
     }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame() called ***");
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.display();
     }
 
     private void displayHelpMenu() {
