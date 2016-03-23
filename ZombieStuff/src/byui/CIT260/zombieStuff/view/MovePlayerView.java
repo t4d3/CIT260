@@ -5,21 +5,18 @@
  */
 package byui.CIT260.zombieStuff.view;
 
-import byui.CIT260.zombieStuff.control.CalcTravelTime;
 import byui.CIT260.zombieStuff.control.GameControl;
 import byui.CIT260.zombieStuff.exceptions.GameControlException;
-import byui.CIT260.zombieStuff.model.GameCharacter;
 import java.awt.Point;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MovePlayerView extends View{
     public MovePlayerView() {
-        super(    "*******************Directory Listing*******************"
+        super("*******************Directory Listing*******************"
 + "\n*      First Floor                 Second Floor       *"
 + "\n* A - Aldo                    N - Nike                *"
-+ "\n* B - Bed Bath and Beyond     O - Old Navy            *"
++ "\n* B - Best Buy                O - Old Navy            *"
 + "\n* C - Claire's                P - Pink                *"
 + "\n* D - Dickies                 Q - Quit                *"
 + "\n* E - Go to                   R - Rue 21              *"
@@ -27,10 +24,10 @@ public class MovePlayerView extends View{
 + "\n* G - GameStop                T - Target              *"
 + "\n* H - Hallway                 U - Uber                *"
 + "\n* I - Ink Shop                V - Victoria's Secret   *"
-+ "\n* J - JCPenney                W - Wag                 *"
-+ "\n* K - Kay Jewelers            X - Xuppa               *"
-+ "\n* L - Lids                    Y - YMCA                *"
-+ "\n* M - Maurices                Z - Zumies              *"
++ "\n* J - JCPenney                W - Unused              *"
++ "\n* K - Kay Jewelers            X - Unused              *"
++ "\n* L - Lids                    Y - Unused              *"
++ "\n* M - Maurices                Z - Unused              *"
 + "\n*******************************************************"
 + "\n\tWhere would you like to go? "
 );
@@ -38,12 +35,87 @@ public class MovePlayerView extends View{
 
     @Override
     public boolean doAction(String menuOption) {
-        System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
-            //        try(GameControl.updateLocation();
-//           catch( say why you cannot travel to that location)
+        Point desiredLocation = new Point(0,0);
+        switch (menuOption) {
+            case "A":
+                desiredLocation.setLocation(1, 1);
+                break;
+            case "B":
+                desiredLocation.setLocation(0, 0);//first floor
+                break;
+            case "C":
+                desiredLocation.setLocation(6, 0);//first floor
+                break;
+            case "D":
+                desiredLocation.setLocation(1, 2);//first floor
+                break;
+            case "F":
+                desiredLocation.setLocation(2, 2);//second floor
+                break;
+            case "G":
+                desiredLocation.setLocation(3, 1);//first floor
+                break;
+            case "H":
+                desiredLocation.setLocation(2, 0);//this will be more challenging
+                break;
+            case "I":
+                desiredLocation.setLocation(3, 2);//first floor
+                break;
+            case "J":
+                desiredLocation.setLocation(4, 1);//first floor
+                break;
+            case "K":
+                desiredLocation.setLocation(6, 0);//second floor
+                break;
+            case "L":
+                desiredLocation.setLocation(5, 1);//first floor
+                break;
+            case "M":
+                desiredLocation.setLocation(1, 1);//Second floor
+                break;
+            case "N":
+                desiredLocation.setLocation(1, 2);//Second floor
+                break;
+            case "O":
+                desiredLocation.setLocation(0, 0);//second floor
+                break;
+            case "P":
+                desiredLocation.setLocation(3, 1);//Second floor
+                break;
+            case "R":
+                desiredLocation.setLocation(3, 2);//Second floor
+                break;
+            case "S":
+                desiredLocation.setLocation(4, 1);//first and second floor
+                break;
+            case "T":
+                desiredLocation.setLocation(4, 1);//Second floor
+                break;
+            case "U":
+                desiredLocation.setLocation(5, 1);//Second floor
+                break;
+            case "V":
+                desiredLocation.setLocation(2, 2);
+                break;
+                /*case "W":
+                desiredLocation.setLocation(0, 0);
+                break;
+                case "X":
+                desiredLocation.setLocation(0, 0);
+                break;
+                case "Y":
+                desiredLocation.setLocation(0, 0);
+                break;
+                case "Z":
+                desiredLocation.setLocation(0, 0);
+            break;*/
+            default:
+                System.out.println("\nERROR: Invalid selection... Try again!");
+                break;
+        }
         try {
-            GameControl.updateLocation(menuOption, GameCharacter.Player);
+            GameControl.updateLocation(desiredLocation);
         } catch (GameControlException ex) {
             Logger.getLogger(MovePlayerView.class.getName()).log(Level.SEVERE, null, ex);
         }
