@@ -6,6 +6,9 @@
 package byui.CIT260.zombieStuff.view;
 
 import byui.CIT260.zombieStuff.control.GameControl;
+import byui.CIT260.zombieStuff.exceptions.MapControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import zombiestuff.ZombieStuff;
 
 public class MainMenuView extends View {
@@ -52,7 +55,11 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
-        GameControl.createNewGame(ZombieStuff.getPlayer());
+        try {
+            GameControl.createNewGame(ZombieStuff.getPlayer());
+        } catch (MapControlException ex) {
+            Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
         GameMenuView gameMenuView = new GameMenuView();
 //This part should start into the game...Unlike most code, it is very important.
         gameMenuView.display();
