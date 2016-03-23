@@ -6,9 +6,7 @@
 package byui.CIT260.zombieStuff.view;
 
 import byui.CIT260.zombieStuff.control.GameControl;
-import java.util.Scanner;
 import zombiestuff.ZombieStuff;
-import byui.CIT260.zombieStuff.view.HelpMenuView;
 
 public class MainMenuView extends View {
     public MainMenuView() {
