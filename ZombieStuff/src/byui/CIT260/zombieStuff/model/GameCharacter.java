@@ -39,7 +39,7 @@ public enum GameCharacter implements Serializable {
         this.defence = defence;
     }
 
-    
+
     
     public String getDescription() {
         return description;
@@ -60,6 +60,8 @@ public enum GameCharacter implements Serializable {
     public String setCurrentLocation() {
         return description;
     }
-    
-    
+       
+    public Point getCurrentLocation() {
+        return currentLocation;
+    }
 }
