@@ -6,26 +6,25 @@
 package byui.CIT260.zombieStuff.view;
 
 import byui.CIT260.zombieStuff.control.GameControl;
-import byui.CIT260.zombieStuff.exceptions.MapControlException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import byui.CIT260.zombieStuff.exceptions.GameControlException;
 import zombiestuff.ZombieStuff;
 
 public class MainMenuView extends View {
+
     public MainMenuView() {
-        super(    "***********************Main Menu***********************"
-+ "\n*                                                     *"
-+ "\n*                                                     *"
-+ "\n* N - New game                                        *"
-+ "\n* R - Retrieve and resume old game                    *"
-+ "\n* H - Display a Help menu                             *"
-+ "\n* S - Save game                                       *"
-+ "\n* Q - Quit                                            *"
-+ "\n*                                                     *"
-+ "\n*                                                     *"
-+ "\n*******************************************************"
-+ "\n\tWhat would you like to do? "
-);
+        super("***********************Main Menu***********************"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n* N - New game                                        *"
+                + "\n* R - Retrieve and resume old game                    *"
+                + "\n* H - Display a Help menu                             *"
+                + "\n* S - Save game                                       *"
+                + "\n* Q - Quit                                            *"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n*******************************************************"
+                + "\n\tWhat would you like to do? "
+        );
     }
 
     @Override
@@ -34,22 +33,22 @@ public class MainMenuView extends View {
         menuOption = menuOption.toUpperCase();
 
         switch (menuOption) {
-            case "N" :
-                    this.startNewGame();
-                    break;
+            case "N":
+                this.startNewGame();
+                break;
             case "R":
-                    this.startExistingGame();
-                    break;
+                this.startExistingGame();
+                break;
             case "H":
-                    this.displayHelpMenu();
-                    break;
+                this.displayHelpMenu();
+                break;
             case "S":
-                    this.saveGame();
-                    break;
+                this.saveGame();
+                break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
-            
+
         }
         return false;
     }
@@ -57,12 +56,14 @@ public class MainMenuView extends View {
     private void startNewGame() {
         try {
             GameControl.createNewGame(ZombieStuff.getPlayer());
-        } catch (MapControlException ex) {
-            Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        GameMenuView gameMenuView = new GameMenuView();
+        } catch (GameControlException e) {
+            ErrorView.display(this.getClass().getName(),
+                    "ERROR: " + e.getMessage());
+
+            GameMenuView gameMenuView = new GameMenuView();
 //This part should start into the game...Unlike most code, it is very important.
-        gameMenuView.display();
+            gameMenuView.display();
+        }
     }
 
     private void startExistingGame() {

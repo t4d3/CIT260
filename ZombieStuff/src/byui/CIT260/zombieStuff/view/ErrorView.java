@@ -17,9 +17,7 @@ public class ErrorView {
     private static final PrintWriter logFile = ZombieStuff.getLogFile();
 
     public static void display(String className, String errorMessage) {
-        errorFile.println("*********************************************"
-                +"\n* ERROR MESSAGE: " + errorMessage
-                +"\n*********************************************");
+        errorFile.println("ERROR MESSAGE: " + errorMessage);
         logFile.println(className + " - " + errorMessage);
     }
 }

@@ -32,7 +32,7 @@ public abstract class View implements ViewInterface {
         boolean done = false;
         do {
 // the concole is not writing....
-                this.console.print("\n" + this.displayMessage);
+                System.out.print("\n" + this.displayMessage);
             String value = this.getInput();
             if (value.toUpperCase().equals("Q")) {
                 return;
