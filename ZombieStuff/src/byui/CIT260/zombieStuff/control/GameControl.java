@@ -12,6 +12,8 @@ import byui.CIT260.zombieStuff.model.Item;
 import byui.CIT260.zombieStuff.model.Map;
 import byui.CIT260.zombieStuff.model.Player;
 import java.awt.Point;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import zombiestuff.ZombieStuff;
 
 /**
@@ -74,5 +76,16 @@ public class GameControl {
         System.out.println("** createInventory() called ***");
         Item[] item = {};
         return item;
+    }
+    
+    public static void saveGame(String filePath) throws GameControlException {
+                try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+
+            output.writeObject(ZombieStuff.getCurrentGame());
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+
     }
 }

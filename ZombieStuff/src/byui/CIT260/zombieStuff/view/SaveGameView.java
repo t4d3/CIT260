@@ -5,6 +5,7 @@
  */
 package byui.CIT260.zombieStuff.view;
 
+import byui.CIT260.zombieStuff.control.GameControl;
 import byui.CIT260.zombieStuff.exceptions.GameControlException;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
@@ -39,12 +40,10 @@ public class SaveGameView extends View {
             return false;
         }
         System.out.println("starting the try statment...");
-        try (FileOutputStream fops = new FileOutputStream(filePath)) {
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-
-            output.writeObject(ZombieStuff.getCurrentGame());
-        } catch (Exception e) {
-            throw new GameControlException(e.getMessage());
+        try {
+            GameControl.saveGame(filePath);
+        } catch (GameControlException e) {
+            ErrorView.display("GameControl", e.getMessage());
         }
         return true;
     }
