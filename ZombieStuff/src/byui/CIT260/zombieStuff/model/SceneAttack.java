@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author T4d3-T550
  */
 public class SceneAttack {
+
     private String Description;
 
     public String getDescription() {
@@ -21,7 +22,7 @@ public class SceneAttack {
     public void setDescription(String Description) {
         this.Description = Description;
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 3;

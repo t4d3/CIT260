@@ -5,36 +5,47 @@
  */
 package byui.CIT260.zombieStuff.view;
 
+import byui.CIT260.zombieStuff.exceptions.GameControlException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import zombiestuff.ZombieStuff;
+
 /**
  *
  * @author T4d3-T550
  */
-public class SaveGameView extends View{
+public class SaveGameView extends View {
+
     public SaveGameView() {
         super("*******************************************************"
-+ "\n*                                                     *"
-+ "\n* Okay, here we go now...                             *"
-+ "\n*   You must enter the full file path of where you    *"
-+ "\n* want to save the game.                              *"
-+ "\n*        Examples:                                    *"
-+ "\n* C:/Users/your_User_Name/Desktop/myGame              *"
-+ "\n* C:/Windows/System32/config.dat                      *"
-+ "\n* C:/Users/Public/Documents/ZombieGame.iso            *"
-+ "\n* F:/ServerFiles/ImportantDocs/DO_NOT_TOUCH.nsfw      *"
-+ "\n*                                                     *"
-+ "\n*******************************************************"
-        +"\nPlease enter the FULL file path: ");
+                + "\n*                                                     *"
+                + "\n* Okay, here we go now...                             *"
+                + "\n*   You must enter the full file path of where you    *"
+                + "\n* want to save the game.                              *"
+                + "\n*        Examples:                                    *"
+                + "\n* C:\\Users\\your_User_Name\\Desktop\\myGame              *"
+                + "\n* C:\\Windows\\System32\\config.dat                      *"
+                + "\n* C:\\Users\\Public\\Documents\\ZombieGame.iso            *"
+                + "\n* F:\\ServerFiles\\ImportantDocs\\DO_NOT_TOUCH.nsfw      *"
+                + "\n*                                                     *"
+                + "\n*******************************************************"
+                + "\nPlease enter the FULL file path: ");
     }
 
     @Override
     public boolean doAction(String filePath) {
         if (filePath.length() < 3) {
-            System.out.println("Invalid entry...must be a litte longer.");
+            ErrorView.display(this.getClass().getName(),"Invalid entry...must be a litte longer.");
             return false;
         }
-        System.out.println("It got this far!");
-//this is where the try file stuff goes
+        System.out.println("starting the try statment...");
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
 
+            output.writeObject(ZombieStuff.getCurrentGame());
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
         return true;
     }
 }
