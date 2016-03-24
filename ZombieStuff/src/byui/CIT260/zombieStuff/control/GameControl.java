@@ -8,7 +8,6 @@ package byui.CIT260.zombieStuff.control;
 import byui.CIT260.zombieStuff.exceptions.GameControlException;
 import byui.CIT260.zombieStuff.exceptions.MapControlException;
 import byui.CIT260.zombieStuff.model.Game;
-import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Item;
 import byui.CIT260.zombieStuff.model.Map;
 import byui.CIT260.zombieStuff.model.Player;
