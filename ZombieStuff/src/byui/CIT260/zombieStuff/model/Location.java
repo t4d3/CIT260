@@ -13,7 +13,7 @@ import java.util.Objects;
  * @author Justin Cox
  */
 public class Location implements Serializable {
-    
+
     //variables
     private int row;
     private int column;
@@ -25,7 +25,7 @@ public class Location implements Serializable {
 
     public Location() {
     }
-    
+
     public int getRow() {
         return row;
     }
@@ -85,7 +85,6 @@ public class Location implements Serializable {
         return hash;
     }
 
-    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -113,6 +112,4 @@ public class Location implements Serializable {
         return Objects.equals(this.name, other.name);
     }
 
-    
-    
 }

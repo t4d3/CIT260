@@ -12,6 +12,7 @@ import java.io.Serializable;
  * @author Justin Cox
  */
 public class Game implements Serializable {
+
     private int totalTime;
     private double currentScore;
     private Item[] inventory;
@@ -22,8 +23,6 @@ public class Game implements Serializable {
     public Game() {
     }
 
-    
-    
     public int getTimeStarted() {
         return totalTime;
     }
@@ -53,8 +52,6 @@ public class Game implements Serializable {
         return "Game{" + "totalTime=" + totalTime + ", currentScore=" + currentScore + '}';
     }
 
-    
-    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -70,10 +67,7 @@ public class Game implements Serializable {
         if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.currentScore) != Double.doubleToLongBits(other.currentScore)) {
-            return false;
-        }
-        return true;
+        return Double.doubleToLongBits(this.currentScore) == Double.doubleToLongBits(other.currentScore);
     }
 
     public int getTotalTime() {
@@ -116,5 +110,4 @@ public class Game implements Serializable {
         this.map = map;
     }
 
-    
 }

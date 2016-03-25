@@ -13,14 +13,13 @@ import java.util.Objects;
  * @author Justin Cox
  */
 public class Player implements Serializable {
+
     private String description;
     private String name;
 
     public Player() {
     }
 
-    
-    
     public String getDescription() {
         return description;
     }
@@ -50,8 +49,6 @@ public class Player implements Serializable {
         return "Player{" + "description=" + description + ", name=" + name + '}';
     }
 
-    
-    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -67,12 +64,7 @@ public class Player implements Serializable {
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.name, other.name);
     }
-    
-    
-    
+
 }

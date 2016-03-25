@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author T4d3-T550
  */
 public class SceneShop {
+
     private String Description;
 
     public String getDescription() {

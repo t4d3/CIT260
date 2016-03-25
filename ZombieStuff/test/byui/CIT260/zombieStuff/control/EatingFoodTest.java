@@ -32,7 +32,6 @@ public class EatingFoodTest {
      */
     @Test
     public void testEatFood() {
-        System.out.println("eatFood");
         int healthCurrent = 10;
         int numCornDogs = 1;
         float money = 2.04F;

@@ -5,8 +5,6 @@
  */
 package byui.CIT260.zombieStuff.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author T4d3-T550
@@ -35,7 +33,6 @@ public class MapView extends View{
 
     @Override
     public boolean doAction(String menuOption) {
-        System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
 
         switch (menuOption) {
@@ -64,7 +61,6 @@ public class MapView extends View{
     }
 
     private void visitedPlaceView() {
-                System.out.println("\n***PreviousePlacesView()***");
     }
 
     private void displayHelpMenu() {

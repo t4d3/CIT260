@@ -8,7 +8,6 @@ package byui.CIT260.zombieStuff.view;
 import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Item;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
@@ -53,7 +52,6 @@ public class InventoryView extends View {
     }
 
     private void equipItem() {
-        System.out.println("**Equip item called***");
     }
 
     

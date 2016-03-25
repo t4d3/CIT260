@@ -5,51 +5,47 @@
  */
 package byui.CIT260.zombieStuff.view;
 
-import byui.CIT260.zombieStuff.model.GameCharacter;
-import byui.CIT260.zombieStuff.model.Item;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 /**
  *
  * @author T4d3-T550
  */
-public class GameMenuView extends View{
+public class GameMenuView extends View {
+
     public GameMenuView() {
-            super("***********************Game menu***********************"
-+ "\n*                                                     *"
-+ "\n*                                                     *"
-+ "\n* G - Go to a store                                   *"
-+ "\n* M - Display the Map                                 *"
-+ "\n* F - Fight a Zombie                                  *"
-+ "\n* I - Look at your Inventory                          *"
-+ "\n* Q - Quit                                            *"
-+ "\n*                                                     *"
-+ "\n*                                                     *"
-+ "\n*******************************************************"
-+ "\n\tWhat would you like to do? ");
+        super("***********************Game menu***********************"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n* M - Manifestation of the Map                        *"
+                + "\n* F - Fight a Zombie                                  *"
+                + "\n* I - Inspect your Inventory                          *"
+                + "\n* T - Tell the remaining Time                         *"
+                + "\n* Q - Quit                                            *"
+                + "\n*                                                     *"
+                + "\n*******************************************************"
+                + "\n\tWhat would you like to do? ");
     }
 
     @
-        Override
+            Override
     public boolean doAction(String menuOption) {
         menuOption = menuOption.toUpperCase();
 
         switch (menuOption) {
-            case "M" :
-                    this.MapView();
-                    break;
+            case "M":
+                this.MapView();
+                break;
             case "U":
-                    this.movePlayer();
-                    break;
+                this.movePlayer();
+                break;
             case "F":
-                    this.FightZombieView();
-                    break;
+                this.FightZombieView();
+                break;
             case "I":
-                    this.InventoryView();
-                    break;
+                this.InventoryView();
+                break;
             case "B":
-                    this.FightZombieView();
+                this.FightZombieView();
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
@@ -63,9 +59,8 @@ public class GameMenuView extends View{
     }
 
     private void movePlayer() {
-        System.out.println("*** movePlayer() ***");
     }
-    
+
     private void FoodMenuView() {
         FoodMenuView foodMenuView = new FoodMenuView();
         foodMenuView.display();

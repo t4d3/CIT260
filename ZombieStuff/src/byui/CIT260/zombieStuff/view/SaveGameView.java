@@ -7,9 +7,6 @@ package byui.CIT260.zombieStuff.view;
 
 import byui.CIT260.zombieStuff.control.GameControl;
 import byui.CIT260.zombieStuff.exceptions.GameControlException;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import zombiestuff.ZombieStuff;
 
 /**
  *
@@ -26,7 +23,6 @@ public class SaveGameView extends View {
                 + "\n*        Examples:                                    *"
                 + "\n* C:\\Users\\your_User_Name\\Desktop\\myGame              *"
                 + "\n* C:\\Windows\\System32\\config.dat                      *"
-                + "\n* C:\\Users\\Public\\Documents\\ZombieGame.iso            *"
                 + "\n* F:\\ServerFiles\\ImportantDocs\\DO_NOT_TOUCH.nsfw      *"
                 + "\n*                                                     *"
                 + "\n*******************************************************"
@@ -39,7 +35,6 @@ public class SaveGameView extends View {
             ErrorView.display(this.getClass().getName(),"Invalid entry...must be a litte longer.");
             return false;
         }
-        System.out.println("starting the try statment...");
         try {
             GameControl.saveGame(filePath);
         } catch (GameControlException e) {

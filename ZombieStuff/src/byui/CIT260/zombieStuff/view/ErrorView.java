@@ -13,6 +13,7 @@ import zombiestuff.ZombieStuff;
  * @author T4d3-T550
  */
 public class ErrorView {
+
     private static final PrintWriter errorFile = ZombieStuff.getOutFile();
     private static final PrintWriter logFile = ZombieStuff.getLogFile();
 

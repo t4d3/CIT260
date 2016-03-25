@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author T4d3-T550
  */
 public class SceneHallway {
+
     private String Description;
 
     public String getDescription() {
@@ -48,5 +49,5 @@ public class SceneHallway {
     public String toString() {
         return "SceneHallway{" + "Description=" + Description + '}';
     }
-    
+
 }

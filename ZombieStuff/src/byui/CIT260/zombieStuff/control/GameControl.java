@@ -11,7 +11,9 @@ import byui.CIT260.zombieStuff.model.Item;
 import byui.CIT260.zombieStuff.model.Map;
 import byui.CIT260.zombieStuff.model.Player;
 import java.awt.Point;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import zombiestuff.ZombieStuff;
 
@@ -22,7 +24,6 @@ import zombiestuff.ZombieStuff;
 public class GameControl {
 
     public static Player createPlayer(String playerName) {
-        System.out.println("\n*** Create player funciton called***");
         if (playerName == null) {
             return null;
         }
@@ -56,13 +57,11 @@ public class GameControl {
     //            if there is no error, the update the location
 
     public static void updateGameTime(int desiredTravelTime) {
-        System.out.println("***updateGameTime() Called***");
         ZombieStuff.getCurrentGame().setTotalTime(ZombieStuff.getCurrentGame().getTotalTime() + desiredTravelTime);
     }
 
     public static void updateLocation(Point desiredLocation)
             throws GameControlException {
-        System.out.println("***UpdateLocation() Called***");
 
         //calculate the travel time to that store;
         //if the travel time is negative, RETURN Error Code
@@ -77,7 +76,6 @@ public class GameControl {
     }
 
     private static Item[] createInventory() {
-        System.out.println("** createInventory() called ***");
         Item[] item = {};
         return item;
     }
@@ -90,5 +88,21 @@ public class GameControl {
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
+    }
+
+    public static void retrieveGame(String filePath) throws GameControlException {
+        Game game = null;
+
+        try (FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+
+            game = (Game) input.readObject();
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+
+        }
+
+        ZombieStuff.setCurrentGame(game);
+
     }
 }

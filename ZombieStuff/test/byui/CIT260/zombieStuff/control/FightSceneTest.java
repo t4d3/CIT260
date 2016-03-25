@@ -32,7 +32,6 @@ public class FightSceneTest {
      */
     @Test
     public void testFightAZombie() {
-        System.out.println("Test 3");
         int currentHealth = 7;
         int armorBonus = 0;
         int weaponBonus = 0;

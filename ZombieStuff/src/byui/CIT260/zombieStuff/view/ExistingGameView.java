@@ -5,25 +5,27 @@
  */
 package byui.CIT260.zombieStuff.view;
 
+import byui.CIT260.zombieStuff.control.GameControl;
+
 /**
  *
  * @author T4d3-T550
  */
 class ExistingGameView extends View {
+
     ExistingGameView() {
         super("*******************************************************"
-+ "\n*                                                     *"
-+ "\n* Alreighty, let's do this...                         *"
-+ "\n*   You must enter the full file path of where the    *"
-+ "\n* existing game is saved.                             *"
-+ "\n*        Examples:                                    *"
-+ "\n* C:\\Users\\your_User_Name\\Desktop\\myGame              *"
-+ "\n* C:\\Windows\\System32\\config.dat                      *"
-+ "\n* C:\\Users\\Public\\Documents\\ZombieGame.iso            *"
-+ "\n* F:\\ServerFiles\\ImportantDocs\\DO_NOT_TOUCH.nsfw      *"
-+ "\n*                                                     *"
-+ "\n*******************************************************"
-        +"\nPlease enter the FULL file path: ");
+                + "\n*                                                     *"
+                + "\n* Alrighty, let's do this...                         *"
+                + "\n*   You must enter the full file path of where the    *"
+                + "\n* existing game is saved.                             *"
+                + "\n*        Examples:                                    *"
+                + "\n* C:\\Users\\your_User_Name\\Desktop\\myGame              *"
+                + "\n* C:\\Windows\\System32\\config.dat                      *"
+                + "\n* F:\\ServerFiles\\ImportantDocs\\DO_NOT_TOUCH.nsfw      *"
+                + "\n*                                                     *"
+                + "\n*******************************************************"
+                + "\nPlease enter the FULL file path: ");
     }
 
     @Override
@@ -32,10 +34,12 @@ class ExistingGameView extends View {
             System.out.println("Invalid entry...must be a litte longer.");
             return false;
         }
-        System.out.println("It got this far!");
-//this is where the try file stuff goes
-
+        try {
+            GameControl.retrieveGame(filePath);
+        } catch (Exception e) {
+            ErrorView.display("MainMenuView", e.getMessage());
+        }
         return true;
     }
-    
+
 }

@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author T4d3-T550
  */
 public class Equip {
+
     private Integer AttributeDefence;
     private Integer AttributeAttack;
     private Integer ObjectID;
@@ -72,6 +73,5 @@ public class Equip {
     public String toString() {
         return "Equip{" + "AttributeDefence=" + AttributeDefence + ", AttributeAttack=" + AttributeAttack + ", ObjectID=" + ObjectID + '}';
     }
-    
-    
+
 }

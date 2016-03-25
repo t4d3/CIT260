@@ -10,6 +10,7 @@ package byui.CIT260.zombieStuff.model;
  * @author T4d3-T550
  */
 public class Inventory {
+
     private int size;
     private int itemID;
 
@@ -62,5 +63,5 @@ public class Inventory {
     public String toString() {
         return "Inventory{" + "size=" + size + ", itemID=" + itemID + '}';
     }
-    
+
 }

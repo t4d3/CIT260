@@ -9,7 +9,7 @@ package byui.CIT260.zombieStuff.exceptions;
  *
  * @author T4d3-T550
  */
-public class CalcTravelTimeException extends Exception{
+public class CalcTravelTimeException extends Exception {
 
     public CalcTravelTimeException() {
     }
@@ -29,5 +29,5 @@ public class CalcTravelTimeException extends Exception{
     public CalcTravelTimeException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
-    
+
 }

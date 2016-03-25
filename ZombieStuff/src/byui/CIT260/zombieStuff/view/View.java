@@ -58,7 +58,6 @@ public abstract class View implements ViewInterface {
                 }
             } while (!valid);
         } catch (Exception e) {
-//Error messages are NOT writing....
                     ErrorView.display(this.getClass().getName(),
                             "ERROR reading input: " + e.getMessage());
         }

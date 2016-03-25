@@ -7,7 +7,6 @@ package byui.CIT260.zombieStuff.view;
 
 import byui.CIT260.zombieStuff.control.GameControl;
 import byui.CIT260.zombieStuff.model.Player;
-import java.util.Scanner;
 
 /**
  *
@@ -25,7 +24,6 @@ public class StartProgramView extends View {
 + "\n* order for the party to be complete. You leave your  *"
 + "\n* pot roast onthe stove and head to the mall infested *"
 + "\n* with zombies to get the items that you forgot       *"
-+ "\n*                                                     *"
 + "\n*                                                     *"
 + "\n*******************************************************"
         +"\n\tPlease enter your name: ");

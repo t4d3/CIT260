@@ -15,9 +15,10 @@ public class MainMenuView extends View {
         super("***********************Main Menu***********************"
                 + "\n*                                                     *"
                 + "\n*                                                     *"
+                + "\n*                                                     *"
                 + "\n* N - New game                                        *"
-                + "\n* R - Retrieve and resume old game                    *"
                 + "\n* H - Display a Help menu                             *"
+                + "\n* R - Retrieve and resume game                        *"
                 + "\n* S - Save game                                       *"
                 + "\n* Q - Quit                                            *"
                 + "\n*                                                     *"
@@ -29,7 +30,6 @@ public class MainMenuView extends View {
 
     @Override
     public boolean doAction(String menuOption) {
-        System.out.println("\n*** doAction() called ***");
         menuOption = menuOption.toUpperCase();
 
         switch (menuOption) {

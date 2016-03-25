@@ -8,7 +8,6 @@ package byui.CIT260.zombieStuff.model;
 import java.awt.Point;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  *
@@ -16,15 +15,15 @@ import java.util.Objects;
  */
 public enum GameCharacter implements Serializable {
 
-    Player(10, 3, 0, 1, new Point(0,0), "You might have had too many street tacos"),
-    Zombie(5, 2, 0, 1, new Point(2,3), "This is an evil Zombie"),
-    Baker(10, 3, 0, 1, new Point(0,0), "He might not exist, but he looks good!"),
-    ShopOwner(10, 3, 0, 1, new Point(0,0), "He kinda wears weird cloaths, but that's his thing"),
-    HotDogEmployee(1, 70, 10, 1, new Point(0,0), "She looks shifty, but oddly enough, you want to buy her food");
+    Player(10, 3, 0, 1, new Point(0, 0), "You might have had too many street tacos"),
+    Zombie(5, 2, 0, 1, new Point(2, 3), "This is an evil Zombie"),
+    Baker(10, 3, 0, 1, new Point(0, 0), "He might not exist, but he looks good!"),
+    ShopOwner(10, 3, 0, 1, new Point(0, 0), "He kinda wears weird cloaths, but that's his thing"),
+    HotDogEmployee(1, 70, 10, 1, new Point(0, 0), "She looks shifty, but oddly enough, you want to buy her food");
 
     private final double attack;
     private final double defence;
-    private double health;
+    private final double health;
     private final int floor;
     private final String description;
     private final Point currentLocation;
@@ -39,8 +38,6 @@ public enum GameCharacter implements Serializable {
         this.defence = defence;
     }
 
-
-    
     public String getDescription() {
         return description;
     }
@@ -60,7 +57,7 @@ public enum GameCharacter implements Serializable {
     public String setCurrentLocation() {
         return description;
     }
-       
+
     public Point getCurrentLocation() {
         return currentLocation;
     }
