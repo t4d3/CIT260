@@ -27,8 +27,7 @@ public class GameControl {
         if (playerName == null) {
             return null;
         }
-        Player player;
-        player = new Player();
+        Player player = new Player();
         player.setName(playerName);
         ZombieStuff.setPlayer(player);
         return player;
@@ -46,11 +45,13 @@ public class GameControl {
 
             Map map = MapControl.createMap();
             game.setMap(map);
-
+            System.out.println("this far1");
             MapControl.moveCharacterToStartingLocation(map);
         } catch (Exception e) {
+            System.out.println("this far2");
             throw new GameControlException(e.getMessage());
         }
+        System.out.println("this far 3");
     }
     //    public static updateLocation() {
     //        call calcTravelTime
@@ -85,6 +86,7 @@ public class GameControl {
             ObjectOutputStream output = new ObjectOutputStream(fops);
 
             output.writeObject(ZombieStuff.getCurrentGame());
+            output.writeObject(ZombieStuff.getPlayer());
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
@@ -104,5 +106,20 @@ public class GameControl {
 
         ZombieStuff.setCurrentGame(game);
 
+    }
+
+    //this will write a list of all the items to a file the user chooses.
+    public static void saveItems(String filePath) throws GameControlException {
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            //ArrayList<item> = new item[] or whatever...
+            //output("super awesome header, for columns.
+            //for(int i = 0; i <= items.getSize(); i++) {
+            //    output(super awesome code for formating);
+            //}
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
     }
 }
