@@ -22,12 +22,12 @@ public class MapView extends View{
 + "\n            | Food   I   I  Navy  |   **************************"
 + "\n ___________|________|   |________|_____________________________"
 + "\n|           |        |   |        |        |        |           |"
-+ "\n|           |Zumies  I   I  Nike  | Zales  |Stairs  |           |"
++ "\n|           |Zumies  I   I  Nike  | Lids   |Stairs  |           |"
 + "\n|           |________|   |__._.___|__._.___|___._.__|           |"
 + "\n|  Target   I                                       I  Claire's |"
 + "\n|           |_________._._.____Hall_Way_____________|           |"
-+ "\n|           |                                       |           |"
-+ "\n|___________|                                       |___________|"
++ "\n|           |            |            |             |           |"
++ "\n|___________|__GameStop__|___JCPenney_|Kay Jewelers_|___________|"
 + "\n\tWhat would you like to do? ");
     }
 

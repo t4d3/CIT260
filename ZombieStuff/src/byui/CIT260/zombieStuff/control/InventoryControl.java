@@ -16,6 +16,10 @@ public class InventoryControl {
 
     InventoryControl() {
     }
+    
+    public static void addItem(Item item) {
+        
+    }
 
     public static int getInventoryWeight(ArrayList<Item> inventory) {
         int totalWeight = 0;

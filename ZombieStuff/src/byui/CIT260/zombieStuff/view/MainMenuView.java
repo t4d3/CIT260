@@ -15,7 +15,6 @@ public class MainMenuView extends View {
         super("***********************Main Menu***********************"
                 + "\n*                                                     *"
                 + "\n*                                                     *"
-                + "\n*                                                     *"
                 + "\n* N - New game                                        *"
                 + "\n* H - Display a Help menu                             *"
                 + "\n* R - Retrieve and resume game                        *"
@@ -59,11 +58,11 @@ public class MainMenuView extends View {
         } catch (GameControlException e) {
             ErrorView.display(this.getClass().getName(),
                     "ERROR: " + e.getMessage());
+        }
 
             GameMenuView gameMenuView = new GameMenuView();
 //This part should start into the game...Unlike most code, it is very important.
             gameMenuView.display();
-        }
     }
 
     private void startExistingGame() {

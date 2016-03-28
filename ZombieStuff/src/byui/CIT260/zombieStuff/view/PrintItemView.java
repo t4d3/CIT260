@@ -6,19 +6,20 @@
 package byui.CIT260.zombieStuff.view;
 
 import byui.CIT260.zombieStuff.control.GameControl;
+import byui.CIT260.zombieStuff.exceptions.GameControlException;
 
 /**
  *
  * @author T4d3-T550
  */
-class ExistingGameView extends View {
-
-    ExistingGameView() {
+class PrintItemView extends View {
+    
+    PrintItemView() {
         super("*******************************************************"
                 + "\n*                                                     *"
-                + "\n* Alrighty, let's do this...                         *"
-                + "\n*   You must enter the full file path of where the    *"
-                + "\n* existing game is saved.                             *"
+                + "\n* Okay then, this will be interesting:                *"
+                + "\n*   You must enter the full file path of where you    *"
+                + "\n* want to save this list of Items.                    *"
                 + "\n*        Examples:                                    *"
                 + "\n* C:\\Users\\your_User_Name\\Desktop\\myGame              *"
                 + "\n* C:\\Windows\\System32\\config.dat                      *"
@@ -31,20 +32,15 @@ class ExistingGameView extends View {
     @Override
     public boolean doAction(String filePath) {
         if (filePath.length() < 3) {
-            System.out.println("Invalid entry...must be a litte longer.");
+            ErrorView.display(this.getClass().getName(),"Invalid entry...must be a litte longer.");
             return false;
         }
         try {
-            GameControl.retrieveGame(filePath);
-        } catch (Exception e) {
-            ErrorView.display("MainMenuView", e.getMessage());
-            return false;
+            GameControl.saveItems(filePath);
+        } catch (GameControlException e) {
+            ErrorView.display("GameControl", e.getMessage());
         }
-        
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
-
         return true;
     }
-
+    
 }

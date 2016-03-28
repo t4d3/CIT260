@@ -15,7 +15,7 @@ public class GameMenuView extends View {
         super("***********************Game menu***********************"
                 + "\n*                                                     *"
                 + "\n*                                                     *"
-                + "\n*                                                     *"
+                + "\n* P - Print all Items in the game, to a file          *"
                 + "\n* M - Manifestation of the Map                        *"
                 + "\n* F - Fight a Zombie                                  *"
                 + "\n* I - Inspect your Inventory                          *"
@@ -34,6 +34,9 @@ public class GameMenuView extends View {
         switch (menuOption) {
             case "M":
                 this.MapView();
+                break;
+            case "P":
+                this.PrintItemView();
                 break;
             case "U":
                 this.movePlayer();
@@ -74,6 +77,11 @@ public class GameMenuView extends View {
     private void FightZombieView() {
         FightZombieView fightZombieView = new FightZombieView();
         fightZombieView.display();
+    }
+
+    private void PrintItemView() {
+        PrintItemView printView = new PrintItemView();
+        printView.display();
     }
 
 }

@@ -22,7 +22,7 @@ public enum Scene implements Serializable {
     GameStop("GameStop", ""),
     Hall("Hallway", ""),
     InkShop("Ink Shop", ""),
-    JCPenney("JCPenny", ""),
+    JCPenney("JCPenney", ""),
     Kay("Kay Jewelers", ""),
     Lids("Lids", ""),
     Maurices("Maurices", ""),
@@ -32,13 +32,14 @@ public enum Scene implements Serializable {
     // Q - Quit
     Rue("Rue 21", ""),
     Stairs("Stairs", ""), //the big stores can be cover 2 locations, with two floors
+    Outside("Outside", "How in the **** did you get here?"),
     Target("Target", ""),
     Uber("Uber", ""),
-    VictoriasSecret("Victoria's Secret", "")//,
+    VictoriasSecret("Victoria's Secret", ""),
     //    Wag("Wag", ""),
     //    Xuppa("Xuppa", ""),
     //    YMCA("YMCA", ""),
-    //    Zumies("Zumies", "A great place...for teeangers.")
+        Zumies("Zumies", "A great place...for teeangers.")
     ;
 
     private final String description;
