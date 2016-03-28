@@ -17,7 +17,7 @@ public class Game implements Serializable {
     private double currentScore;
     private Item[] inventory;
     private Player player;
-    private String[] actors;
+    private String[] gameCharacters;
     private Map map;
 
     public Game() {
@@ -94,12 +94,12 @@ public class Game implements Serializable {
         this.player = player;
     }
 
-    public String[] getActors() {
-        return actors;
+    public String[] getGameCharacters() {
+        return gameCharacters;
     }
 
-    public void setActors(String[] actors) {
-        this.actors = actors;
+    public void setGameCharacters(String[] gameCharacters) {
+        this.gameCharacters = gameCharacters;
     }
 
     public Map getMap() {
