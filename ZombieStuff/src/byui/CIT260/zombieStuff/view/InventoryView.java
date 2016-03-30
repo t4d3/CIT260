@@ -64,20 +64,19 @@ public class InventoryView extends View {
         inventory = ZombieStuff.getCurrentGame().getPlayerCharacter().getInventory();
         for (int i = 0; i < 4; i++) {
 
-            String currentItem = "\t";
+            String currentItem = "\n* " + (i + 1) + " -                                                 *";
 
             if (i < inventory.size()) {
-                currentItem = inventory.get(i).getItemName();
-            }
-//this displayBlock might need to be a tmp variable, in the if statment above.
-            displayMessage += ("\n* " + (i + 1) + " - " + currentItem
-                    + "\t"
-                    + inventory.get(i).getAttackBonus()
-                    + "\t\t"
-                    + inventory.get(i).getDefenceBonus()
-                    + "             *");
-            //+ String.format("%38s", " ") + "*");
 
+                currentItem = ("\n* " + (i + 1) + " - " + inventory.get(i).getItemName()
+                        + "\t"
+                        + inventory.get(i).getAttackBonus()
+                        + "\t\t"
+                        + inventory.get(i).getDefenceBonus()
+                        + "             *");
+            }
+            //+ String.format("%38s", " ") + "*");
+            displayMessage += currentItem;
         }
 
         displayMessage
