@@ -40,6 +40,7 @@ public class FightZombieView extends View {
                 + "\n--------------------------------------------------------*"
                 + "\n*              F - Fight to the death                   *"
                 + "\n*              R - Run away like a girl                 *"
+                + "\n*              Q - Quit                                 *"
                 + "\n*********************************************************"
                 + "\n\tWhat would you like to do?");
     }
@@ -50,7 +51,7 @@ public class FightZombieView extends View {
 
         switch (menuOption) {
             case "F":
-                this.fightZombie();
+                this.fightAZombie();
                 break;
             case "R":
                 System.out.println("You sissy...just fight!");
@@ -62,7 +63,7 @@ public class FightZombieView extends View {
         return false;
     }
 
-    private void fightZombie() {
+    public void fightAZombie() {
     }
-
+    
 }

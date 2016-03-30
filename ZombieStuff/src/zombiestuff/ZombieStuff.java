@@ -94,11 +94,11 @@ public class ZombieStuff {
                 if (ZombieStuff.inFile != null) {
                     ZombieStuff.inFile.close();
                 }
-                if (ZombieStuff.logFile != null) {
-                    ZombieStuff.logFile.close();
-                }
                 if (ZombieStuff.outFile != null) {
                     ZombieStuff.outFile.close();
+                }
+                if (ZombieStuff.logFile != null) {
+                    ZombieStuff.logFile.close();
                 }
             } catch (IOException ex) {
                 System.out.println("Error Closing Files");

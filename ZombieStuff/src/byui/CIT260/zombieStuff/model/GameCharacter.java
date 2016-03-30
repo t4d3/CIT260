@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public enum GameCharacter implements Serializable {
 
-    Player(10, 3, 0, 1, new Point(0, 0), "", "You might have had too many street tacos"),
+    Player(10, 3, 0, 1, new Point(3, 2), "", "You might have had too many street tacos"),
     Zombie(5, 2, 0, 1, new Point(2, 3), "the undead", "This is an evil Zombie"),
     Baker(10, 3, 0, 1, new Point(0, 0), "Pierre", "He might not exist, but he looks good!"),
     ShopOwner(10, 3, 0, 1, new Point(0, 0), "Sam", "He kinda wears weird cloaths, but that's his thing"),
