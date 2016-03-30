@@ -5,7 +5,6 @@
  */
 package byui.CIT260.zombieStuff.view;
 
-import byui.CIT260.zombieStuff.model.Game;
 import byui.CIT260.zombieStuff.model.Item;
 import java.util.ArrayList;
 import zombiestuff.ZombieStuff;
@@ -104,7 +103,6 @@ public class InventoryView extends View {
 //the default \t\t is used if the statement isn't met.
             inventoryDisplayBlock += ("\n* " + (i + 1) + " - " + currentItem
                     + String.format("%38s", " ") + "*");
-            System.out.println("Spot 2");
         }
 //"***********************Inventory***********************"
 //+ "\n* The First portion of the code does this display     *" 
