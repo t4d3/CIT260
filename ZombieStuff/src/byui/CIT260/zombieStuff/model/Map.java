@@ -25,26 +25,24 @@ public class Map implements Serializable {
     public Map() {
     }
 
-    public Map(int noOfRows, int noOfColumns) {
+    public Map(int noOfColumns, int noOfRows) {
         if (noOfRows < 1 || noOfColumns < 1) {
             System.out.println("The number of Rows and Columns must be > 0");
             return;
         }
         this.noOfRows = noOfRows;
         this.noOfColumns = noOfColumns;
+        this.floors = 1;
+        this.locations = new Location[noOfColumns][noOfRows];
 
-        this.locations = new Location[noOfRows][noOfColumns];
+        for (int row = 0; row < noOfRows; row++) {
+            for (int column = 0; column < noOfColumns; column++) {
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
 
-        for (int floor = 0; floor < floors; floor++) {
-            for (int row = 0; row < noOfRows; row++) {
-                for (int column = 0; column < noOfColumns; column++) {
-                    Location location = new Location();
-                    location.setColumn(column);
-                    location.setRow(row);
-                    location.setVisited(false);
-
-                    locations[row][column] = location;
-                }
+                locations[column][row] = location;
             }
         }
     }
@@ -59,6 +57,10 @@ public class Map implements Serializable {
 
     public Location[][] getLocations() {
         return locations;
+    }
+
+    public Location getLocation(int column, int row) {
+        return this.locations[column][row];
     }
 
     public void setLocations(Location[][] locations) {

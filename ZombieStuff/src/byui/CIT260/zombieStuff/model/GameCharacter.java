@@ -15,6 +15,7 @@ import java.util.ArrayList;
  */
 public class GameCharacter implements Serializable {
 
+
     private final double attack;
     private final double defence;
     private double health;

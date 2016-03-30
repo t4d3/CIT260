@@ -42,13 +42,13 @@ public class GameControl {
         GameCharacter[] gameCharacters = new GameCharacter[8];
 
         GameCharacter player = new GameCharacter(10, 3, 0, 1, new Point(2, 1), ZombieStuff.getPlayer().getName(), "You might have had too many street tacos");
+        GameCharacter hotDogEmployee = new GameCharacter(1, 70, 10, 1, new Point(1, 3), "Kyndra", "She looks shifty, but oddly enough, you want to buy her food");
+        GameCharacter baker = new GameCharacter(10, 3, 0, 1, new Point(1, 3), "Pierre", "He might not exist, but he looks good!");
+        GameCharacter shopOwner = new GameCharacter(10, 3, 0, 1, new Point(4, 2), "Sam", "He kinda wears weird cloaths, but that's his thing");
         GameCharacter zombie = new GameCharacter(5, 2, 0, 1, new Point(2, 3), "the undead", "This is an evil Zombie");
         GameCharacter zombie1 = new GameCharacter(5, 2, 0, 1, new Point(0, 1), "the undead", "This is an evil Zombie");
         GameCharacter zombie2 = new GameCharacter(5, 2, 0, 1, new Point(5, 1), "the undead", "This is an evil Zombie");
         GameCharacter zombie3 = new GameCharacter(5, 2, 0, 1, new Point(4, 2), "the undead", "This is an evil Zombie");
-        GameCharacter baker = new GameCharacter(10, 3, 0, 1, new Point(1, 3), "Pierre", "He might not exist, but he looks good!");
-        GameCharacter shopOwner = new GameCharacter(10, 3, 0, 1, new Point(4, 2), "Sam", "He kinda wears weird cloaths, but that's his thing");
-        GameCharacter hotDogEmployee = new GameCharacter(1, 70, 10, 1, new Point(1, 3), "Kyndra", "She looks shifty, but oddly enough, you want to buy her food");
 
         gameCharacters[0] = player;
         gameCharacters[1] = hotDogEmployee;
@@ -68,17 +68,17 @@ public class GameControl {
 
             ZombieStuff.setCurrentGame(game);
             game.setPlayer(player);
-
             GameCharacter[] characters = GameControl.createGameCharacters();
             game.setGameCharacters(characters);
             game.setPlayerCharacter(characters[0]);
 
-            ZombieStuff.getCurrentGame().getPlayerCharacter().addInventoryItem(Item.Dress);
 //this block might be taken out....  it's creating an inventory for the game, which isn't doing anything.
             Item[] inventoryList = GameControl.createInventory();
             game.setInventory(inventoryList);
             Map map = MapControl.createMap();
             game.setMap(map);
+            MapControl.assignScenesToLocations();
+
             MapControl.moveCharacterToStartingLocation(map);
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());

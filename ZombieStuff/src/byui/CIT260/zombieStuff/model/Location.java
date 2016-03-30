@@ -23,7 +23,7 @@ public class Location implements Serializable {
     private String description;
     private String name;
     private Scene scene;
-    private ArrayList<GameCharacter> charactersInThisLocation = null;
+    private ArrayList<GameCharacter> charactersInThisLocation;
 
     public ArrayList<GameCharacter> getCharactersInThisLocation() {
         return charactersInThisLocation;
@@ -34,6 +34,11 @@ public class Location implements Serializable {
     }
  
     public Location() {
+        this.charactersInThisLocation = new ArrayList<>();
+    }
+
+    public void setCharacterToLocation(GameCharacter character) {
+        this.charactersInThisLocation.add(character);
     }
 
     public int getRow() {
