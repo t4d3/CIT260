@@ -6,6 +6,7 @@
 package byui.CIT260.zombieStuff.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -22,7 +23,16 @@ public class Location implements Serializable {
     private String description;
     private String name;
     private Scene scene;
+    private ArrayList<GameCharacter> charactersInThisLocation = null;
 
+    public ArrayList<GameCharacter> getCharactersInThisLocation() {
+        return charactersInThisLocation;
+    }
+
+    public void setCharactersInThisLocation(ArrayList<GameCharacter> charactersInThisLocation) {
+        this.charactersInThisLocation = charactersInThisLocation;
+    }
+ 
     public Location() {
     }
 

@@ -5,9 +5,10 @@
  */
 package byui.CIT260.zombieStuff.view;
 
-import byui.CIT260.zombieStuff.model.GameCharacter;
+import byui.CIT260.zombieStuff.model.Game;
 import byui.CIT260.zombieStuff.model.Item;
 import java.util.ArrayList;
+import zombiestuff.ZombieStuff;
 
 /**
  *
@@ -19,19 +20,19 @@ public class InventoryView extends View {
         super("");
         this.displayMessage = getInventoryBlockMessage();
     }
-    
+
     @Override
     public boolean doAction(String menuOption) {
         menuOption = menuOption.toUpperCase();
 
         switch (menuOption) {
-            case "D" :
+            case "D":
                 this.dropItem();
                 break;
-            case "E" :
+            case "E":
                 this.equipItem();
                 break;
-            case "S" :
+            case "S":
                 this.viewInventoryStats();
                 break;
             default:
@@ -45,7 +46,6 @@ public class InventoryView extends View {
         this.displayMessage = ("Which item do you want to drop? ERROR CHECKING NOT IMPLIMENTED: ");
         int num = Integer.valueOf(this.getInput());
         System.out.println(num);
-        
 
 //this resets the super message, because they are in the inventoryView() function.
         this.displayMessage = getInventoryBlockMessage();
@@ -54,58 +54,58 @@ public class InventoryView extends View {
     private void equipItem() {
     }
 
-    
     private String viewInventoryStats() {
-                this.displayMessage = 
-                  "*****************Inventory Stats***********************"
-              + "\n*                                                     *"
-              + "\n*      Item           Attack           Defense        *"
-              + "\n*-----------------------------------------------------*";
-        ArrayList<Item> inventory = GameCharacter.Player.getInventory();
-        for (int i = 0; i < 2; i++) {
+        this.displayMessage
+                = "*****************Inventory Stats***********************"
+                + "\n*                                                     *"
+                + "\n*      Item           Attack           Defense        *"
+                + "\n*-----------------------------------------------------*";
+        ArrayList<Item> inventory;
+        inventory = ZombieStuff.getCurrentGame().getPlayerCharacter().getInventory();
+        for (int i = 0; i < 4; i++) {
 
             String currentItem = "\t";
 
-            if (i < inventory.size())
+            if (i < inventory.size()) {
                 currentItem = inventory.get(i).getItemName();
-
+            }
+//this displayBlock might need to be a tmp variable, in the if statment above.
             displayMessage += ("\n* " + (i + 1) + " - " + currentItem
                     + "\t"
                     + inventory.get(i).getAttackBonus()
                     + "\t\t"
                     + inventory.get(i).getDefenceBonus()
                     + "             *");
-                    //+ String.format("%38s", " ") + "*");
+            //+ String.format("%38s", " ") + "*");
 
         }
 
-        displayMessage+=
-              "\n*-----------------------------------------------------*"
-            + "\n* D - Drop Item        S - View Inventory Stats       *"
-            + "\n* E - Equip Item                                      *"
-            + "\n* Q - Quit                                            *"
-            + "\n*******************************************************"
-            + "\n\tWhat would you like to do? ";        
+        displayMessage
+                += "\n*-----------------------------------------------------*"
+                + "\n* D - Drop Item        S - View Inventory Stats       *"
+                + "\n* E - Equip Item                                      *"
+                + "\n* Q - Quit                                            *"
+                + "\n*******************************************************"
+                + "\n\tWhat would you like to do? ";
         return displayMessage;
     }
-    
-    private String getInventoryBlockMessage() {
-        GameCharacter.Player.addInventoryItem(Item.Hammer);
-        GameCharacter.Player.addInventoryItem(Item.Toothbrush);
 
-        String inventoryDisplayBlock = 
-                "***********************Inventory***********************"
-            + "\n*                                                     *";
-        ArrayList<Item> inventory = GameCharacter.Player.getInventory();
+    private String getInventoryBlockMessage() {
+        String inventoryDisplayBlock
+                = "***********************Inventory***********************"
+                + "\n*                                                     *";
+        ArrayList<Item> inventory = ZombieStuff.getCurrentGame().getPlayerCharacter().getInventory();
         for (int i = 0; i < 4; i++) {
 //the default is always resert to empty
             String currentItem = "\t\t";
 //while there is still something in the inventory, display it
-            if (i < inventory.size())
+            if (i < inventory.size()) {
                 currentItem = inventory.get(i).getItemName();
+            }
 //the default \t\t is used if the statement isn't met.
             inventoryDisplayBlock += ("\n* " + (i + 1) + " - " + currentItem
                     + String.format("%38s", " ") + "*");
+            System.out.println("Spot 2");
         }
 //"***********************Inventory***********************"
 //+ "\n* The First portion of the code does this display     *" 
@@ -113,13 +113,13 @@ public class InventoryView extends View {
 //+ "\n* this is all given that there are a max of 4 items   *"
 //+ "\n* in the inventory MAX.  Equiped will be a different  *"
 //+ "\n* view, to not detract from inventory size.           *"
-        inventoryDisplayBlock += 
-    "\n*                                                     *"
-  + "\n* D - Drop Item        S - View Inventory Stats       *"
-  + "\n* E - Equip Item                                      *"
-  + "\n* Q - Quit                                            *"
-  + "\n*******************************************************"
-  + "\n\tWhat would you like to do? ";
+        inventoryDisplayBlock
+                += "\n*                                                     *"
+                + "\n* D - Drop Item        S - View Inventory Stats       *"
+                + "\n* E - Equip Item                                      *"
+                + "\n* Q - Quit                                            *"
+                + "\n*******************************************************"
+                + "\n\tWhat would you like to do? ";
 
         return inventoryDisplayBlock;
     }

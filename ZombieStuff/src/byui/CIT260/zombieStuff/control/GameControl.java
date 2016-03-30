@@ -7,6 +7,7 @@ package byui.CIT260.zombieStuff.control;
 
 import byui.CIT260.zombieStuff.exceptions.GameControlException;
 import byui.CIT260.zombieStuff.model.Game;
+import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Item;
 import byui.CIT260.zombieStuff.model.Map;
 import byui.CIT260.zombieStuff.model.Player;
@@ -23,14 +24,42 @@ import zombiestuff.ZombieStuff;
  */
 public class GameControl {
 
-    public static Player createPlayer(String playerName) {
+    public static Player createPlayer(String playerName) throws GameControlException {
         if (playerName == null) {
             return null;
         }
-        Player player = new Player();
-        player.setName(playerName);
-        ZombieStuff.setPlayer(player);
-        return player;
+        try {
+            Player player = new Player();
+            player.setName(playerName);
+            ZombieStuff.setPlayer(player);
+            return player;
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+    public static GameCharacter[] createGameCharacters() {
+        GameCharacter[] gameCharacters = new GameCharacter[8];
+
+        GameCharacter player = new GameCharacter(10, 3, 0, 1, new Point(2, 1), ZombieStuff.getPlayer().getName(), "You might have had too many street tacos");
+        GameCharacter zombie = new GameCharacter(5, 2, 0, 1, new Point(2, 3), "the undead", "This is an evil Zombie");
+        GameCharacter zombie1 = new GameCharacter(5, 2, 0, 1, new Point(0, 1), "the undead", "This is an evil Zombie");
+        GameCharacter zombie2 = new GameCharacter(5, 2, 0, 1, new Point(5, 1), "the undead", "This is an evil Zombie");
+        GameCharacter zombie3 = new GameCharacter(5, 2, 0, 1, new Point(4, 2), "the undead", "This is an evil Zombie");
+        GameCharacter baker = new GameCharacter(10, 3, 0, 1, new Point(1, 3), "Pierre", "He might not exist, but he looks good!");
+        GameCharacter shopOwner = new GameCharacter(10, 3, 0, 1, new Point(4, 2), "Sam", "He kinda wears weird cloaths, but that's his thing");
+        GameCharacter hotDogEmployee = new GameCharacter(1, 70, 10, 1, new Point(1, 3), "Kyndra", "She looks shifty, but oddly enough, you want to buy her food");
+
+        gameCharacters[0] = player;
+        gameCharacters[1] = hotDogEmployee;
+        gameCharacters[2] = baker;
+        gameCharacters[3] = shopOwner;
+        gameCharacters[4] = zombie;
+        gameCharacters[5] = zombie1;
+        gameCharacters[6] = zombie2;
+        gameCharacters[7] = zombie3;
+
+        return gameCharacters;
     }
 
     public static void createNewGame(Player player) throws GameControlException {
@@ -40,22 +69,21 @@ public class GameControl {
             ZombieStuff.setCurrentGame(game);
             game.setPlayer(player);
 
+            GameCharacter[] characters = GameControl.createGameCharacters();
+            game.setGameCharacters(characters);
+            game.setPlayerCharacter(characters[0]);
+
+            ZombieStuff.getCurrentGame().getPlayerCharacter().addInventoryItem(Item.Dress);
+//this block might be taken out....  it's creating an inventory for the game, which isn't doing anything.
             Item[] inventoryList = GameControl.createInventory();
             game.setInventory(inventoryList);
-
             Map map = MapControl.createMap();
             game.setMap(map);
-            System.out.println("this far1");
             MapControl.moveCharacterToStartingLocation(map);
         } catch (Exception e) {
-            System.out.println("this far2");
             throw new GameControlException(e.getMessage());
         }
-        System.out.println("this far 3");
     }
-    //    public static updateLocation() {
-    //        call calcTravelTime
-    //            if there is no error, the update the location
 
     public static void updateGameTime(int desiredTravelTime) {
         ZombieStuff.getCurrentGame().setTotalTime(ZombieStuff.getCurrentGame().getTotalTime() + desiredTravelTime);
@@ -76,6 +104,7 @@ public class GameControl {
         }
     }
 
+//this is probably going out the window
     private static Item[] createInventory() {
         Item[] item = {};
         return item;
@@ -103,16 +132,14 @@ public class GameControl {
             throw new GameControlException(e.getMessage());
 
         }
-
         ZombieStuff.setCurrentGame(game);
-
     }
 
     //this will write a list of all the items to a file the user chooses.
     public static void saveItems(String filePath) throws GameControlException {
         try (FileOutputStream fops = new FileOutputStream(filePath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
-            
+
             //ArrayList<item> = new item[] or whatever...
             //output("super awesome header, for columns.
             //for(int i = 0; i <= items.getSize(); i++) {
