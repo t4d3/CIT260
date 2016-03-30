@@ -6,6 +6,7 @@
 package byui.CIT260.zombieStuff.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,7 +18,8 @@ public class Game implements Serializable {
     private double currentScore;
     private Item[] inventory;
     private Player player;
-    private String[] gameCharacters;
+    private GameCharacter playerCharacter;
+    private GameCharacter[] gameCharacters;
     private Map map;
 
     public Game() {
@@ -25,6 +27,10 @@ public class Game implements Serializable {
 
     public int getTimeStarted() {
         return totalTime;
+    }
+
+    public ArrayList<Item> getPlayerCharacterInventory() {
+        return playerCharacter.getInventory();
     }
 
     public void setTimeStarted(int totalTime) {
@@ -94,11 +100,11 @@ public class Game implements Serializable {
         this.player = player;
     }
 
-    public String[] getGameCharacters() {
+    public GameCharacter[] getGameCharacters() {
         return gameCharacters;
     }
 
-    public void setGameCharacters(String[] gameCharacters) {
+    public void setGameCharacters(GameCharacter[] gameCharacters) {
         this.gameCharacters = gameCharacters;
     }
 
@@ -110,4 +116,11 @@ public class Game implements Serializable {
         this.map = map;
     }
 
+    public GameCharacter getPlayerCharacter() {
+        return gameCharacters[0];
+    }
+
+    public void setPlayerCharacter(GameCharacter playerCharacter) {
+        this.playerCharacter = playerCharacter;
+    }
 }

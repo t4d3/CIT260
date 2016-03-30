@@ -7,7 +7,6 @@ package byui.CIT260.zombieStuff.control;
 
 import byui.CIT260.zombieStuff.exceptions.MapControlException;
 import byui.CIT260.zombieStuff.model.GameCharacter;
-import static byui.CIT260.zombieStuff.model.GameCharacter.Player;
 import byui.CIT260.zombieStuff.model.Location;
 import byui.CIT260.zombieStuff.model.Map;
 import byui.CIT260.zombieStuff.model.Scene;
@@ -22,26 +21,27 @@ public class MapControl {
 
     public static Map createMap() {
 //Quite frankly, I have no idea what this is for.
-        Map map = new Map(20, 20);
+        Map map = new Map(6, 4);
 
         return map;
     }
 
     public static void moveCharacterToStartingLocation(Map map)
             throws MapControlException {
-        GameCharacter[] character = GameCharacter.values();
 
-        for (GameCharacter Character : character) {
-            Point coordinates = Player.getCurrentLocation();
-            MapControl.moveCharacterToLocation(Character, coordinates);
+        GameCharacter[] characters = ZombieStuff.getCurrentGame().getGameCharacters();
+
+        for (GameCharacter character : characters) {
+            Point coordinates = character.getCurrentLocation();
+            MapControl.moveCharacterToLocation(character, coordinates);
         }
     }
 
     public static void moveCharacterToLocation(GameCharacter character, Point coordinates)
             throws MapControlException {
         Map map = ZombieStuff.getCurrentGame().getMap();
-        int newRow = coordinates.x - 1;
-        int newColumn = coordinates.y - 1;
+        int newRow = coordinates.x;
+        int newColumn = coordinates.y;
 
         if (newRow < 0 || newRow >= map.getNoOfRows()
                 || newColumn < 0 || newColumn >= map.getNoOfColumns()) {
