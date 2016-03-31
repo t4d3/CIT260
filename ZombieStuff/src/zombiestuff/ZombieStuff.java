@@ -76,7 +76,7 @@ public class ZombieStuff {
 
             ZombieStuff.outFile = new PrintWriter(System.out, true);
 
-            String filePath = "C:\\Share\\log.txt";
+            String filePath = "log.txt";
             ZombieStuff.logFile = new PrintWriter(filePath);
 
             //display the banner

@@ -5,8 +5,11 @@
  */
 package byui.CIT260.zombieStuff.view;
 
+import byui.CIT260.zombieStuff.control.InventoryControl;
 import byui.CIT260.zombieStuff.model.Item;
+import java.io.IOException;
 import java.util.ArrayList;
+import javax.imageio.IIOException;
 import zombiestuff.ZombieStuff;
 
 /**
@@ -31,6 +34,9 @@ public class InventoryView extends View {
             case "E":
                 this.equipItem();
                 break;
+            case "A":
+                this.addItems();
+                break;
             case "S":
                 this.viewInventoryStats();
                 break;
@@ -38,16 +44,13 @@ public class InventoryView extends View {
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
         }
+        this.displayMessage = getInventoryBlockMessage();
         return false;
     }
 
     private void dropItem() {
-        this.displayMessage = ("Which item do you want to drop? ERROR CHECKING NOT IMPLIMENTED: ");
-        int num = Integer.valueOf(this.getInput());
-        System.out.println(num);
-
-//this resets the super message, because they are in the inventoryView() function.
-        this.displayMessage = getInventoryBlockMessage();
+        DropItemView dropItemView = new DropItemView();
+        dropItemView.display();
     }
 
     private void equipItem() {
@@ -81,7 +84,7 @@ public class InventoryView extends View {
         displayMessage
                 += "\n*-----------------------------------------------------*"
                 + "\n* D - Drop Item        S - View Inventory Stats       *"
-                + "\n* E - Equip Item                                      *"
+                + "\n* E - Equip Item                  A - add items       *"
                 + "\n* Q - Quit                                            *"
                 + "\n*******************************************************"
                 + "\n\tWhat would you like to do? ";
@@ -103,22 +106,19 @@ public class InventoryView extends View {
 //the default \t\t is used if the statement isn't met.
             inventoryDisplayBlock += ("\n* " + (i + 1) + " - " + currentItem
                     + String.format("%38s", " ") + "*");
-            System.out.println("Spot 2");
         }
-//"***********************Inventory***********************"
-//+ "\n* The First portion of the code does this display     *" 
-//+ "\n* portion, factoring in the items in the inventory    *"
-//+ "\n* this is all given that there are a max of 4 items   *"
-//+ "\n* in the inventory MAX.  Equiped will be a different  *"
-//+ "\n* view, to not detract from inventory size.           *"
         inventoryDisplayBlock
                 += "\n*                                                     *"
                 + "\n* D - Drop Item        S - View Inventory Stats       *"
-                + "\n* E - Equip Item                                      *"
+                + "\n* E - Equip Item                  A - add items       *"
                 + "\n* Q - Quit                                            *"
                 + "\n*******************************************************"
                 + "\n\tWhat would you like to do? ";
 
         return inventoryDisplayBlock;
+    }
+
+    private void addItems() {
+        InventoryControl.addItem(Item.Hammer);
     }
 }

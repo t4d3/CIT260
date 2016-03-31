@@ -67,19 +67,26 @@ public class GameControl {
             Game game = new Game();
 
             ZombieStuff.setCurrentGame(game);
+
             game.setPlayer(player);
             GameCharacter[] characters = GameControl.createGameCharacters();
+
             game.setGameCharacters(characters);
             game.setPlayerCharacter(characters[0]);
 
 //this block might be taken out....  it's creating an inventory for the game, which isn't doing anything.
             Item[] inventoryList = GameControl.createInventory();
             game.setInventory(inventoryList);
+
             Map map = MapControl.createMap();
             game.setMap(map);
+
             MapControl.assignScenesToLocations();
 
             MapControl.moveCharacterToStartingLocation(map);
+
+            ZombieStuff.setCurrentGame(game);
+
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }

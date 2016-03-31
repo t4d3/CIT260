@@ -32,7 +32,7 @@ public abstract class View implements ViewInterface {
         boolean done = false;
         do {
 // the concole is not writing....
-                this.console.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
             String value = this.getInput();
             if (value.toUpperCase().equals("Q")) {
                 return;
@@ -58,8 +58,8 @@ public abstract class View implements ViewInterface {
                 }
             } while (!valid);
         } catch (Exception e) {
-                    ErrorView.display(this.getClass().getName(),
-                            "ERROR reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "ERROR reading input: " + e.getMessage());
         }
         return value;
     }

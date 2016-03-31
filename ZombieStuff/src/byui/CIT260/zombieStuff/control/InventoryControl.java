@@ -5,8 +5,11 @@
  */
 package byui.CIT260.zombieStuff.control;
 
+import byui.CIT260.zombieStuff.exceptions.InventoryControlException;
 import byui.CIT260.zombieStuff.model.Item;
+import java.awt.Point;
 import java.util.ArrayList;
+import zombiestuff.ZombieStuff;
 
 /**
  *
@@ -16,9 +19,28 @@ public class InventoryControl {
 
     InventoryControl() {
     }
-    
+
     public static void addItem(Item item) {
-        
+        ZombieStuff.getCurrentGame().getPlayerCharacter().getInventory().add(item);
+    }
+
+    public static void dropItem(int itemIndex) throws InventoryControlException {
+        Item item = null;
+
+        try {
+            item = ZombieStuff.getCurrentGame().getPlayerCharacter().getInventory().get(itemIndex);
+        } catch (IndexOutOfBoundsException e) {
+            throw new InventoryControlException("No Item here! " + e.getMessage());
+        }
+        Point currentLocation = ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation();
+
+        ZombieStuff.getCurrentGame().getMap().getLocation(currentLocation.x, currentLocation.y).addItemToLocation(item);
+
+        try {
+            ZombieStuff.getCurrentGame().getPlayerCharacter().getInventory().remove(item);
+        } catch (IndexOutOfBoundsException e) {
+            throw new InventoryControlException("No Item to drop! " + e.getMessage());
+        }
     }
 
     public static int getInventoryWeight(ArrayList<Item> inventory) {
