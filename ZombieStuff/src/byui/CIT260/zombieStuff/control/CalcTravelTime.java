@@ -8,7 +8,6 @@ package byui.CIT260.zombieStuff.control;
 
 import byui.CIT260.zombieStuff.exceptions.GameControlException;
 import java.awt.Point;
-import zombiestuff.ZombieStuff;
 
 /**
  *
