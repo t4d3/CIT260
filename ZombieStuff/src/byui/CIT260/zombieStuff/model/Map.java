@@ -5,6 +5,7 @@
  */
 package byui.CIT260.zombieStuff.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -61,6 +62,9 @@ public class Map implements Serializable {
 
     public Location getLocation(int column, int row) {
         return this.locations[column][row];
+    }
+    public Location getLocation(Point location) {
+        return this.locations[location.x][location.y];
     }
 
     public void setLocations(Location[][] locations) {

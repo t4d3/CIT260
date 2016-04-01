@@ -22,7 +22,7 @@ public class MapView extends View{
 + "\n            | Food   I   I  Navy  |   **************************"
 + "\n ___________|________|   |________|_____________________________"
 + "\n|           |        |   |        |        |        |           |"
-+ "\n|           |Zumies  I   I  Nike  | Lids   |Stairs  |           |"
++ "\n|           |Zumies  I   I  Nike  | Lids   |Rue 21  |           |"
 + "\n|           |________|   |__._.___|__._.___|___._.__|           |"
 + "\n|  Target   I                                       I  Claire's |"
 + "\n|           |_________._._.____Hall_Way_____________|           |"
@@ -37,8 +37,7 @@ public class MapView extends View{
 
         switch (menuOption) {
             case "M" :
-                    this.movePlayerView();
-                    break;
+                    return this.movePlayerView();
             case "L":
                     this.visitedPlaceView();
                     break;
@@ -55,9 +54,10 @@ public class MapView extends View{
         return false;
     }
 
-    private void movePlayerView() {
+    private boolean movePlayerView() {
         MovePlayerView movePlayerView = new MovePlayerView();
         movePlayerView.display();
+        return true;
     }
 
     private void visitedPlaceView() {

@@ -11,92 +11,93 @@ import java.awt.Point;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class MovePlayerView extends View{
+public class MovePlayerView extends View {
+
     public MovePlayerView() {
         super("*******************Directory Listing*******************"
-+ "\n*      First Floor                 Second Floor       *"
-+ "\n* A - Aldo                    L - Lids                *"
-+ "\n* B - Best Buy                M - Maurices            *"
-+ "\n* C - Claire's                N - Nike                *"
-+ "\n* D - Dickies                 O - Old Navy            *"
-+ "\n* E - Go to                   P - Pink                *"
-+ "\n* F - Food Court              Q - Quit                *"
-+ "\n* G - GameStop                R - Rue 21              *"
-+ "\n* H - Hallway                 S - Stairs              *"
-+ "\n* I - Ink Shop                T - Target              *"
-+ "\n* J - JCPenney                U - Uber                *"
-+ "\n* K - Kay Jewelers            V - Victoria's Secret   *"
-+ "\n*******************************************************"
-+ "\n\tWhere would you like to go? "
-);
+                + "\n*      First Floor                 Second Floor       *"
+                + "\n* A -                         L - Lids                *"
+                + "\n* B -                         M -                     *"
+                + "\n* C - Claire's                N - Nike                *"
+                + "\n* D -                         O - Old Navy            *"
+                + "\n* E -                         P -                     *"
+                + "\n* F - Food Court              Q - Quit                *"
+                + "\n* G - GameStop                R - Rue 21              *"
+                + "\n* H - Hallway                 S -                     *"
+                + "\n* I -                         T - Target              *"
+                + "\n* J - JCPenney                U -                     *"
+                + "\n* K - Kay Jewelers            V - Victoria's Secret   *"
+                + "\n*******************************************************"
+                + "\n\tWhere would you like to go? "
+        );
     }
 
     @Override
     public boolean doAction(String menuOption) {
         menuOption = menuOption.toUpperCase();
-        Point desiredLocation = new Point(0,0);
+        Point desiredLocation = new Point(0, 0);
         switch (menuOption) {
-            case "A":
-                desiredLocation.setLocation(1, 1);
-                break;
-            case "B":
-                desiredLocation.setLocation(0, 0);//first floor
-                break;
+//            case "A":
+//                desiredLocation.setLocation(1, 1);
+//                break;
+//            case "B":
+//                desiredLocation.setLocation(0, 0);//first floor
+//                break;
             case "C":
-                desiredLocation.setLocation(6, 0);//first floor
+                desiredLocation.setLocation(6, 1);//first floor
                 break;
-            case "D":
-                desiredLocation.setLocation(1, 2);//first floor
-                break;
+//            case "D":
+//                desiredLocation.setLocation(1, 2);//first floor
+//                break;
             case "F":
-                desiredLocation.setLocation(2, 2);//second floor
+                desiredLocation.setLocation(1, 3);//second floor
                 break;
             case "G":
-                desiredLocation.setLocation(3, 1);//first floor
+                desiredLocation.setLocation(1, 0);//first floor
                 break;
             case "H":
-                desiredLocation.setLocation(2, 0);//this will be more challenging
+                desiredLocation.setLocation(2, 1);//this will be more challenging
                 break;
-            case "I":
-                desiredLocation.setLocation(3, 2);//first floor
-                break;
+//            case "I":
+//                desiredLocation.setLocation(3, 2);//first floor
+//                break;
             case "J":
-                desiredLocation.setLocation(4, 1);//first floor
+                desiredLocation.setLocation(3, 0);//first floor
                 break;
             case "K":
-                desiredLocation.setLocation(6, 0);//second floor
+                desiredLocation.setLocation(4, 0);//second floor
                 break;
             case "L":
-                desiredLocation.setLocation(5, 1);//first floor
+                desiredLocation.setLocation(4, 2);//first floor
                 break;
-            case "M":
-                desiredLocation.setLocation(1, 1);//Second floor
-                break;
+//            case "M":
+//                desiredLocation.setLocation(1, 1);//Second floor
+//                break;
             case "N":
-                desiredLocation.setLocation(1, 2);//Second floor
-                break;
-            case "O":
-                desiredLocation.setLocation(0, 0);//second floor
-                break;
-            case "P":
-                desiredLocation.setLocation(3, 1);//Second floor
-                break;
-            case "R":
                 desiredLocation.setLocation(3, 2);//Second floor
                 break;
-            case "S":
-                desiredLocation.setLocation(4, 1);//first and second floor
+            case "O":
+                desiredLocation.setLocation(3, 3);//second floor
                 break;
+//            case "P":
+//                desiredLocation.setLocation(3, 1);//Second floor
+//                break;
+            case "R":
+                desiredLocation.setLocation(5, 2);//Second floor
+                break;
+//            case "S":
+//                desiredLocation.setLocation(4, 1);//first and second floor
+//                break;
             case "T":
-                desiredLocation.setLocation(4, 1);//Second floor
+                desiredLocation.setLocation(0, 1);//Second floor
                 break;
-            case "U":
-                desiredLocation.setLocation(5, 1);//Second floor
-                break;
+//            case "U":
+//                desiredLocation.setLocation(5, 1);//Second floor
+//                break;
             case "V":
-                desiredLocation.setLocation(2, 2);
+                desiredLocation.setLocation(2, 4);
                 break;
-                /*case "W":
+            /*case "W":
                 desiredLocation.setLocation(0, 0);
                 break;
                 case "X":
@@ -117,7 +118,10 @@ public class MovePlayerView extends View{
         } catch (GameControlException ex) {
             Logger.getLogger(MovePlayerView.class.getName()).log(Level.SEVERE, null, ex);
         }
-    return true;
+        
+        ShopView shopView = new ShopView();
+        shopView.display();
+        return true;
     }
 
     private void displayHelpMenu() {

@@ -5,6 +5,7 @@
  */
 package byui.CIT260.zombieStuff.model;
 
+import byui.CIT260.zombieStuff.exceptions.GameControlException;
 import java.io.Serializable;
 
 /**
@@ -39,8 +40,7 @@ public enum Scene implements Serializable {
     //    Wag("Wag", ""),
     //    Xuppa("Xuppa", ""),
     //    YMCA("YMCA", ""),
-        Zumies("Zumies", "A great place...for teeangers.")
-    ;
+    Zumies("Zumies", "A great place...for teeangers.");
 
     private final String description;
     private final String name;
@@ -48,5 +48,13 @@ public enum Scene implements Serializable {
     Scene(String name, String description) {
         this.description = description;
         this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+    
+    public String getDescription() {
+        return this.description;
     }
 }

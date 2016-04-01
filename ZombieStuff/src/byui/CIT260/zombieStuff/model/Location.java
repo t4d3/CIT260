@@ -26,17 +26,17 @@ public class Location implements Serializable {
     private ArrayList<GameCharacter> charactersInThisLocation;
     private ArrayList<Item> itemsInThisLocation;
 
+    public Location() {
+        this.charactersInThisLocation = new ArrayList<>();
+        this.itemsInThisLocation = new ArrayList<>();
+    }
+
     public ArrayList<GameCharacter> getCharactersInThisLocation() {
         return charactersInThisLocation;
     }
 
     public void setCharactersInThisLocation(ArrayList<GameCharacter> charactersInThisLocation) {
         this.charactersInThisLocation = charactersInThisLocation;
-    }
-
-    public Location() {
-        this.charactersInThisLocation = new ArrayList<>();
-        this.itemsInThisLocation = new ArrayList<>();
     }
 
     public void setCharacterToLocation(GameCharacter character) {
@@ -97,6 +97,8 @@ public class Location implements Serializable {
 
     public void setScene(Scene scene) {
         this.scene = scene;
+        this.name = scene.getName();
+        this.description = scene.getDescription();
     }
 
     public String getName() {

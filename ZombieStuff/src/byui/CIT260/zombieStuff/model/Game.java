@@ -7,6 +7,7 @@ package byui.CIT260.zombieStuff.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import zombiestuff.ZombieStuff;
 
 /**
  *
@@ -14,8 +15,8 @@ import java.util.ArrayList;
  */
 public class Game implements Serializable {
 
-    private int totalTime;
-    private double currentScore;
+    private int maxTime;
+    private int usedTime;
     private Item[] inventory;
     private Player player;
     private GameCharacter playerCharacter;
@@ -25,37 +26,37 @@ public class Game implements Serializable {
     public Game() {
     }
 
-    public int getTimeStarted() {
-        return totalTime;
+    public int getMaxTime() {
+        return maxTime;
     }
 
     public ArrayList<Item> getPlayerCharacterInventory() {
         return playerCharacter.getInventory();
     }
 
-    public void setTimeStarted(int totalTime) {
-        this.totalTime = totalTime;
+    public void setMaxTime(int maxTime) {
+        this.maxTime = maxTime;
     }
 
-    public double getCurrentScore() {
-        return currentScore;
+    public int getUsedTime() {
+        return usedTime;
     }
 
-    public void setCurrentScore(double currentScore) {
-        this.currentScore = currentScore;
+    public void setUsedTime(int usedTime) {
+        this.usedTime = usedTime;
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 43 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
-        hash = 43 * hash + (int) (Double.doubleToLongBits(this.currentScore) ^ (Double.doubleToLongBits(this.currentScore) >>> 32));
+        hash = 43 * hash + (int) (Double.doubleToLongBits(this.maxTime) ^ (Double.doubleToLongBits(this.maxTime) >>> 32));
+        hash = 43 * hash + (int) (Double.doubleToLongBits(this.usedTime) ^ (Double.doubleToLongBits(this.usedTime) >>> 32));
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", currentScore=" + currentScore + '}';
+        return "Game{" + "maxTime=" + maxTime + ", usedTime=" + usedTime + '}';
     }
 
     @Override
@@ -70,18 +71,10 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
+        if (Double.doubleToLongBits(this.maxTime) != Double.doubleToLongBits(other.maxTime)) {
             return false;
         }
-        return Double.doubleToLongBits(this.currentScore) == Double.doubleToLongBits(other.currentScore);
-    }
-
-    public int getTotalTime() {
-        return totalTime;
-    }
-
-    public void setTotalTime(int totalTime) {
-        this.totalTime = totalTime;
+        return Double.doubleToLongBits(this.usedTime) == Double.doubleToLongBits(other.usedTime);
     }
 
     public Item[] getInventory() {

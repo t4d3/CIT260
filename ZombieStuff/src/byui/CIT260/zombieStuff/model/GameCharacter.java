@@ -27,7 +27,7 @@ public class GameCharacter implements Serializable {
 
     public GameCharacter(int health, int attack, int defence, int floor,
             Point currentLocation, String name, String description) {
-        this.name = "";
+        this.name = name;
         this.description = description;
         this.currentLocation = currentLocation;
         this.floor = floor;

@@ -23,7 +23,7 @@ import zombiestuff.ZombieStuff;
  * @author Justin Cox
  */
 public class GameControl {
-
+    
     public static Player createPlayer(String playerName) throws GameControlException {
         if (playerName == null) {
             return null;
@@ -37,19 +37,19 @@ public class GameControl {
             throw new GameControlException(e.getMessage());
         }
     }
-
+    
     public static GameCharacter[] createGameCharacters() {
         GameCharacter[] gameCharacters = new GameCharacter[8];
-
+        
         GameCharacter player = new GameCharacter(10, 3, 0, 1, new Point(2, 1), ZombieStuff.getPlayer().getName(), "You might have had too many street tacos");
         GameCharacter hotDogEmployee = new GameCharacter(1, 70, 10, 1, new Point(1, 3), "Kyndra", "She looks shifty, but oddly enough, you want to buy her food");
-        GameCharacter baker = new GameCharacter(10, 3, 0, 1, new Point(1, 3), "Pierre", "He might not exist, but he looks good!");
+        GameCharacter baker = new GameCharacter(10, 3, 0, 1, new Point(3, 2), "Pierre", "He might not exist, but he looks good!");
         GameCharacter shopOwner = new GameCharacter(10, 3, 0, 1, new Point(4, 2), "Sam", "He kinda wears weird cloaths, but that's his thing");
-        GameCharacter zombie = new GameCharacter(5, 2, 0, 1, new Point(2, 3), "the undead", "This is an evil Zombie");
+        GameCharacter zombie = new GameCharacter(5, 2, 0, 1, new Point(3, 3), "the undead", "This is an evil Zombie");
         GameCharacter zombie1 = new GameCharacter(5, 2, 0, 1, new Point(0, 1), "the undead", "This is an evil Zombie");
-        GameCharacter zombie2 = new GameCharacter(5, 2, 0, 1, new Point(5, 1), "the undead", "This is an evil Zombie");
+        GameCharacter zombie2 = new GameCharacter(5, 2, 0, 1, new Point(6, 1), "the undead", "This is an evil Zombie");
         GameCharacter zombie3 = new GameCharacter(5, 2, 0, 1, new Point(4, 2), "the undead", "This is an evil Zombie");
-
+        
         gameCharacters[0] = player;
         gameCharacters[1] = hotDogEmployee;
         gameCharacters[2] = baker;
@@ -58,86 +58,88 @@ public class GameControl {
         gameCharacters[5] = zombie1;
         gameCharacters[6] = zombie2;
         gameCharacters[7] = zombie3;
-
+        
         return gameCharacters;
     }
-
+    
     public static void createNewGame(Player player) throws GameControlException {
         try {
             Game game = new Game();
-
+            
             ZombieStuff.setCurrentGame(game);
-
+            
             game.setPlayer(player);
             GameCharacter[] characters = GameControl.createGameCharacters();
-
+            
             game.setGameCharacters(characters);
             game.setPlayerCharacter(characters[0]);
-
+            game.setMaxTime(60);
+            game.setUsedTime(1);
 //this block might be taken out....  it's creating an inventory for the game, which isn't doing anything.
             Item[] inventoryList = GameControl.createInventory();
             game.setInventory(inventoryList);
-
+            
             Map map = MapControl.createMap();
             game.setMap(map);
-
+            
             MapControl.assignScenesToLocations();
-
+            
             MapControl.moveCharacterToStartingLocation(map);
-
+            
             ZombieStuff.setCurrentGame(game);
-
+            
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
     }
-
-    public static void updateGameTime(int desiredTravelTime) {
-        ZombieStuff.getCurrentGame().setTotalTime(ZombieStuff.getCurrentGame().getTotalTime() + desiredTravelTime);
+    
+    public static void updateGameTime(int desiredTravelTime) throws GameControlException {
+        ZombieStuff.getCurrentGame().setUsedTime(ZombieStuff.getCurrentGame().getUsedTime()+ desiredTravelTime);
     }
-
+    
     public static void updateLocation(Point desiredLocation)
             throws GameControlException {
-
-        //calculate the travel time to that store;
-        //if the travel time is negative, RETURN Error Code
-        //Update character's location
-        //update total time  try movePlayerView > updateLocation > calcTravelTime > updateGameTime throw
-        //return total time
-        if (false) {
+        try {
+            CalcTravelTime.calcTravelTime(ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation(), desiredLocation,
+                    ZombieStuff.getCurrentGame().getUsedTime(), ZombieStuff.getCurrentGame().getMaxTime());
+            ZombieStuff.getCurrentGame().getPlayerCharacter().setCurrentLocation(desiredLocation);
+        } catch (GameControlException e) {
             throw new GameControlException("Cannot Update Location"
                     + desiredLocation + ", because it's dumb. "
                     + "CurrentLocation is unchanged");
         }
+        //calculate the travel time to that store;
+        //Update character's location
+        //update total time  try movePlayerView > updateLocation > calcTravelTime > updateGameTime throw
     }
 
 //this is probably going out the window
     private static Item[] createInventory() {
-        Item[] item = {};
+        Item[] item = new Item[4];
         return item;
     }
-
+    
     public static void saveGame(String filePath) throws GameControlException {
         try (FileOutputStream fops = new FileOutputStream(filePath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
-
+            
             output.writeObject(ZombieStuff.getCurrentGame());
             output.writeObject(ZombieStuff.getPlayer());
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
     }
-
+    
     public static void retrieveGame(String filePath) throws GameControlException {
         Game game = null;
-
+        
         try (FileInputStream fips = new FileInputStream(filePath)) {
             ObjectInputStream input = new ObjectInputStream(fips);
-
+            
             game = (Game) input.readObject();
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
-
+            
         }
         ZombieStuff.setCurrentGame(game);
     }

@@ -8,6 +8,7 @@ package byui.CIT260.zombieStuff.control;
 
 import byui.CIT260.zombieStuff.exceptions.GameControlException;
 import java.awt.Point;
+import zombiestuff.ZombieStuff;
 
 /**
  *
@@ -20,7 +21,8 @@ public class CalcTravelTime {
 //    public calcTravelTime() {
 //       if there is an error, this will go back to the movePlayerView()
 
-    public void calcTravelTime(Point ALocation, Point BLocation, int timeUsed, int maxTime) throws GameControlException {
+    public static void calcTravelTime(Point ALocation, Point BLocation, int timeUsed, int maxTime)
+            throws GameControlException {
         boolean pass = true;
         if (timeUsed >= maxTime || timeUsed < 0) {
             pass = false;
@@ -32,12 +34,16 @@ public class CalcTravelTime {
         if ((timeToTravel + timeUsed) > maxTime) {
             pass = false;
         }
-        if (pass) {
+        if (!pass) {
+
             throw new GameControlException("Cannot Update Time: "
                     + timeUsed + " is greater than "
                     + maxTime + " after the calculation is made.");
         }
-        GameControl.updateGameTime(timeToTravel);
-
+        try {
+            GameControl.updateGameTime(timeToTravel);
+        } catch (GameControlException e) {
+            throw new GameControlException(e.getMessage());
+        }
     }
 }
