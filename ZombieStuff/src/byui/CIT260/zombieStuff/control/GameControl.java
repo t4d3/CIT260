@@ -45,10 +45,10 @@ public class GameControl {
         GameCharacter hotDogEmployee = new GameCharacter(1, 70, 10, 1, new Point(1, 3), "Kyndra", "She looks shifty, but oddly enough, you want to buy her food");
         GameCharacter baker = new GameCharacter(10, 3, 0, 1, new Point(3, 2), "Pierre", "He might not exist, but he looks good!");
         GameCharacter shopOwner = new GameCharacter(10, 3, 0, 1, new Point(4, 2), "Sam", "He kinda wears weird cloaths, but that's his thing");
-        GameCharacter zombie = new GameCharacter(5, 2, 0, 1, new Point(3, 3), "the undead", "This is an evil Zombie");
-        GameCharacter zombie1 = new GameCharacter(5, 2, 0, 1, new Point(0, 1), "the undead", "This is an evil Zombie");
-        GameCharacter zombie2 = new GameCharacter(5, 2, 0, 1, new Point(6, 1), "the undead", "This is an evil Zombie");
-        GameCharacter zombie3 = new GameCharacter(5, 2, 0, 1, new Point(4, 2), "the undead", "This is an evil Zombie");
+        GameCharacter zombie = new GameCharacter(5, 2, 0, 1, new Point(3, 3), "A Zombie", "This is an evil Zombie");
+        GameCharacter zombie1 = new GameCharacter(5, 2, 0, 1, new Point(0, 1), "A Zombie", "This is an evil Zombie");
+        GameCharacter zombie2 = new GameCharacter(5, 2, 0, 1, new Point(6, 1), "A Zombie", "This is an evil Zombie");
+        GameCharacter zombie3 = new GameCharacter(5, 2, 0, 1, new Point(4, 2), "A Zombie", "This is an evil Zombie");
 
         gameCharacters[0] = player;
         gameCharacters[1] = hotDogEmployee;

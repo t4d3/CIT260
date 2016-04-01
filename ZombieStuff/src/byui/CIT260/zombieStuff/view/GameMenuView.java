@@ -18,9 +18,9 @@ public class GameMenuView extends View {
                 + "\n*                                                     *"
                 + "\n*                                                     *"
                 + "\n*                                                     *"
+                + "\n*                                                     *"
                 + "\n* P - Print all Items in the game, to a file          *"
                 + "\n* M - Manifestation of the Map                        *"
-                + "\n* F - Fight a Zombie                                  *"
                 + "\n* I - Inspect your Inventory                          *"
                 + "\n* T - Tell the time status                            *"
                 + "\n* Q - Quit                                            *"
@@ -46,14 +46,9 @@ public class GameMenuView extends View {
             case "U":
                 this.movePlayer();
                 break;
-            case "F":
-                this.FightZombieView();
-                break;
             case "I":
                 this.InventoryView();
                 break;
-            case "B":
-                this.FightZombieView();
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
@@ -77,11 +72,6 @@ public class GameMenuView extends View {
     private void InventoryView() {
         InventoryView inventoryView = new InventoryView();
         inventoryView.display();
-    }
-
-    private void FightZombieView() {
-        FightZombieView fightZombieView = new FightZombieView();
-        fightZombieView.display();
     }
 
     private void PrintItemView() {
