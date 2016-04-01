@@ -7,6 +7,7 @@ package byui.CIT260.zombieStuff.control;
 
 import byui.CIT260.zombieStuff.exceptions.MapControlException;
 import byui.CIT260.zombieStuff.model.GameCharacter;
+import byui.CIT260.zombieStuff.model.Item;
 import byui.CIT260.zombieStuff.model.Map;
 import byui.CIT260.zombieStuff.model.Scene;
 import java.awt.Point;
@@ -24,7 +25,7 @@ public class MapControl {
         return map;
     }
 
-    public static void moveCharacterToStartingLocation(Map map)
+    public static void assignCharactersToLocations(Map map)
             throws MapControlException {
         GameCharacter[] characters;
         characters = ZombieStuff.getCurrentGame().getGameCharacters();
@@ -53,23 +54,6 @@ public class MapControl {
 
     }
 
-    /*  "          ___________________________ ********Map View**********"
-        + "\n         |                           |* M - Move the character *"
-        + "\n         |                           |* L - List visited places*"
-        + "\n         |     Victoria's Secret     |* S - Shop current store *"
-        + "\n         |                           |*                        *"
-        + "\n     04  |________14___24______34____|* 44       54        64  *"
-        + "\n            |        |   |  Old   |   *                        *"
-        + "\n            | Food   I   I  Navy  |   **************************"
-        + "\n ____03_____|_____13_| 23|_____33_|_____43_______53________63___"
-        + "\n|           |        |   |        |        |        |           |"
-        + "\n|           |Zumies  I   I  Nike  | Lids   |Rue 21  |           |"
-        + "\n|    02     |_____12_| 22|_____32_|_____42_|_____52_|      62   |"
-        + "\n|  Target   I                                       I  Claire's |"
-        + "\n|    01     |_____11___21______31_______41_______51_|      61   |"
-        + "\n|           |  GameStop  |  JCPenney  |Kay Jewelers |           |"
-        + "\n|____00_____|_____10___20|_____30_____|_40_______50_|______60___|"
-        + "\n\tWhat would you like to do? ");*/
     public static void assignScenesToLocations() {
 
         ZombieStuff.getCurrentGame().getMap().getLocation(0, 0).setScene(Scene.Target);
@@ -107,6 +91,34 @@ public class MapControl {
         ZombieStuff.getCurrentGame().getMap().getLocation(6, 2).setScene(Scene.Claires);
         ZombieStuff.getCurrentGame().getMap().getLocation(6, 3).setScene(Scene.Outside);//null
         ZombieStuff.getCurrentGame().getMap().getLocation(6, 4).setScene(Scene.Outside);//null
+    }
+
+    /*  "          ___________________________ ********Map View**********"
+        + "\n         |                           |* M - Move the character *"
+        + "\n         |                           |* L - List visited places*"
+        + "\n         |     Victoria's Secret     |* S - Shop current store *"
+        + "\n         |                           |*                        *"
+        + "\n     04  |________14___24______34____|* 44       54        64  *"
+        + "\n            |        |   |  Old   |   *                        *"
+        + "\n            | Food   I   I  Navy  |   **************************"
+        + "\n ____03_____|_____13_| 23|_____33_|_____43_______53________63___"
+        + "\n|           |        |   |        |        |        |           |"
+        + "\n|           |Zumies  I   I  Nike  | Lids   |Rue 21  |           |"
+        + "\n|    02     |_____12_| 22|_____32_|_____42_|_____52_|      62   |"
+        + "\n|  Target   I                                       I  Claire's |"
+        + "\n|    01     |_____11___21______31_______41_______51_|      61   |"
+        + "\n|           |  GameStop  |  JCPenney  |Kay Jewelers |           |"
+        + "\n|____00_____|_____10___20|_____30_____|_40_______50_|______60___|"
+        + "\n\tWhat would you like to do? ");*/
+    static void assignItemsToLocations() {
+        ZombieStuff.getCurrentGame().getMap().getLocation(6, 1).addItemToLocation(Item.Dress);
+        ZombieStuff.getCurrentGame().getMap().getLocation(3, 2).addItemToLocation(Item.Shoes);
+        ZombieStuff.getCurrentGame().getMap().getLocation(0, 1).addItemToLocation(Item.Hammer);
+        ZombieStuff.getCurrentGame().getMap().getLocation(3, 0).addItemToLocation(Item.Toothbrush);
+        ZombieStuff.getCurrentGame().getMap().getLocation(5, 2).addItemToLocation(Item.Hanger);
+        ZombieStuff.getCurrentGame().getMap().getLocation(6, 1).addItemToLocation(Item.Shirt);
+        ZombieStuff.getCurrentGame().getMap().getLocation(2, 4).addItemToLocation(Item.Armor);
+        ZombieStuff.getCurrentGame().getMap().getLocation(3, 1).addItemToLocation(Item.Toothpick);
     }
 
 }

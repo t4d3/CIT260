@@ -73,6 +73,7 @@ public class GameControl {
 
             game.setGameCharacters(characters);
             game.setPlayerCharacter(characters[0]);
+            
             game.setMaxTime(30);
             game.setUsedTime(1);
 //this block might be taken out....  it's creating an inventory for the game, which isn't doing anything.
@@ -83,8 +84,8 @@ public class GameControl {
             game.setMap(map);
 
             MapControl.assignScenesToLocations();
-
-            MapControl.moveCharacterToStartingLocation(map);
+            MapControl.assignCharactersToLocations(map);
+            MapControl.assignItemsToLocations();
 
             ZombieStuff.setCurrentGame(game);
 

@@ -32,7 +32,7 @@ public class ShopView extends View {
                 ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation());
 
         String displayBlock = "Your are currently in " + location.getName() + ".";
-        displayBlock += "\n" + location.getDescription() + "\nPeople in this location: ";
+        displayBlock += "\n" + location.getDescription() + "\nPeople in this location: You; ";
         for (int i = 0; i < location.getCharactersInThisLocation().size(); i++) {
             displayBlock += location.getCharactersInThisLocation().get(i).getName() + "; ";
         }
