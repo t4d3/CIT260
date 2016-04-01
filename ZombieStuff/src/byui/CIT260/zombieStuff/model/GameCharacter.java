@@ -24,6 +24,7 @@ public class GameCharacter implements Serializable {
     private final String description;
     private Point currentLocation;
     private ArrayList<Item> inventory = new ArrayList<>();
+    private ArrayList<Item> equiped = new ArrayList<>();
 
     public GameCharacter(int health, int attack, int defence, int floor,
             Point currentLocation, String name, String description) {
@@ -34,6 +35,20 @@ public class GameCharacter implements Serializable {
         this.health = health;
         this.attack = attack;
         this.defence = defence;
+        this.equiped = new ArrayList<>();
+        this.inventory = new ArrayList<>();
+    }
+
+    public ArrayList<Item> getEquiped() {
+        return equiped;
+    }
+
+    public void setEquiped(ArrayList<Item> equiped) {
+        this.equiped = equiped;
+    }
+
+    public void setEquiped(Item item) {
+        this.equiped.add(item);
     }
 
     public double getHealth() {

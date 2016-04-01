@@ -30,12 +30,15 @@ public class InventoryView extends View {
         switch (menuOption) {
             case "D":
                 this.dropItem();
+                this.displayMessage = getInventoryBlockMessage();
                 break;
             case "E":
                 this.equipItem();
+                this.displayMessage = getInventoryBlockMessage();
                 break;
             case "A":
                 this.addItems();
+                this.displayMessage = getInventoryBlockMessage();
                 break;
             case "S":
                 this.viewInventoryStats();
@@ -44,7 +47,6 @@ public class InventoryView extends View {
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
         }
-        this.displayMessage = getInventoryBlockMessage();
         return false;
     }
 
@@ -54,14 +56,14 @@ public class InventoryView extends View {
     }
 
     private void equipItem() {
+        EquipItemView equipItemView = new EquipItemView();
+        equipItemView.display();
     }
 
-    private String viewInventoryStats() {
-        this.displayMessage
-                = "*****************Inventory Stats***********************"
-                + "\n*                                                     *"
-                + "\n*      Item           Attack           Defense        *"
-                + "\n*-----------------------------------------------------*";
+    private void viewInventoryStats() {
+        String inventoryDisplayBlock
+                = "********************Inventory Stats********************"
+                + "\n*      Item           Attack           Defense        *";
         ArrayList<Item> inventory;
         inventory = ZombieStuff.getCurrentGame().getPlayerCharacter().getInventory();
         for (int i = 0; i < 4; i++) {
@@ -78,17 +80,16 @@ public class InventoryView extends View {
                         + "             *");
             }
             //+ String.format("%38s", " ") + "*");
-            displayMessage += currentItem;
+            inventoryDisplayBlock += currentItem;
         }
 
-        displayMessage
-                += "\n*-----------------------------------------------------*"
+        inventoryDisplayBlock += "\n*                                                     *"
                 + "\n* D - Drop Item        S - View Inventory Stats       *"
                 + "\n* E - Equip Item                  A - add items       *"
                 + "\n* Q - Quit                                            *"
                 + "\n*******************************************************"
                 + "\n\tWhat would you like to do? ";
-        return displayMessage;
+        this.displayMessage = inventoryDisplayBlock;
     }
 
     private String getInventoryBlockMessage() {

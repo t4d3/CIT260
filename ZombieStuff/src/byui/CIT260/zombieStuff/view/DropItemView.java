@@ -32,7 +32,7 @@ public class DropItemView extends View {
         }
 
         if (1 > input || input > 4) {
-            return true;
+            return false;
         }
 
         try {

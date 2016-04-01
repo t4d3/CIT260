@@ -27,14 +27,14 @@ public enum Scene implements Serializable {
     Kay("Kay Jewelers", ""),
     Lids("Lids", ""),
     Maurices("Maurices", ""),
-    Nike("Nike", ""),
+    Nike("Nike", "Such a great store."),
     OldNavy("Old Navy", ""),
     Pink("Pink", ""),
     // Q - Quit
     Rue("Rue 21", ""),
     Stairs("Stairs", ""), //the big stores can be cover 2 locations, with two floors
     Outside("Outside", "How in the **** did you get here?"),
-    Target("Target", ""),
+    Target("Target", "You can buy everything, from food to clothing!"),
     Uber("Uber", ""),
     VictoriasSecret("Victoria's Secret", ""),
     //    Wag("Wag", ""),

@@ -17,6 +17,22 @@ import zombiestuff.ZombieStuff;
  */
 public class InventoryControl {
 
+    public static void equipItem(int itemIndex) throws InventoryControlException {
+        Item item = null;
+        try {
+            System.out.println("getting Item");
+            item = ZombieStuff.getCurrentGame().getPlayerCharacter().getInventory().get(itemIndex);
+            System.out.println("remove(itemIndex");
+            ZombieStuff.getCurrentGame().getPlayerCharacter().getInventory().remove(itemIndex);
+            System.out.println("setEquiped");
+            ZombieStuff.getCurrentGame().getPlayerCharacter().setEquiped(item);
+            System.out.println("success");
+
+        } catch (IndexOutOfBoundsException e) {
+            throw new InventoryControlException("No Item here! " + e.getMessage());
+        }
+    }
+
     InventoryControl() {
     }
 
