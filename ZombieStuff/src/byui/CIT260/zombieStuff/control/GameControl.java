@@ -73,7 +73,7 @@ public class GameControl {
 
             game.setGameCharacters(characters);
             game.setPlayerCharacter(characters[0]);
-            game.setMaxTime(60);
+            game.setMaxTime(30);
             game.setUsedTime(1);
 //this block might be taken out....  it's creating an inventory for the game, which isn't doing anything.
             Item[] inventoryList = GameControl.createInventory();

@@ -5,6 +5,8 @@
  */
 package byui.CIT260.zombieStuff.view;
 
+import zombiestuff.ZombieStuff;
+
 /**
  *
  * @author T4d3-T550
@@ -15,13 +17,13 @@ public class GameMenuView extends View {
         super("***********************Game menu***********************"
                 + "\n*                                                     *"
                 + "\n*                                                     *"
+                + "\n*                                                     *"
                 + "\n* P - Print all Items in the game, to a file          *"
                 + "\n* M - Manifestation of the Map                        *"
                 + "\n* F - Fight a Zombie                                  *"
                 + "\n* I - Inspect your Inventory                          *"
-                + "\n* T - Tell the remaining Time                         *"
+                + "\n* T - Tell the time status                            *"
                 + "\n* Q - Quit                                            *"
-                + "\n*                                                     *"
                 + "\n*******************************************************"
                 + "\n\tWhat would you like to do? ");
     }
@@ -37,6 +39,9 @@ public class GameMenuView extends View {
                 break;
             case "P":
                 this.PrintItemView();
+                break;
+            case "T":
+                this.displayTime();
                 break;
             case "U":
                 this.movePlayer();
@@ -82,6 +87,25 @@ public class GameMenuView extends View {
     private void PrintItemView() {
         PrintItemView printView = new PrintItemView();
         printView.display();
+    }
+
+    private void displayTime() {
+        this.displayMessage = "***********************Game menu***********************"
+                + "\n*                                                     *"
+                + "\n* Max time: " + ZombieStuff.getCurrentGame().getMaxTime()
+                + " minutes used: " + ZombieStuff.getCurrentGame().getUsedTime()
+                + " minutes remaining: " + (ZombieStuff.getCurrentGame().getMaxTime()
+                - ZombieStuff.getCurrentGame().getUsedTime())
+                + "  *"
+                + "\n*                                                     *"
+                + "\n* P - Print all Items in the game, to a file          *"
+                + "\n* M - Manifestation of the Map                        *"
+                + "\n* F - Fight a Zombie                                  *"
+                + "\n* I - Inspect your Inventory                          *"
+                + "\n* T - Tell the remaining Time                         *"
+                + "\n* Q - Quit                                            *"
+                + "\n*******************************************************"
+                + "\n\tWhat would you like to do? ";
     }
 
 }
