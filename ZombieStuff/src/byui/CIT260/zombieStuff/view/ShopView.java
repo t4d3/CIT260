@@ -40,7 +40,7 @@ public class ShopView extends View {
         for (int i = 0; i < location.getItemsInThisLocation().size(); i++) {
             displayBlock += location.getItemsInThisLocation().get(i) + "; ";
         }
-
+        
         return displayBlock;
     }
 

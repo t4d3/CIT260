@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
  *
  * @author Justin Cox
  */
-public class FightSceneTest {
+public class FightZombieControlTest {
     
-    public FightSceneTest() {
+    public FightZombieControlTest() {
     }
     
     @Before
@@ -28,14 +28,14 @@ public class FightSceneTest {
     }
 
     /**
-     * Test of fightAZombie method, of class FightScene.
+     * Test of fightAZombie method, of class FightZombieControl.
      */
     @Test
     public void testFightAZombie() {
         int currentHealth = 7;
         int armorBonus = 0;
         int weaponBonus = 0;
-        FightScene instance = new FightScene();
+        FightZombieControl instance = new FightZombieControl();
         int expResult = 5;
         int result = instance.fightAZombie(currentHealth, armorBonus, weaponBonus);
         assertEquals(expResult, result);

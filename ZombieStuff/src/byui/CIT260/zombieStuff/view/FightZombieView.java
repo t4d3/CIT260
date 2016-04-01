@@ -5,6 +5,9 @@
  */
 package byui.CIT260.zombieStuff.view;
 
+import byui.CIT260.zombieStuff.control.FightZombieControl;
+
+
 /**
  *
  * @author Justin Cox
@@ -38,11 +41,13 @@ public class FightZombieView extends View {
                 + "\n*              #@(,@( &@#@@@&%###(#%%%@@@      %@@      *"
                 + "\n*              /(      ,    #&&&&&&%%#/.                *"
                 + "\n--------------------------------------------------------*"
+                + "\n*         There is a zombie in this location.           *"
+                + "\n*              You have two options:                    *"
+                + "\n*                                                       *"
                 + "\n*              F - Fight to the death                   *"
                 + "\n*              R - Run away like a girl                 *"
-                + "\n*              Q - Quit                                 *"
                 + "\n*********************************************************"
-                + "\n\tWhat would you like to do?");
+                + "\n\tWhat are you going to do?");
     }
 
     @Override
@@ -54,8 +59,7 @@ public class FightZombieView extends View {
                 this.fightAZombie();
                 break;
             case "R":
-                System.out.println("You sissy...just fight!");
-                break;
+                return true;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
@@ -63,7 +67,7 @@ public class FightZombieView extends View {
         return false;
     }
 
-    public void fightAZombie() {
+    private void fightAZombie() {
+        
     }
-    
 }

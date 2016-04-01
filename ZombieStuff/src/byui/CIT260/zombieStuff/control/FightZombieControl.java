@@ -9,7 +9,7 @@ package byui.CIT260.zombieStuff.control;
  *
  * @author Justin Cox
  */
-public class FightScene {
+public class FightZombieControl {
 
     public int fightAZombie(int currentHealth, int armorBonus, int weaponBonus) {
 
