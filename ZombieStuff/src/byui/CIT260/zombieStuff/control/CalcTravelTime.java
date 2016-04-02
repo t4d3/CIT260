@@ -34,7 +34,6 @@ public class CalcTravelTime {
             pass = false;
         }
         if (!pass) {
-
             throw new GameControlException("Cannot Update Time: "
                     + timeUsed + " is greater than "
                     + maxTime + " after the calculation is made.");

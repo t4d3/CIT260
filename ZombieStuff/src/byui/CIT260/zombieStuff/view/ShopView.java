@@ -19,20 +19,41 @@ public class ShopView extends View {
     public ShopView() {
         super("ERROR: This view was not called properly!\n\tPess Q to return.");
         displayMessage = this.getDisplayBlockMessage();
+        if (this.zombieTest()) {
+            System.out.println("shopView should be exited if this is displayed.");
+        }
+        System.out.println("It got here, and needs to continue the shopView.");
+
+    }
+
+    @Override
+    public boolean doAction(String menuOption) {
+        menuOption = menuOption.toUpperCase();
+        switch (menuOption) {
+            case "P":
+                this.pickUpItem();
+                this.getDisplayBlockMessage();
+                break;
+            case "D":
+                this.dropItem();
+                this.getDisplayBlockMessage();
+                break;
+        }
+        displayMessage = this.getDisplayBlockMessage();
+        return false;
+    }
+
+    private boolean zombieTest() {
         Location location = ZombieStuff.getCurrentGame().getMap().getLocation(
                 ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation());
         ArrayList<GameCharacter> charactersInThisLocation = location.getCharactersInThisLocation();
         for (int i = 0; i < charactersInThisLocation.size(); i++) {
             if ("A Zombie".equals(charactersInThisLocation.get(i).getName())) {
                 this.fightZombie();
+                return true;
             }
         }
-
-    }
-
-    @Override
-    public boolean doAction(String value) {
-        return true;
+        return false;
     }
 
     private String getDisplayBlockMessage() {
@@ -41,8 +62,8 @@ public class ShopView extends View {
 
         String displayBlock = "***********************Shopping!***********************";
         displayBlock += "\n* Your are currently in " + location.getName() + "."
-                + "\n* " + location.getDescription()
-                + "\n* People in this location: You; ";
+                + "\n* " + location.getDescription() + "\n*"
+                + "\n* People in this location: ";
         for (int i = 0; i < location.getCharactersInThisLocation().size(); i++) {
             displayBlock += location.getCharactersInThisLocation().get(i).getName() + "; ";
         }
@@ -54,8 +75,15 @@ public class ShopView extends View {
                 + "\n* P - Pick up Item                                    *"
                 + "\n* D - drop Item from your inventory                   *"
                 + "\n* Q - Quit back to main menu                          *"
-                + "\n*                                                     *";
+                + "\n*******************************************************"
+                + "\n\tWhat would you like to do? ";
+
         return displayBlock;
+    }
+
+    private void dropItem() {
+        DropItemView dropItemView = new DropItemView();
+        dropItemView.display();
     }
 
     private void fightZombie() {
@@ -63,4 +91,8 @@ public class ShopView extends View {
         fightZombieView.display();
     }
 
+    private void pickUpItem() {
+        PickUpItemView pickUpItemView = new PickUpItemView();
+        pickUpItemView.display();
+    }
 }

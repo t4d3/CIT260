@@ -60,7 +60,7 @@ public class HelpMenuView extends View {
                         + "\n*  want.                                              *");
                 break;
             default:
-                System.out.println(
+                this.displayMessage = this.getHelpMenu(
                         "***********************Help Menu***********************"
                         + "\n*                                                     *"
                         + "\n* ERROR: Invalid selection... Try again!              *"

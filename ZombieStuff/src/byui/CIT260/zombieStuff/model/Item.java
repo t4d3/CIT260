@@ -16,6 +16,7 @@ public enum Item implements Serializable{
 //Story related objects
     Dress      (0,0,1, "Princes dress", "Too small to wear, but it'll be great!"),
     Shoes      (0,0,1, "Princes shoes", "Too small to wear, but it'll be great!"),
+    Tiara      (0,0,1, "Princes tiara", "Too small to wear, but it'll be great!"),
 
 //Attack related object
     Hammer     (1, 0, 2, "Hammer\t", "This is a pretty hard thing, but you can manage."), 
@@ -23,7 +24,7 @@ public enum Item implements Serializable{
     Hanger     (1, 0, 1, "Hanger\t", "I gues you could stab something with it."),
 
 //Defence related objects
-    Shirt      (0, 1, 1, "Shirt\t\t", "The Hello Kitty picture is so CUTE!!!"),
+    Shirt      (0, 1, 1, "Shirt\t", "The Hello Kitty picture is so CUTE!!!"),
     Armor      (0, 5, 5, "Full Body Armor", "In theory, this should protect me."),
 
 //not really related objects

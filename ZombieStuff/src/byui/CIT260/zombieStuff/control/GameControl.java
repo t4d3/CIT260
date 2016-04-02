@@ -73,7 +73,7 @@ public class GameControl {
 
             game.setGameCharacters(characters);
             game.setPlayerCharacter(characters[0]);
-            
+
             game.setMaxTime(30);
             game.setUsedTime(1);
 //this block might be taken out....  it's creating an inventory for the game, which isn't doing anything.
@@ -101,14 +101,22 @@ public class GameControl {
     public static void updateLocation(Point desiredLocation)
             throws GameControlException {
         try {
+            Point currentLocation = ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation();
+            int currentLocationCharacterIndex = ZombieStuff.getCurrentGame().getMap().getLocation(
+                    currentLocation).getCharactersInThisLocation().size() - 1;
 //This "Visited" one is redundant, but it's just in case we missed something.
-            ZombieStuff.getCurrentGame().getMap().getLocation(
-                    ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation()).setVisited(true);
+            ZombieStuff.getCurrentGame().getMap().getLocation(currentLocation).setVisited(true);
 //if this fails, that is chill
-            CalcTravelTime.calcTravelTime(ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation(), desiredLocation,
+            CalcTravelTime.calcTravelTime(currentLocation, desiredLocation,
                     ZombieStuff.getCurrentGame().getUsedTime(), ZombieStuff.getCurrentGame().getMaxTime());
 //if this fails, that is not chill
             ZombieStuff.getCurrentGame().getPlayerCharacter().setCurrentLocation(desiredLocation);
+//remove the player from the currentLocation
+            ZombieStuff.getCurrentGame().getMap().getLocation(
+                    currentLocation).getCharactersInThisLocation().remove(currentLocationCharacterIndex);
+            //Set the playerCharacter to the desired Location on the map.
+            ZombieStuff.getCurrentGame().getMap().getLocation(desiredLocation).setCharacterToLocation(
+                    ZombieStuff.getCurrentGame().getPlayerCharacter());
 //setting the "visited" variable as true
             ZombieStuff.getCurrentGame().getMap().getLocation(desiredLocation).setVisited(true);
         } catch (GameControlException e) {

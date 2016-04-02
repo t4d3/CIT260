@@ -20,13 +20,9 @@ public class InventoryControl {
     public static void equipItem(int itemIndex) throws InventoryControlException {
         Item item = null;
         try {
-            System.out.println("getting Item");
             item = ZombieStuff.getCurrentGame().getPlayerCharacter().getInventory().get(itemIndex);
-            System.out.println("remove(itemIndex");
             ZombieStuff.getCurrentGame().getPlayerCharacter().getInventory().remove(itemIndex);
-            System.out.println("setEquiped");
             ZombieStuff.getCurrentGame().getPlayerCharacter().setEquiped(item);
-            System.out.println("success");
 
         } catch (IndexOutOfBoundsException e) {
             throw new InventoryControlException("No Item here! " + e.getMessage());
@@ -38,6 +34,20 @@ public class InventoryControl {
 
     public static void addItem(Item item) {
         ZombieStuff.getCurrentGame().getPlayerCharacter().getInventory().add(item);
+    }
+
+    public static void pickUpItemFromLocation(int itemIndex) throws InventoryControlException {
+        Item item;
+
+        try {
+            Point currentLocation = ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation();
+            item = ZombieStuff.getCurrentGame().getMap().getLocation(currentLocation).getItemFromLocation(itemIndex);
+            InventoryControl.addItem(item);
+            ZombieStuff.getCurrentGame().getMap().getLocation(currentLocation).removeItemFromLocation(itemIndex);
+        } catch (IndexOutOfBoundsException e) {
+            throw new InventoryControlException("No Item here! " + e.getMessage());
+        }
+
     }
 
     public static void dropItem(int itemIndex) throws InventoryControlException {

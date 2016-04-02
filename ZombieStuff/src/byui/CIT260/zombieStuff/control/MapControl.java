@@ -111,14 +111,14 @@ public class MapControl {
         + "\n|____00_____|_____10___20|_____30_____|_40_______50_|______60___|"
         + "\n\tWhat would you like to do? ");*/
     static void assignItemsToLocations() {
-        ZombieStuff.getCurrentGame().getMap().getLocation(6, 1).addItemToLocation(Item.Dress);
-        ZombieStuff.getCurrentGame().getMap().getLocation(3, 2).addItemToLocation(Item.Shoes);
-        ZombieStuff.getCurrentGame().getMap().getLocation(0, 1).addItemToLocation(Item.Hammer);
-        ZombieStuff.getCurrentGame().getMap().getLocation(3, 0).addItemToLocation(Item.Toothbrush);
-        ZombieStuff.getCurrentGame().getMap().getLocation(5, 2).addItemToLocation(Item.Hanger);
-        ZombieStuff.getCurrentGame().getMap().getLocation(6, 1).addItemToLocation(Item.Shirt);
-        ZombieStuff.getCurrentGame().getMap().getLocation(2, 4).addItemToLocation(Item.Armor);
-        ZombieStuff.getCurrentGame().getMap().getLocation(3, 1).addItemToLocation(Item.Toothpick);
+        ZombieStuff.getCurrentGame().getMap().getLocation(6, 1).addItemToLocation(Item.Dress);      //Claire's
+        ZombieStuff.getCurrentGame().getMap().getLocation(3, 2).addItemToLocation(Item.Shoes);      //Nike
+        ZombieStuff.getCurrentGame().getMap().getLocation(0, 1).addItemToLocation(Item.Hammer);     //Target
+        ZombieStuff.getCurrentGame().getMap().getLocation(3, 0).addItemToLocation(Item.Toothbrush); //JCPenney
+        ZombieStuff.getCurrentGame().getMap().getLocation(5, 2).addItemToLocation(Item.Hanger);     //Rue 21
+        ZombieStuff.getCurrentGame().getMap().getLocation(6, 1).addItemToLocation(Item.Shirt);      //Claire's
+        ZombieStuff.getCurrentGame().getMap().getLocation(2, 4).addItemToLocation(Item.Armor);      //Victoreia's Secret
+        ZombieStuff.getCurrentGame().getMap().getLocation(1, 3).addItemToLocation(Item.Toothpick);  //Food Court
     }
 
 }

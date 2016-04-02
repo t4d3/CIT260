@@ -17,15 +17,8 @@ public class GameMenuView extends View {
         super("***********************Game menu***********************"
                 + "\n*                                                     *"
                 + "\n*                                                     *"
-                + "\n*                                                     *"
-                + "\n*                                                     *"
-                + "\n* P - Print all Items in the game, to a file          *"
-                + "\n* M - Manifestation of the Map                        *"
-                + "\n* I - Inspect your Inventory                          *"
-                + "\n* T - Tell the time status                            *"
-                + "\n* Q - Quit                                            *"
-                + "\n*******************************************************"
-                + "\n\tWhat would you like to do? ");
+                + "\n*                                                     *");
+        displayMessage += this.getDefaultFooter();
     }
 
     @
@@ -48,6 +41,9 @@ public class GameMenuView extends View {
                 break;
             case "I":
                 this.InventoryView();
+                break;
+            case "S":
+                this.shopCurrentStore();
                 break;
             default:
                 System.out.println("\nERROR: Invalid selection... Try again!");
@@ -88,14 +84,23 @@ public class GameMenuView extends View {
                 - ZombieStuff.getCurrentGame().getUsedTime())
                 + "  *"
                 + "\n*                                                     *"
+                + this.getDefaultFooter();
+    }
+
+    private String getDefaultFooter() {
+        String defaultFooter = "\n* S - Shop in the current store                       *"
                 + "\n* P - Print all Items in the game, to a file          *"
                 + "\n* M - Manifestation of the Map                        *"
-                + "\n* F - Fight a Zombie                                  *"
-                + "\n* I - Inspect your Inventory                          *"
-                + "\n* T - Tell the remaining Time                         *"
+                + "\n* I - Inventory inspection                            *"
+                + "\n* T - Tell the time remaining and such                *"
                 + "\n* Q - Quit                                            *"
                 + "\n*******************************************************"
                 + "\n\tWhat would you like to do? ";
+        return defaultFooter;
     }
 
+    private void shopCurrentStore() {
+        ShopView shopView = new ShopView();
+        shopView.display();
+    }
 }

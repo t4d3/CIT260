@@ -18,9 +18,9 @@ public class MapView extends View {
     public MapView() {
         super(
                 "          ___________________________ ********Map View**********"
+                + "\n         |                           |*                        *"
                 + "\n         |                           |* M - Move the character *"
-                + "\n         |                           |* L - List visited places*"
-                + "\n         |     Victoria's Secret     |* S - Shop current store *"
+                + "\n         |     Victoria's Secret     |* L - List visited places*"
                 + "\n         |                           |* H - Display Help menu  *"
                 + "\n         |____________._.____________|* Q - Exit back to menu  *"
                 + "\n            |        |   |  Old   |   *                        *"
@@ -49,8 +49,6 @@ public class MapView extends View {
             case "H":
                 this.displayHelpMenu();
                 break;
-            case "S":
-                return this.shopStore();
             /*            case "?":
                     this.?();
                     break;*/
@@ -85,11 +83,4 @@ public class MapView extends View {
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
     }
-
-    private boolean shopStore() {
-        ShopView shopView = new ShopView();
-        shopView.display();
-        return true;
-    }
-
 }
