@@ -14,21 +14,24 @@ import java.io.Serializable;
 public enum Item implements Serializable{
 
 //Story related objects
-    Dress      (0,0,1, "Princes dress", "Too small to wear, but it'll be great!"),
-    Shoes      (0,0,1, "Princes shoes", "Too small to wear, but it'll be great!"),
-    Tiara      (0,0,1, "Princes tiara", "Too small to wear, but it'll be great!"),
+    Dress      (0,0,1, "Princess dress", "Too small to wear, but it'll be great!"),
+    Shoes      (0,0,1, "Princess shoes", "Too small to wear, but it'll be great!"),
+    Tiara      (0,0,1, "Princess tiara", "Too small to wear, but it'll be great!"),
 
 //Attack related object
-    Hammer     (1, 0, 2, "Hammer\t", "This is a pretty hard thing, but you can manage."), 
+    Hammer     (2, 0, 2, "Hammer\t", "This is a pretty hard thing, but you can manage."), 
     Toothbrush (-1, 0, 0, "Toothbrush", "It's got lots of dust, and a black hair... Gross."),
-    Hanger     (1, 0, 1, "Hanger\t", "I gues you could stab something with it."),
+    Sword      (5, 0, 1, "Sword\t", "I guess you could stab something with it..."),
 
 //Defence related objects
     Shirt      (0, 1, 1, "Shirt\t", "The Hello Kitty picture is so CUTE!!!"),
     Armor      (0, 5, 5, "Full Body Armor", "In theory, this should protect me."),
+    Helmet     (0, 5, 2, "Steel helmet", "It doesn't even block my vision!"),
 
 //not really related objects
-    Toothpick  (0,0,0,"Toothpick", "I have no IDEA why you'd want that! It's used.");
+    Toothpick  (1,0,0, "Toothpick", "I have no IDEA why you'd want that! It's used."),
+    Game       (1,0,0, "Halo 4", "This is an old game now.  Great gome, lame story line."),
+    PhoneCase  (-1,0,0, "Phone case", "It doesn't fit your phone, and it looks kina broken");
 
 //out of lazyness, if itemName length < "Hammer", add two \t for the spacing
 

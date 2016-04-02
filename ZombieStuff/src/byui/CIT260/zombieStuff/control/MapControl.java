@@ -103,7 +103,7 @@ public class MapControl {
         + "\n            | Food   I   I  Navy  |   **************************"
         + "\n ____03_____|_____13_| 23|_____33_|_____43_______53________63___"
         + "\n|           |        |   |        |        |        |           |"
-        + "\n|           |Zumies  I   I  Nike  | Lids   |Rue 21  |           |"
+        + "\n|           |Zumies  I   I  Nike  |tad\t  |Rue 21  |           |"
         + "\n|    02     |_____12_| 22|_____32_|_____42_|_____52_|      62   |"
         + "\n|  Target   I                                       I  Claire's |"
         + "\n|    01     |_____11___21______31_______41_______51_|      61   |"
@@ -111,14 +111,18 @@ public class MapControl {
         + "\n|____00_____|_____10___20|_____30_____|_40_______50_|______60___|"
         + "\n\tWhat would you like to do? ");*/
     static void assignItemsToLocations() {
-        ZombieStuff.getCurrentGame().getMap().getLocation(6, 1).addItemToLocation(Item.Dress);      //Claire's
+        ZombieStuff.getCurrentGame().getMap().getLocation(3, 0).addItemToLocation(Item.Dress);      //JCPenney
+        ZombieStuff.getCurrentGame().getMap().getLocation(4, 0).addItemToLocation(Item.Tiara);      //Kay Jewelers
         ZombieStuff.getCurrentGame().getMap().getLocation(3, 2).addItemToLocation(Item.Shoes);      //Nike
         ZombieStuff.getCurrentGame().getMap().getLocation(0, 1).addItemToLocation(Item.Hammer);     //Target
-        ZombieStuff.getCurrentGame().getMap().getLocation(3, 0).addItemToLocation(Item.Toothbrush); //JCPenney
-        ZombieStuff.getCurrentGame().getMap().getLocation(5, 2).addItemToLocation(Item.Hanger);     //Rue 21
+        ZombieStuff.getCurrentGame().getMap().getLocation(4, 2).addItemToLocation(Item.Toothbrush); //Lids
+        ZombieStuff.getCurrentGame().getMap().getLocation(5, 2).addItemToLocation(Item.Sword);      //Rue 21
         ZombieStuff.getCurrentGame().getMap().getLocation(6, 1).addItemToLocation(Item.Shirt);      //Claire's
         ZombieStuff.getCurrentGame().getMap().getLocation(2, 4).addItemToLocation(Item.Armor);      //Victoreia's Secret
         ZombieStuff.getCurrentGame().getMap().getLocation(1, 3).addItemToLocation(Item.Toothpick);  //Food Court
+        ZombieStuff.getCurrentGame().getMap().getLocation(1, 2).addItemToLocation(Item.Helmet);     //Zumies
+        ZombieStuff.getCurrentGame().getMap().getLocation(1, 0).addItemToLocation(Item.Game);       //Game Stop
+        ZombieStuff.getCurrentGame().getMap().getLocation(3, 3).addItemToLocation(Item.PhoneCase);  //Old Navy
     }
 
 }

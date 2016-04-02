@@ -7,9 +7,7 @@ package byui.CIT260.zombieStuff.view;
 
 import byui.CIT260.zombieStuff.control.InventoryControl;
 import byui.CIT260.zombieStuff.model.Item;
-import java.io.IOException;
 import java.util.ArrayList;
-import javax.imageio.IIOException;
 import zombiestuff.ZombieStuff;
 
 /**
@@ -36,8 +34,16 @@ public class InventoryView extends View {
                 this.equipItem();
                 this.displayMessage = getInventoryBlockMessage();
                 break;
-            case "A":
-                this.addItems();
+            case "AH":
+                this.addItems(Item.Hammer);
+                this.displayMessage = getInventoryBlockMessage();
+                break;
+            case "AT":
+                this.addItems(Item.Toothbrush);
+                this.displayMessage = getInventoryBlockMessage();
+                break;
+            case "AS":
+                this.addItems(Item.Shoes);
                 this.displayMessage = getInventoryBlockMessage();
                 break;
             case "S":
@@ -83,12 +89,7 @@ public class InventoryView extends View {
             inventoryDisplayBlock += currentItem;
         }
 
-        inventoryDisplayBlock += "\n*                                                     *"
-                + "\n* D - Drop Item        S - View Inventory Stats       *"
-                + "\n* E - Equip Item                  A - add items       *"
-                + "\n* Q - Quit                                            *"
-                + "\n*******************************************************"
-                + "\n\tWhat would you like to do? ";
+        inventoryDisplayBlock += this.getFooter();
         this.displayMessage = inventoryDisplayBlock;
     }
 
@@ -108,18 +109,23 @@ public class InventoryView extends View {
             inventoryDisplayBlock += ("\n* " + (i + 1) + " - " + currentItem
                     + String.format("%38s", " ") + "*");
         }
-        inventoryDisplayBlock
-                += "\n*                                                     *"
-                + "\n* D - Drop Item        S - View Inventory Stats       *"
-                + "\n* E - Equip Item                  A - add items       *"
-                + "\n* Q - Quit                                            *"
-                + "\n*******************************************************"
-                + "\n\tWhat would you like to do? ";
+        inventoryDisplayBlock += this.getFooter();
 
         return inventoryDisplayBlock;
     }
 
-    private void addItems() {
-        InventoryControl.addItem(Item.Hammer);
+    private String getFooter() {
+        String footer
+                = "\n*                                                     *"
+                + "\n* D - Drop Item        S - View Inventory Stats       *"
+                + "\n* E - Equip Item                                      *"
+                + "\n* Q - Quit                                            *"
+                + "\n*******************************************************"
+                + "\n\tWhat would you like to do? ";
+        return footer;
+    }
+
+    private void addItems(Item item) {
+        InventoryControl.addItem(item);
     }
 }
