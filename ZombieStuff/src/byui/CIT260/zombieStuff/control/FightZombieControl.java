@@ -5,17 +5,27 @@
  */
 package byui.CIT260.zombieStuff.control;
 
+import byui.CIT260.zombieStuff.exceptions.GameControlException;
+import byui.CIT260.zombieStuff.model.GameCharacter;
+import zombiestuff.ZombieStuff;
+
 /**
  *
  * @author Justin Cox
  */
 public class FightZombieControl {
 
-    public int fightAZombie(int currentHealth, int armorBonus, int weaponBonus) {
+    public int fightAZombie(Location location) throws GameControlException {
 
+        try {
+        ZombieStuff.getCurrentGame().getPlayer();
+        double health = ZombieStuff.getCurrentGame().getPlayerCharacter().getHealth();
+
+        
+        
         int zombieHealth = 5;
 
-        if (currentHealth < 1) {
+        if (health < 1) {
             //error you are dead!
             return -1;
         } else if (zombieHealth < 1) {
@@ -25,15 +35,17 @@ public class FightZombieControl {
         while (zombieHealth >= 1) {
             zombieHealth -= 3 + weaponBonus;
             if (zombieHealth >= 1) {
-                currentHealth -= (2 - armorBonus);
+                health -= (2 - armorBonus);
             }
-            if (currentHealth <= 0) {
+            if (health <= 0) {
                 //error you are dead
                 return -1;
             }
         }
-
-        return currentHealth;
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        return health;
     }
 
 }
