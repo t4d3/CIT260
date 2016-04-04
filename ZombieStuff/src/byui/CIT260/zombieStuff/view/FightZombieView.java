@@ -6,6 +6,7 @@
 package byui.CIT260.zombieStuff.view;
 
 import byui.CIT260.zombieStuff.control.FightZombieControl;
+import zombiestuff.ZombieStuff;
 
 
 /**
@@ -68,6 +69,7 @@ public class FightZombieView extends View {
     }
 
     private void fightAZombie() {
-        
+        FightZombieControl.fightAZombie(ZombieStuff.getCurrentGame().getMap().getLocation(
+                ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation()));
     }
 }

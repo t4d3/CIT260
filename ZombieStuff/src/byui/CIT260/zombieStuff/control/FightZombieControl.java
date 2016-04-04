@@ -5,13 +5,15 @@
  */
 package byui.CIT260.zombieStuff.control;
 
+import byui.CIT260.zombieStuff.model.Location;
+
 /**
  *
  * @author Justin Cox
  */
 public class FightZombieControl {
 
-    public int fightAZombie(int currentHealth, int armorBonus, int weaponBonus) {
+    public static int  fightAZombie(Location location) {
 
         int zombieHealth = 5;
 
