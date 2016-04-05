@@ -35,31 +35,37 @@ public class FightZombieControl {
                 //zombie is dead
                 throw new GameControlException("Zombie is dead.");
             }
-
+            
             int zombieHealth = zombie.getHealth();
             int playerHealth = playerCharacter.getHealth();
-            int playerAttack = playerCharacter.getAttack();
-            int playerDefense = playerCharacter.getDefence();
+            
+            //check to see the values of playerHealth and zombieHealth
+            System.out.println("playerHealth = " + playerHealth + "\nzombieHealth = " + zombieHealth);
+            //int playerAttack = playerCharacter.getAttack();
+            //int playerDefense = playerCharacter.getDefence();
 
-            for (int i = 0; i < playerCharacter.getEquiped().size(); i++) {
+            //for (int i = 0; i < playerCharacter.getEquiped().size(); i++) {
                 
-            }
+            
 
             while (zombieHealth >= 1) {
-                zombieHealth -= 3;
+                zombieHealth -= 2;
                 if (zombieHealth >= 1) {
-                    playerHealth -= 2;
+                    playerHealth -= 3;
                 }
                 if (playerHealth <= 0) {
                     //error you are dead
                     throw new GameControlException("You are dead bro.");
                 }
+                ZombieStuff.getCurrentGame().getPlayerCharacter().setHealth(playerHealth);
+                
             }
+            System.out.println("playerHealth = " + playerHealth + "\nzombieHealth = " + zombieHealth);
         } catch (Exception e) {
             throw new GameControlException("You are not able to fight this zombie.");
         }
         //assign variables here
-        
+       
     }
 
 }
