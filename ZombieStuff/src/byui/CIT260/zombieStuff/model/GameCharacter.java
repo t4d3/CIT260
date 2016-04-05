@@ -15,7 +15,6 @@ import java.util.ArrayList;
  */
 public class GameCharacter implements Serializable {
 
-
     private final int attack;
     private final int defence;
     private int health;
@@ -61,6 +60,22 @@ public class GameCharacter implements Serializable {
 
     public int getHealth() {
         return health;
+    }
+
+    public int getAttackBonus() {
+        int weaponBonus = 0;
+        for (Item currentWeapon : this.equiped) {
+            weaponBonus += currentWeapon.getAttackBonus();
+        }
+        return weaponBonus;
+    }
+
+    public int getDefenceBonus() {
+        int defenceBonus = 0;
+        for (Item currentWeapon : this.equiped) {
+            defenceBonus += currentWeapon.getDefenceBonus();
+        }
+        return defenceBonus;
     }
 
     public void setHealth(int health) {
