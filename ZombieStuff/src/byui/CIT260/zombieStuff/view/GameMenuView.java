@@ -5,6 +5,7 @@
  */
 package byui.CIT260.zombieStuff.view;
 
+import byui.CIT260.zombieStuff.control.GameControl;
 import zombiestuff.ZombieStuff;
 
 /**
@@ -100,7 +101,12 @@ public class GameMenuView extends View {
     }
 
     private void shopCurrentStore() {
-        ShopView shopView = new ShopView();
-        shopView.display();
+        if (GameControl.zombieTest()) {
+            FightZombieView fightZombieView = new FightZombieView();
+            fightZombieView.display();
+        } else {
+            ShopView shopView = new ShopView();
+            shopView.display();
+        }
     }
 }

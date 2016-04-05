@@ -118,9 +118,13 @@ public class MovePlayerView extends View {
         } catch (GameControlException ex) {
             Logger.getLogger(MovePlayerView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        ShopView shopView = new ShopView();
-        shopView.display();
+        if (GameControl.zombieTest()) {
+            FightZombieView fightZombieView = new FightZombieView();
+            fightZombieView.display();
+        } else {
+            ShopView shopView = new ShopView();
+            shopView.display();
+        }
         return true;
     }
 

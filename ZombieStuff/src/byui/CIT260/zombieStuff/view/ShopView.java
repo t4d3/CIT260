@@ -19,11 +19,6 @@ public class ShopView extends View {
     public ShopView() {
         super("ERROR: This view was not called properly!\n\tPess Q to return.");
         displayMessage = this.getDisplayBlockMessage();
-        if (this.zombieTest()) {
-            System.out.println("shopView should be exited if this is displayed.");
-        }
-        System.out.println("It got here, and needs to continue the shopView.");
-
     }
 
     @Override
@@ -40,19 +35,6 @@ public class ShopView extends View {
                 break;
         }
         displayMessage = this.getDisplayBlockMessage();
-        return false;
-    }
-
-    private boolean zombieTest() {
-        Location location = ZombieStuff.getCurrentGame().getMap().getLocation(
-                ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation());
-        ArrayList<GameCharacter> charactersInThisLocation = location.getCharactersInThisLocation();
-        for (int i = 0; i < charactersInThisLocation.size(); i++) {
-            if ("A Zombie".equals(charactersInThisLocation.get(i).getName())) {
-                this.fightZombie();
-                return true;
-            }
-        }
         return false;
     }
 
