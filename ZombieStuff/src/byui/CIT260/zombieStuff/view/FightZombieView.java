@@ -69,12 +69,12 @@ public class FightZombieView extends View {
         return false;
     }
 
-    private void fightAZombie() throws GameControlException{
+    private void fightAZombie() {
         try {
             FightZombieControl.fightAZombie(ZombieStuff.getCurrentGame().getMap().getLocation(
                     ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation()));
         } catch (GameControlException e) {
-            throw new GameControlException(e.getMessage());
-        }
+            ErrorView.display("fightAZombie", e.getMessage());
+                    }
     }
 }

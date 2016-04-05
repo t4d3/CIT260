@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class GameCharacter implements Serializable {
 
 
-    private final double attack;
-    private final double defence;
-    private double health;
+    private final int attack;
+    private final int defence;
+    private int health;
     private int floor;
     private String name;
     private final String description;
@@ -47,15 +47,23 @@ public class GameCharacter implements Serializable {
         this.equiped = equiped;
     }
 
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getDefence() {
+        return defence;
+    }
+
     public void setEquiped(Item item) {
         this.equiped.add(item);
     }
 
-    public double getHealth() {
+    public int getHealth() {
         return health;
     }
 
-    public void setHealth(double health) {
+    public void setHealth(int health) {
         this.health = health;
     }
 

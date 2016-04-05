@@ -188,5 +188,4 @@ public class GameControl {
         }
         return false;
     }
-
 }

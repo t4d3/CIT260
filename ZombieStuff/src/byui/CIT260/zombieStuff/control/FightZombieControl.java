@@ -16,34 +16,50 @@ import zombiestuff.ZombieStuff;
  */
 public class FightZombieControl {
 
-    public static int fightAZombie(Location location) throws GameControlException {
+    public static void fightAZombie(Location location) throws GameControlException {
 
         try {
-            ZombieStuff.getCurrentGame().getPlayer();
-            double health = ZombieStuff.getCurrentGame().getPlayerCharacter().getHealth();
-            
-            int zombieHealth = 5;
-
-            if (health < 1) {
-                //error you are dead!
-                return -1;
-            } else if (zombieHealth < 1) {
-                //zombie is dead
-                return -2;
-            }
-            while (zombieHealth >= 1) {
-                zombieHealth -= 3 + weaponBonus;
-                if (zombieHealth >= 1) {
-                    health -= (2 - armorBonus);
+            //get the characters info and sign it to variables
+            GameCharacter playerCharacter = ZombieStuff.getCurrentGame().getPlayerCharacter();
+            GameCharacter zombie = null;
+            for (int i = 0; i < location.getCharactersInThisLocation().size(); i++) {
+                if ("A Zombie".equals(location.getCharactersInThisLocation().get(i).getName())) {
+                    zombie = location.getCharactersInThisLocation().get(i);
                 }
-                if (health <= 0) {
+            }
+
+            if (playerCharacter.getHealth() < 1) {
+                //error you are dead!
+                throw new GameControlException("Player health is too low.");
+            } else if (zombie.getHealth() < 1) {
+                //zombie is dead
+                throw new GameControlException("Zombie is dead.");
+            }
+
+            int zombieHealth = zombie.getHealth();
+            int playerHealth = playerCharacter.getHealth();
+            int playerAttack = playerCharacter.getAttack();
+            int playerDefense = playerCharacter.getDefence();
+
+            for (int i = 0; i < playerCharacter.getEquiped().size(); i++) {
+                
+            }
+
+            while (zombieHealth >= 1) {
+                zombieHealth -= 3;
+                if (zombieHealth >= 1) {
+                    playerHealth -= 2;
+                }
+                if (playerHealth <= 0) {
                     //error you are dead
-                    return -1;
+                    throw new GameControlException("You are dead bro.");
                 }
             }
         } catch (Exception e) {
             throw new GameControlException("You are not able to fight this zombie.");
         }
+        
+        
     }
-    return health;
+
 }
