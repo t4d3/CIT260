@@ -9,13 +9,16 @@ import byui.CIT260.zombieStuff.exceptions.GameControlException;
 import byui.CIT260.zombieStuff.model.Game;
 import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Item;
+import byui.CIT260.zombieStuff.model.Location;
 import byui.CIT260.zombieStuff.model.Map;
 import byui.CIT260.zombieStuff.model.Player;
+import byui.CIT260.zombieStuff.view.FightZombieView;
 import java.awt.Point;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import zombiestuff.ZombieStuff;
 
 /**
@@ -174,4 +177,16 @@ public class GameControl {
             throw new GameControlException(e.getMessage());
         }
     }
+
+    public static boolean zombieTest() {
+        ArrayList<GameCharacter> charactersInThisLocation = ZombieStuff.getCurrentGame().getMap().getLocation(
+                ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation()).getCharactersInThisLocation();
+        for (int i = 0; i < charactersInThisLocation.size(); i++) {
+            if ("A Zombie".equals(charactersInThisLocation.get(i).getName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

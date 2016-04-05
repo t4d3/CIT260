@@ -5,6 +5,7 @@
  */
 package byui.CIT260.zombieStuff.control;
 
+import byui.CIT260.zombieStuff.model.Location;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,7 +38,7 @@ public class FightZombieControlTest {
         int weaponBonus = 0;
         FightZombieControl instance = new FightZombieControl();
         int expResult = 5;
-        int result = instance.fightAZombie(currentHealth, armorBonus, weaponBonus);
+        int result = instance.fightAZombie(new Location());
         assertEquals(expResult, result);
         
     }
