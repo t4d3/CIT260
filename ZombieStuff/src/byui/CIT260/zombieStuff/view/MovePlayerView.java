@@ -121,6 +121,10 @@ public class MovePlayerView extends View {
         if (GameControl.zombieTest()) {
             FightZombieView fightZombieView = new FightZombieView();
             fightZombieView.display();
+        } else if (desiredLocation.equals(new Point(1, 3))) {
+            System.out.println("This is a food location");
+            FoodMenuView foodMenuView = new FoodMenuView();
+            foodMenuView.display();
         } else {
             ShopView shopView = new ShopView();
             shopView.display();

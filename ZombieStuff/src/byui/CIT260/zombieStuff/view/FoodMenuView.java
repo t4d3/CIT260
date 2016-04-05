@@ -60,6 +60,7 @@ public class FoodMenuView extends View {
     }
 
     private void buyCornDog() {
-
+        BuyACornDogView buyView = new BuyACornDogView();
+        buyView.display();
     }
 }
