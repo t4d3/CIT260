@@ -6,6 +6,8 @@
 package byui.CIT260.zombieStuff.view;
 
 import byui.CIT260.zombieStuff.control.FightZombieControl;
+import byui.CIT260.zombieStuff.exceptions.GameControlException;
+import zombiestuff.ZombieStuff;
 
 
 /**
@@ -67,7 +69,12 @@ public class FightZombieView extends View {
         return false;
     }
 
-    private void fightAZombie() {
-        
+    private void fightAZombie() throws GameControlException{
+        try {
+            FightZombieControl.fightAZombie(ZombieStuff.getCurrentGame().getMap().getLocation(
+                    ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation()));
+        } catch (GameControlException e) {
+            throw new GameControlException(e.getMessage());
+        }
     }
 }
