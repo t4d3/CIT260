@@ -58,7 +58,7 @@ public class FightZombieControl {
         } catch (Exception e) {
             throw new GameControlException("You are not able to fight this zombie.");
         }
-        
+        //assign variables here
         
     }
 
