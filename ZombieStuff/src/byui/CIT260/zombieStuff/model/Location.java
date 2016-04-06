@@ -5,6 +5,7 @@
  */
 package byui.CIT260.zombieStuff.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -69,6 +70,10 @@ public class Location implements Serializable {
     
     public int getColumn() {
         return column;
+    }
+    
+    public Point getCoordinates() {
+        return new Point(this.column, this.row);
     }
     
     public void setColumn(int column) {
