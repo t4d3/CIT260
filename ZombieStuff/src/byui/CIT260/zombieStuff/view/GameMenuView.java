@@ -101,10 +101,11 @@ public class GameMenuView extends View {
     }
 
     private void shopCurrentStore() {
-        if (GameControl.zombieTest()) {
+        while (GameControl.zombieTest()) {
             FightZombieView fightZombieView = new FightZombieView();
             fightZombieView.display();
-        } else {
+        }
+        if (!GameControl.zombieTest()) {
             ShopView shopView = new ShopView();
             shopView.display();
         }

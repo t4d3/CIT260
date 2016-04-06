@@ -66,7 +66,7 @@ public class FightZombieView extends View {
                 System.out.println("\nERROR: Invalid selection... Try again!");
                 break;
         }
-        return false;
+        return true;
     }
 
     private void fightAZombie() {

@@ -118,17 +118,20 @@ public class MovePlayerView extends View {
         } catch (GameControlException ex) {
             Logger.getLogger(MovePlayerView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if (GameControl.zombieTest()) {
+        while (GameControl.zombieTest()) {
             FightZombieView fightZombieView = new FightZombieView();
             fightZombieView.display();
-        } else if (desiredLocation.equals(new Point(1, 3))) {
+        }
+        if (desiredLocation.equals(new Point(1, 3))) {
             System.out.println("This is a food location");
             FoodMenuView foodMenuView = new FoodMenuView();
             foodMenuView.display();
-        } else {
+
+        } else if (!GameControl.zombieTest()) {
             ShopView shopView = new ShopView();
             shopView.display();
         }
+
         return true;
     }
 

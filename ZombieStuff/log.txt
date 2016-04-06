@@ -1,1 +1,0 @@
-fightAZombie - You are not able to fight this zombie.
