@@ -23,6 +23,7 @@ public class FightZombieControl {
             //get the characters info and sign it to variables
             GameCharacter playerCharacter = ZombieStuff.getCurrentGame().getPlayerCharacter();
             GameCharacter zombie = null;
+            
             int playerAttack = playerCharacter.getAttack() + playerCharacter.getAttackBonus();
             int playerDefence = playerCharacter.getDefence() + playerCharacter.getDefenceBonus();
             int zombieIndex = 0;
@@ -37,19 +38,16 @@ public class FightZombieControl {
             if (playerCharacter.getHealth() < 1) {
                 //error you are dead!
                 throw new GameControlException("Player health is too low.");
+            
             } else if (zombie.getHealth() < 1) {
                 //zombie is dead
+                
                 throw new GameControlException("Zombie is dead.");
             }
 
             int zombieHealth = zombie.getHealth();
             int playerHealth = playerCharacter.getHealth();
-
-            //check to see the values of playerHealth and zombieHealth
-            System.out.println("playerHealth = " + playerHealth + "\nzombieHealth = " + zombieHealth);
-            //int playerAttack = playerCharacter.getAttack();
-            //int playerDefense = playerCharacter.getDefence();
-
+                                 
             //for (int i = 0; i < playerCharacter.getEquiped().size(); i++) {
             while (zombieHealth >= 1) {
                 zombieHealth -= playerAttack;
@@ -68,17 +66,11 @@ public class FightZombieControl {
             if (zombieHealth <= 0) {
                 ZombieStuff.getCurrentGame().getMap().getLocation(location.getCoordinates()).getCharactersInThisLocation().remove(zombieIndex);
             }
-            
-           
                 ZombieStuff.getCurrentGame().getPlayerCharacter().setHealth(playerHealth);
 
-           
             System.out.println("playerHealth = " + playerHealth + "\nzombieHealth = " + zombieHealth);
         } catch (Exception e) {
             throw new GameControlException("You are not able to fight this zombie.");
         }
-     
-
     }
-
 }
