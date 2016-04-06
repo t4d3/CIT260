@@ -5,7 +5,6 @@
  */
 package byui.CIT260.zombieStuff.view;
 
-import byui.CIT260.zombieStuff.model.Location;
 import byui.CIT260.zombieStuff.model.Map;
 import zombiestuff.ZombieStuff;
 

@@ -36,7 +36,7 @@ class PickUpItemView extends View {
         }
 
         try {
-        InventoryControl.pickUpItemFromLocation(input - 1);
+            InventoryControl.pickUpItemFromLocation(input - 1);
         } catch (InventoryControlException e) {
             ErrorView.display("DropItemView.doAction()", e.getMessage());
             return false;
@@ -48,10 +48,10 @@ class PickUpItemView extends View {
 
     private String getInventoryBlockMessage() {
         String inventoryDisplayBlock
-                =   "*********************Pick up Item**********************"
+                = "*********************Pick up Item**********************"
                 + "\n*                                                     *";
-            ArrayList<Item> locationInventory = ZombieStuff.getCurrentGame().getMap().getLocation(
-                    ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation()).getItemsInThisLocation();
+        ArrayList<Item> locationInventory = ZombieStuff.getCurrentGame().getMap().getLocation(
+                ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation()).getItemsInThisLocation();
         for (int i = 0; i < 4; i++) {
             String currentItem = "\t\t";
             if (i < locationInventory.size()) {

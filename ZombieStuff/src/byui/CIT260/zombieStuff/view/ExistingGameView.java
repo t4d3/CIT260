@@ -40,7 +40,7 @@ class ExistingGameView extends View {
             ErrorView.display("MainMenuView", e.getMessage());
             return false;
         }
-        
+
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
 

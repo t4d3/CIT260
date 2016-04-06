@@ -10,7 +10,10 @@ package byui.CIT260.zombieStuff.view;
  * @author T4d3-T550
  */
 public interface ViewInterface {
+
     public void display();
+
     public String getInput();
+
     public boolean doAction(String value);
 }

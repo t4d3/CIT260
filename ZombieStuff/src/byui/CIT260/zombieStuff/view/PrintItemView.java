@@ -13,7 +13,7 @@ import byui.CIT260.zombieStuff.exceptions.GameControlException;
  * @author T4d3-T550
  */
 class PrintItemView extends View {
-    
+
     PrintItemView() {
         super("*******************************************************"
                 + "\n*                                                     *"
@@ -32,7 +32,7 @@ class PrintItemView extends View {
     @Override
     public boolean doAction(String filePath) {
         if (filePath.length() < 3) {
-            ErrorView.display(this.getClass().getName(),"Invalid entry...must be a litte longer.");
+            ErrorView.display(this.getClass().getName(), "Invalid entry...must be a litte longer.");
             return false;
         }
         try {
@@ -42,5 +42,5 @@ class PrintItemView extends View {
         }
         return true;
     }
-    
+
 }

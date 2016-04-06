@@ -7,7 +7,6 @@ package byui.CIT260.zombieStuff.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import zombiestuff.ZombieStuff;
 
 /**
  *

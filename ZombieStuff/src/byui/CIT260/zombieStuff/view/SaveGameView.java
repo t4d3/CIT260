@@ -32,7 +32,7 @@ public class SaveGameView extends View {
     @Override
     public boolean doAction(String filePath) {
         if (filePath.length() < 3) {
-            ErrorView.display(this.getClass().getName(),"Invalid entry...must be a litte longer.");
+            ErrorView.display(this.getClass().getName(), "Invalid entry...must be a litte longer.");
             return false;
         }
         try {

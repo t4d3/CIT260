@@ -46,11 +46,11 @@ class BuyACornDogView extends View {
             ErrorView.display("InventoryView.getInput", e.getMessage());
         }
         try {
-        EatingFood.eatFood(numCornDogs, money);
+            EatingFood.eatFood(numCornDogs, money);
         } catch (GameControlException e) {
             ErrorView.display("GameControl", e.getMessage());
         }
-                return true;
+        return true;
     }
 
 }

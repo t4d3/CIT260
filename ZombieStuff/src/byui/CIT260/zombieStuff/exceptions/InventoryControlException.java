@@ -9,8 +9,8 @@ package byui.CIT260.zombieStuff.exceptions;
  *
  * @author T4d3-T550
  */
-public class InventoryControlException extends Exception{
-    
+public class InventoryControlException extends Exception {
+
     public InventoryControlException() {
     }
 

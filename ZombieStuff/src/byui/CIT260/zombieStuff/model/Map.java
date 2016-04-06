@@ -63,6 +63,7 @@ public class Map implements Serializable {
     public Location getLocation(int column, int row) {
         return this.locations[column][row];
     }
+
     public Location getLocation(Point location) {
         return this.locations[location.x][location.y];
     }

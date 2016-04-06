@@ -60,9 +60,9 @@ public class MainMenuView extends View {
                     "ERROR: " + e.getMessage());
         }
 
-            GameMenuView gameMenuView = new GameMenuView();
+        GameMenuView gameMenuView = new GameMenuView();
 //This part should start into the game...Unlike most code, it is very important.
-            gameMenuView.display();
+        gameMenuView.display();
     }
 
     private void startExistingGame() {

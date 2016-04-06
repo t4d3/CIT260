@@ -5,9 +5,7 @@
  */
 package byui.CIT260.zombieStuff.view;
 
-import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Location;
-import java.util.ArrayList;
 import zombiestuff.ZombieStuff;
 
 /**
