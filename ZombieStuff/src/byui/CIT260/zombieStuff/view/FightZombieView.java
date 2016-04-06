@@ -9,7 +9,6 @@ import byui.CIT260.zombieStuff.control.FightZombieControl;
 import byui.CIT260.zombieStuff.exceptions.GameControlException;
 import zombiestuff.ZombieStuff;
 
-
 /**
  *
  * @author Justin Cox
@@ -59,6 +58,7 @@ public class FightZombieView extends View {
         switch (menuOption) {
             case "F":
                 this.fightAZombie();
+                System.out.print("\nCongrats, you won...murderer.");
                 break;
             case "R":
                 return true;
@@ -75,6 +75,6 @@ public class FightZombieView extends View {
                     ZombieStuff.getCurrentGame().getPlayerCharacter().getCurrentLocation()));
         } catch (GameControlException e) {
             ErrorView.display("fightAZombie", e.getMessage());
-                    }
+        }
     }
 }
