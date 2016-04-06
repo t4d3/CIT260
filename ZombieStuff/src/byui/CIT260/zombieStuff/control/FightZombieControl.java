@@ -63,9 +63,10 @@ public class FightZombieControl {
                 gameOverView.display();
                 gameOverView.EndGame();
             }
-            else if (zombieHealth <= 0) {
-                
-            }
+            //else if (zombieHealth <= 0) {
+               
+            //}
+            
              else {
                 ZombieStuff.getCurrentGame().getPlayerCharacter().setHealth(playerHealth);
 
