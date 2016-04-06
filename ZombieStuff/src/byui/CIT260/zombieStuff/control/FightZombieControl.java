@@ -8,6 +8,7 @@ package byui.CIT260.zombieStuff.control;
 import byui.CIT260.zombieStuff.exceptions.GameControlException;
 import byui.CIT260.zombieStuff.model.GameCharacter;
 import byui.CIT260.zombieStuff.model.Location;
+import byui.CIT260.zombieStuff.view.GameOverView;
 import zombiestuff.ZombieStuff;
 
 /**
@@ -58,11 +59,14 @@ public class FightZombieControl {
             }
             if (playerHealth <= 0) {
                 //error you are dead
-                throw new GameControlException("You are dead bro.");
+                GameOverView gameOverView = new GameOverView();
+                gameOverView.display();
+                gameOverView.EndGame();
             }
-
-            if (playerHealth >= 10)
-                    ; else {
+            else if (zombieHealth <= 0) {
+                
+            }
+             else {
                 ZombieStuff.getCurrentGame().getPlayerCharacter().setHealth(playerHealth);
 
             }
@@ -70,7 +74,7 @@ public class FightZombieControl {
         } catch (Exception e) {
             throw new GameControlException("You are not able to fight this zombie.");
         }
-        //assign variables here
+     
 
     }
 
