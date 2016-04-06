@@ -25,10 +25,12 @@ public class FightZombieControl {
             GameCharacter zombie = null;
             int playerAttack = playerCharacter.getAttack() + playerCharacter.getAttackBonus();
             int playerDefence = playerCharacter.getDefence() + playerCharacter.getDefenceBonus();
-
+            int zombieIndex = 0;
+            
             for (int i = 0; i < location.getCharactersInThisLocation().size(); i++) {
                 if ("A Zombie".equals(location.getCharactersInThisLocation().get(i).getName())) {
                     zombie = location.getCharactersInThisLocation().get(i);
+                    zombieIndex = i;
                 }
             }
 
@@ -63,14 +65,14 @@ public class FightZombieControl {
                 gameOverView.display();
                 gameOverView.EndGame();
             }
-            //else if (zombieHealth <= 0) {
-               
-            //}
+            if (zombieHealth <= 0) {
+                ZombieStuff.getCurrentGame().getMap().getLocation(location.getCoordinates()).getCharactersInThisLocation().remove(zombieIndex);
+            }
             
-             else {
+           
                 ZombieStuff.getCurrentGame().getPlayerCharacter().setHealth(playerHealth);
 
-            }
+           
             System.out.println("playerHealth = " + playerHealth + "\nzombieHealth = " + zombieHealth);
         } catch (Exception e) {
             throw new GameControlException("You are not able to fight this zombie.");
