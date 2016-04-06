@@ -68,7 +68,6 @@ public class FightZombieControl {
             }
                 ZombieStuff.getCurrentGame().getPlayerCharacter().setHealth(playerHealth);
 
-            System.out.println("playerHealth = " + playerHealth + "\nzombieHealth = " + zombieHealth);
         } catch (Exception e) {
             throw new GameControlException("You are not able to fight this zombie.");
         }
